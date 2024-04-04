@@ -8,8 +8,11 @@
 - 🙌 FREELANCE DEVELOPER!
 
 ## Portfolio
-<a herf="https://coolgunxdd.github.io/Lemon_portfolio/ ">
-    <img height="100em" src="https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=Lemon_portfolio"/>
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=Lemon_portfolio&theme=dark)](https://coolgunxdd.github.io/Lemon_portfolio/)
+
+<a herf="https://coolgunxdd.github.io/Lemon_portfolio/">
+    Link!
 </a>
 
 ## Statistics
