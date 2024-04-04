@@ -8,12 +8,14 @@
 - 🙌 FREELANCE DEVELOPER!
 
 ## Portfolio
-Here is My React Portfolio: https://coolgunxdd.github.io/Lemon_portfolio/ 
+<a herf="https://coolgunxdd.github.io/Lemon_portfolio/ ">
+    <img height="170em" src="https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=github-readme-stats)"/>
+</a>
 
 ## Statistics
 <a herf="https://github.com/CooLguNxDD/">
-  <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=CooLguNxDD&show_icons=true&theme=dark&count_private=true"/>&ensp;
-  <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark"/>&ensp;
+  <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=CooLguNxDD&show_icons=true&theme=dark&count_private=true"/>
+  <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark"/>
 </a>
 
 <!--
