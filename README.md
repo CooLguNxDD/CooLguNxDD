@@ -12,7 +12,8 @@ Here is My React Portfolio: https://coolgunxdd.github.io/Lemon_portfolio/
 
 ## Statistics
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=CooLguNxDD&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
-https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark
+
+[![Anurag's GitHub stats](https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark)]
 
 
 <!--
