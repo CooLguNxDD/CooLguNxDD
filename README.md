@@ -10,7 +10,7 @@
 ## Portfolio
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=Lemon_portfolio)](https://github.com/anuraghazra/github-readme-stats)
 <a herf="https://coolgunxdd.github.io/Lemon_portfolio/ ">
-    <img height="170em" src="https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=Lemon_portfolio)"/>
+    <img height="170em" src="https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=Lemon_portfolio"/>
     
 </a>
 
