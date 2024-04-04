@@ -12,7 +12,7 @@ Here is My React Portfolio: https://coolgunxdd.github.io/Lemon_portfolio/
 
 ## Statistics
 <a herf="https://github.com/CooLguNxDD/">
-  <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=CooLguNxDD&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>&ensp;
+  <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=CooLguNxDD&show_icons=true&theme=dark&count_private=true"/>&ensp;
 </a>
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=CooLguNxDD&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
