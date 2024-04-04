@@ -1,8 +1,19 @@
 ### Hi there 👋
 
+## I am Andrew!
+
+- 🎮 GAME DEVELOPER (Unity/ Unreal)
+- 💻 SOFTWARE DEVELOPER (C/C++, C#, Python...)
+- 🌐 WEB DEVELOPER (JS, React, Node, MongoDB)
+- 🙌 FREELANCE DEVELOPER!
+
+## Portfolio
 Here is My React Portfolio: https://coolgunxdd.github.io/Lemon_portfolio/ 
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=CooLguNxDD)](https://github.com/anuraghazra/github-readme-stats)
+## Statistics
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=CooLguNxDD&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
+https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark
+
 
 <!--
 **CooLguNxDD/CooLguNxDD** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
