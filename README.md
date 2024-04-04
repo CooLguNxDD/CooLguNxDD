@@ -12,11 +12,10 @@
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=Lemon_portfolio&theme=dark)](https://coolgunxdd.github.io/Lemon_portfolio/)
 
 <a herf="https://coolgunxdd.github.io/Lemon_portfolio/">
-    Link!
 </a>
 
 ## Statistics
-<a herf="https://github.com/CooLguNxDD/">
+<a href="https://github.com/CooLguNxDD/">
   <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=CooLguNxDD&show_icons=true&theme=dark&count_private=true"/>
   <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark"/>
 </a>
