@@ -9,9 +9,8 @@
 
 ## Portfolio
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=Lemon_portfolio&theme=dark)](https://coolgunxdd.github.io/Lemon_portfolio/)
-
-<a herf="https://coolgunxdd.github.io/Lemon_portfolio/">
+<a href="https://coolgunxdd.github.io/Lemon_portfolio/">
+  <img height="120em" src="https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=Lemon_portfolio&theme=dark"/>
 </a>
 
 ## Statistics
