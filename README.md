@@ -16,7 +16,7 @@
 ## Statistics
 <a href="https://github.com/CooLguNxDD/">
   <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=CooLguNxDD&show_icons=true&theme=dark&count_private=true"/>
-  <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark"/>
+  <img height="170em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark&count_private=true"/>
 </a>
 
 <!--
