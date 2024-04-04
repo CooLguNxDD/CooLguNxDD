@@ -2,7 +2,7 @@
 
 Here is My React Portfolio: https://coolgunxdd.github.io/Lemon_portfolio/ 
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=CooLguNxDD)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--
 **CooLguNxDD/CooLguNxDD** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
