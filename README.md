@@ -10,7 +10,7 @@
 ## Portfolio
 
 <a href="https://coolgunxdd.github.io/CatPortfolio/">
-  <img height="135" src="https://github-readme-stats.vercel.app/api/pin/?username=CooLguNxDD&repo=CatPortfolio&theme=dark&hide_border=true" alt="CatPortfolio" />
+  <img src="./assets/catportfolio-card.svg" alt="CatPortfolio — live GenUI site" width="440" />
 </a>
 
 ## Statistics
