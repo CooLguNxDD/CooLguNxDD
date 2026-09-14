@@ -2,7 +2,7 @@
 
 ## I am Andrew Liang
 
-**Full-Stack & Agentic AI Systems Engineer** · Vancouver, BC
+**DevOps & Agentic AI Systems Engineer**
 
 I build production MCP platforms, self-rendering GenUI, and cloud infrastructure — with a background in real-time graphics.
 
