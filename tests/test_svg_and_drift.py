@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from stats_gen.cats import select_roaming_breeds  # noqa: E402
-from stats_gen.config import load_breeds, load_config, load_text_bundle  # noqa: E402
+from stats_gen.config import apply_theme_preset, load_breeds, load_config, load_text_bundle, load_themes  # noqa: E402
 from stats_gen.github_io import redact_secret  # noqa: E402
 from stats_gen.svg import (  # noqa: E402
     CARD_RENDERERS,
@@ -57,6 +57,8 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertIn("@keyframes", hero_svg)
         self.assertIn("prefers-reduced-motion: reduce", hero_svg)
         self.assertIn(self.breeds["breeds"]["white"]["coat"], hero_svg)
+        self.assertIn("cat-pupils", hero_svg)
+        self.assertIn("cat-head", hero_svg)
         self.assertNotIn("cat-peek", hero_svg)
         self.assertIn("Agentic AI Platforms", hero_svg)
         self.assertNotIn("Production MCP platforms", hero_svg)
@@ -71,6 +73,8 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertIn("prefers-reduced-motion: reduce", cp_svg)
         self.assertIn(self.breeds["breeds"]["black"]["coat"], cp_svg)
         self.assertIn(self.breeds["breeds"]["black"]["coat_rim"], cp_svg)
+        self.assertIn("cat-pupils", cp_svg)
+        self.assertIn("cat-head", cp_svg)
 
         ai_cat_svg = render_ai_tools_cat_svg(self.cfg, self.breeds, self.bundle["templates"])
         ET.fromstring(ai_cat_svg)
@@ -78,6 +82,8 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertIn("@keyframes", ai_cat_svg)
         self.assertIn("prefers-reduced-motion: reduce", ai_cat_svg)
         self.assertIn("catch-fish", ai_cat_svg)
+        self.assertIn("cat-pupils", ai_cat_svg)
+        self.assertIn("cat-head", ai_cat_svg)
         self.assertIn(self.breeds["breeds"]["ginger"]["coat"], ai_cat_svg)
 
         roaming = select_roaming_breeds(self.breeds, 3, "2026-11-19")
@@ -152,6 +158,9 @@ class TestSvgAndDrift(unittest.TestCase):
         )
 
     def test_on_disk_generated_svgs_valid_xml_no_bom(self) -> None:
+        themes = load_themes(ROOT / "config" / "themes.json")
+        latte_bg = themes["themes"]["latte"]["bg_start"]
+        light_cfg = apply_theme_preset(self.cfg, themes, theme_id="latte", accent_id="latte_mauve")
         names = (
             "hero-banner.svg",
             "catportfolio-card.svg",
@@ -164,6 +173,25 @@ class TestSvgAndDrift(unittest.TestCase):
             raw = (ROOT / "assets" / name).read_bytes()
             self.assertFalse(raw.startswith(b"\xef\xbb\xbf"), f"UTF-8 BOM in {name}")
             ET.fromstring(raw.decode("utf-8"))
+
+            light_raw = (ROOT / "assets" / "light" / name).read_bytes()
+            self.assertFalse(light_raw.startswith(b"\xef\xbb\xbf"), f"UTF-8 BOM in light/{name}")
+            light_text = light_raw.decode("utf-8")
+            ET.fromstring(light_text)
+            self.assertIn(latte_bg, light_text)
+
+        self.assertEqual(
+            (ROOT / "assets" / "light" / "hero-banner.svg").read_text(encoding="utf-8"),
+            render_hero_svg(light_cfg, self.breeds, self.bundle["templates"]),
+        )
+        self.assertEqual(
+            (ROOT / "assets" / "light" / "catportfolio-card.svg").read_text(encoding="utf-8"),
+            render_catportfolio_svg(light_cfg, self.breeds, self.bundle["templates"]),
+        )
+        self.assertEqual(
+            (ROOT / "assets" / "light" / "ai-tools-cat.svg").read_text(encoding="utf-8"),
+            render_ai_tools_cat_svg(light_cfg, self.breeds, self.bundle["templates"]),
+        )
 
 
 if __name__ == "__main__":

@@ -125,7 +125,26 @@ def _build_cat_context(
     }
 
 
-def run_full(ctx: dict[str, Any], bundle: dict[str, dict[str, Any]], out_dir: Path) -> int:
+def _write_card_set(cards: tuple[tuple[str, str], ...], ctx: dict[str, Any], out_dir: Path) -> None:
+    # Rule 5: one-shot static SVG pipeline uses direct CARD_RENDERERS registry dispatch rather than an event bus.
+    for key, filename in cards:
+        _write_svg(out_dir / filename, CARD_RENDERERS[key](ctx))
+
+
+def _light_ctx(ctx: dict[str, Any], raw_cfg: dict[str, Any], themes_cfg: dict[str, Any]) -> dict[str, Any]:
+    light_theme = str(raw_cfg.get("light_theme", "latte"))
+    light_accent = str(raw_cfg.get("light_accent", "mauve"))
+    light_cfg = apply_theme_preset(raw_cfg, themes_cfg, theme_id=light_theme, accent_id=light_accent)
+    return {**ctx, "cfg": light_cfg}
+
+
+def run_full(
+    ctx: dict[str, Any],
+    raw_cfg: dict[str, Any],
+    themes_cfg: dict[str, Any],
+    bundle: dict[str, dict[str, Any]],
+    out_dir: Path,
+) -> int:
     """Fetch GitHub metrics and dispatch all registered SVG card renderers."""
     cfg = ctx["cfg"]
     stats_token = os.environ.get("STATS_TOKEN", "").strip()
@@ -148,16 +167,16 @@ def run_full(ctx: dict[str, Any], bundle: dict[str, dict[str, Any]], out_dir: Pa
         fetched["user"], int(fetched["repos"]["totalCount"]),
         fetched["repos"]["nodes"], fetched["all_time"], excluded, cfg,
     )
-    full_ctx = {
-        **ctx,
+    shared = {
         "metrics": metrics,
         "include_private": include_private,
         "has_exclusions": bool(excluded),
         "updated_date": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d"),
     }
-    # Rule 5: one-shot static SVG pipeline uses direct CARD_RENDERERS registry dispatch rather than an event bus.
-    for key, filename in OFFLINE_CARDS + STATS_CARDS:
-        _write_svg(out_dir / filename, CARD_RENDERERS[key](full_ctx))
+    full_ctx = {**ctx, **shared}
+    all_cards = OFFLINE_CARDS + STATS_CARDS
+    _write_card_set(all_cards, full_ctx, out_dir)
+    _write_card_set(all_cards, _light_ctx(full_ctx, raw_cfg, themes_cfg), out_dir / "light")
     _print_summary(cfg, metrics, full_ctx, username=username, custom_token=has_custom, include_private=include_private)
     return 0
 
@@ -177,15 +196,16 @@ def main(argv: list[str] | None = None) -> int:
     ctx = _build_cat_context(cfg, breeds_cfg, bundle, seed)
 
     if args.hero_only:
-        _write_svg(args.output_dir / "hero-banner.svg", CARD_RENDERERS["hero"](ctx))
+        _write_card_set((OFFLINE_CARDS[0],), ctx, args.output_dir)
+        _write_card_set((OFFLINE_CARDS[0],), _light_ctx(ctx, raw_cfg, themes_cfg), args.output_dir / "light")
         print(cfg["messages"]["cli_hero_done"])
         return 0
     if args.offline:
-        for key, filename in OFFLINE_CARDS:
-            _write_svg(args.output_dir / filename, CARD_RENDERERS[key](ctx))
+        _write_card_set(OFFLINE_CARDS, ctx, args.output_dir)
+        _write_card_set(OFFLINE_CARDS, _light_ctx(ctx, raw_cfg, themes_cfg), args.output_dir / "light")
         print(cfg["messages"]["cli_hero_done"])
         return 0
-    return run_full(ctx, bundle, args.output_dir)
+    return run_full(ctx, raw_cfg, themes_cfg, bundle, args.output_dir)
 
 
 if __name__ == "__main__":

@@ -96,7 +96,7 @@ def _render_hero_chips(hero: dict[str, Any], theme: dict[str, Any], snips: dict[
             chip_bg=theme["chip_bg"], chip_border=theme["chip_border"],
             text_x=chip["text_x"], text_y=chip["text_y"],
             font_family=_esc(theme["font_family"]),
-            color=sanitize_color(chip["color"], theme["text_primary"]),
+            color=theme.get(chip.get("color_key", ""), sanitize_color(chip.get("color"), theme["text_primary"])),
             text=_esc(chip["text"]),
         )
         for chip in hero["chips"]
@@ -225,7 +225,7 @@ def render_catportfolio_svg(
             x=c["x"], y=c["y"], width=c["width"], height=c["height"],
             chip_bg=theme["chip_bg"], chip_border=theme["chip_border"],
             text_x=c["text_x"], text_y=c["text_y"],
-            font_family=_esc(theme["font_family"]), color="#e8d7ff", text=_esc(c["text"]),
+            font_family=_esc(theme["font_family"]), color=theme["text_primary"], text=_esc(c["text"]),
         )
         for c in card["chips"]
     )

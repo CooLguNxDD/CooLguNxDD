@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="./assets/hero-banner.svg" alt="Andrew Liang — DevOps & Agentic AI Systems Engineer" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="./assets/light/hero-banner.svg" />
+    <img src="./assets/hero-banner.svg" alt="Andrew Liang — DevOps & Agentic AI Systems Engineer" width="100%" />
+  </picture>
 </p>
 
 <p align="center">
@@ -19,7 +22,10 @@ I architect **Agentic AI platforms**, **self-rendering GenUI**, and **distribute
 
 <p>
   <a href="https://coolgunxdd.github.io/CatPortfolio/">
-    <img src="./assets/catportfolio-card.svg" alt="CatPortfolio — live GenUI site" width="440" />
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="./assets/light/catportfolio-card.svg" />
+      <img src="./assets/catportfolio-card.svg" alt="CatPortfolio — live GenUI site" width="440" />
+    </picture>
   </a>
 </p>
 
@@ -34,15 +40,24 @@ I architect **Agentic AI platforms**, **self-rendering GenUI**, and **distribute
 
 <p>
   <a href="https://github.com/CooLguNxDD">
-    <img height="196" src="./assets/github-stats.svg" alt="Andrew Liang's GitHub Activity" />
-    <img height="196" src="./assets/top-langs.svg" alt="Andrew Liang's Top Languages" />
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="./assets/light/github-stats.svg" />
+      <img height="196" src="./assets/github-stats.svg" alt="Andrew Liang's GitHub Activity" />
+    </picture>
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="./assets/light/top-langs.svg" />
+      <img height="196" src="./assets/top-langs.svg" alt="Andrew Liang's Top Languages" />
+    </picture>
   </a>
 </p>
 
-<sub>Self-hosted SVG cards driven by <a href="./config/profile.json"><code>config/profile.json</code></a> and <a href="./config/breeds.json"><code>config/breeds.json</code></a>, generated via <a href="./scripts/generate_stats.py"><code>scripts/generate_stats.py</code></a> and <a href="./.github/workflows/update-stats.yml">GitHub Actions</a> — zero third-party OAuth apps.</sub>
+<sub>Self-hosted SVG cards driven by <a href="./config/profile.json"><code>config/profile.json</code></a> and <a href="./config/breeds.json"><code>config/breeds.json</code></a>, generated via <a href="./scripts/generate_stats.py"><code>scripts/generate_stats.py</code></a> and <a href="./.github/workflows/update-stats.yml">GitHub Actions</a> — zero third-party OAuth apps. Auto-switches between dark and Catppuccin Latte light mode.</sub>
 
 <p align="center">
-  <img src="./assets/cat-fleet-strip.svg" alt="Cat Fleet — daily rotating animated cat breeds" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="./assets/light/cat-fleet-strip.svg" />
+    <img src="./assets/cat-fleet-strip.svg" alt="Cat Fleet — daily rotating animated cat breeds" width="100%" />
+  </picture>
 </p>
 
 <details>
@@ -107,7 +122,10 @@ I architect **Agentic AI platforms**, **self-rendering GenUI**, and **distribute
       <sub><b>Grok</b></sub>
     </td>
     <td align="center" width="250">
-      <img src="./assets/ai-tools-cat.svg" alt="Orange cat catching a leaping fish" width="240" />
+      <picture>
+        <source media="(prefers-color-scheme: light)" srcset="./assets/light/ai-tools-cat.svg" />
+        <img src="./assets/ai-tools-cat.svg" alt="Orange cat catching a leaping fish" width="240" />
+      </picture>
     </td>
   </tr>
 </table>

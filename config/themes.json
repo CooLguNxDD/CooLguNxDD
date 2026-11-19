@@ -126,6 +126,16 @@
       "icon_cyan": "#f5c2e7",
       "icon_violet": "#cba6f7",
       "default_lang_color": "#f5c2e7"
+    },
+    "latte_mauve": {
+      "label": "Latte Mauve",
+      "accent_start": "#8839ef",
+      "accent_end": "#1e66f5",
+      "pill_lavender": "#6c2bd9",
+      "pill_cyan": "#0969da",
+      "icon_cyan": "#1e66f5",
+      "icon_violet": "#8839ef",
+      "default_lang_color": "#8839ef"
     }
   }
 }

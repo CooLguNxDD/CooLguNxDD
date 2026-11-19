@@ -5,6 +5,8 @@
       .cat-blink { transform-box: fill-box; transform-origin: 50% 50%; animation: cat-blink 4.8s ease-in-out infinite; }
       .cat-ear { transform-box: fill-box; transform-origin: 40% 95%; animation: cat-ear 5.5s ease-in-out infinite; }
       .catch-hop { transform-box: fill-box; transform-origin: 50% 100%; animation: catch-hop 2.2s ease-in-out infinite; }
+      .cat-head { transform-box: fill-box; transform-origin: 50% 85%; animation: cat-head 2.2s ease-in-out infinite; }
+      .cat-pupils { animation: cat-pupils 2.2s ease-in-out infinite; }
       .catch-paw { transform-box: fill-box; transform-origin: 15% 65%; animation: catch-paw 2.2s ease-in-out infinite; }
       .catch-fish { animation: catch-fish 2.2s ease-in-out infinite; }
       .splash-pop { animation: splash-pop 2.2s ease-out infinite; }
@@ -25,6 +27,16 @@
         0%, 100% { transform: translate(0px, 0px); }
         40% { transform: translate(8px, -7px); }
         60% { transform: translate(10px, -4px); }
+      }
+      @keyframes cat-head {
+        0%, 100% { transform: rotate(2deg); }
+        42% { transform: rotate(-5deg); }
+        70% { transform: rotate(0deg); }
+      }
+      @keyframes cat-pupils {
+        0%, 100% { transform: translate(1.2px, 0.7px); }
+        42% { transform: translate(0.7px, -1.3px); }
+        70% { transform: translate(1.1px, -0.3px); }
       }
       @keyframes catch-paw {
         0%, 100% { transform: rotate(8deg); }

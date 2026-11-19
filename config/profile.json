@@ -2,6 +2,8 @@
   "username": "CooLguNxDD",
   "active_theme": "catportfolio",
   "active_accent": "violet",
+  "light_theme": "latte",
+  "light_accent": "latte_mauve",
   "github": {
     "endpoint": "https://api.github.com/graphql",
     "user_agent": "CooLguNxDD-profile-stats",
@@ -98,7 +100,7 @@
         "height": 22,
         "text_x": 83,
         "text_y": "162.5",
-        "color": "#e8d7ff"
+        "color_key": "text_primary"
       },
       {
         "text": "Open Source · MCP · WebGL",
@@ -108,7 +110,7 @@
         "height": 22,
         "text_x": 226,
         "text_y": "162.5",
-        "color": "#7ee0ff"
+        "color_key": "pill_cyan"
       },
       {
         "text": "Cat Fleet",
@@ -118,7 +120,7 @@
         "height": 22,
         "text_x": 360,
         "text_y": "162.5",
-        "color": "#d7c2ff"
+        "color_key": "pill_lavender"
       }
     ],
     "aquarium": {
