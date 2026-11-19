@@ -159,14 +159,14 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertEqual(cp_disk, render_catportfolio_svg(cfg_for(cp_disk), self.breeds, self.bundle["templates"], breed_id=breed_of(cp_disk)))
 
         ai_disk = (ROOT / "assets" / "ai-tools-cat.svg").read_text(encoding="utf-8")
-        self.assertEqual(ai_disk, render_ai_tools_cat_svg(cfg_for(ai_disk), self.breeds, self.bundle["templates"]))
+        self.assertEqual(ai_disk, render_ai_tools_cat_svg(cfg_for(ai_disk), self.breeds, self.bundle["templates"], breed_id=breed_of(ai_disk)))
 
         strip_disk = (ROOT / "assets" / "cat-fleet-strip.svg").read_text(encoding="utf-8")
         strip_match = SEED_RE.search(strip_disk)
         self.assertIsNotNone(strip_match)
         strip_seed = strip_match.group(1)
         strip_roaming = select_roaming_breeds(self.breeds, 3, strip_seed)
-        daily_roaming = select_roaming_breeds(self.breeds, 5, strip_seed, include_pinned=True)[2:]
+        daily_roaming = select_roaming_breeds(self.breeds, 6, strip_seed, include_pinned=True)[3:]
         strip_cfg = cfg_for(strip_disk)
         daily_poses = select_daily_poses(["stroll", "nap", "play"], 3, strip_seed)
         candidates = (
@@ -207,10 +207,10 @@ class TestSvgAndDrift(unittest.TestCase):
         cp_breed = BREED_RE.search(cp_light)
         self.assertIsNotNone(cp_breed)
         self.assertEqual(cp_light, render_catportfolio_svg(light_cfg, self.breeds, self.bundle["templates"], breed_id=cp_breed.group(1)))
-        self.assertEqual(
-            (ROOT / "assets" / "light" / "ai-tools-cat.svg").read_text(encoding="utf-8"),
-            render_ai_tools_cat_svg(light_cfg, self.breeds, self.bundle["templates"]),
-        )
+        ai_light = (ROOT / "assets" / "light" / "ai-tools-cat.svg").read_text(encoding="utf-8")
+        ai_breed = BREED_RE.search(ai_light)
+        self.assertIsNotNone(ai_breed)
+        self.assertEqual(ai_light, render_ai_tools_cat_svg(light_cfg, self.breeds, self.bundle["templates"], breed_id=ai_breed.group(1)))
 
 
 if __name__ == "__main__":

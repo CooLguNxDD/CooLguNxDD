@@ -189,16 +189,20 @@ def render_ai_tools_cat_svg(
     cfg: dict[str, Any],
     breeds_cfg: dict[str, Any],
     templates: dict[str, dict[str, str]],
+    *,
+    breed_id: str | None = None,
 ) -> str:
-    """Render the animated orange cat catching a leaping fish beside AI Tools."""
+    """Render the animated cat catching a leaping fish beside AI Tools."""
     theme, card, snips = cfg["theme"], cfg["ai_tools_cat"], cfg["svg_snippets"]
     cat_cfg = card["cat"]
+    chosen_breed = breed_id or cat_cfg["breed"]
     cat_svg = render_cat(
-        cat_cfg["breed"], cat_cfg["pose"], breeds_cfg, snips["cat_wrapper"],
+        chosen_breed, cat_cfg["pose"], breeds_cfg, snips["cat_wrapper"],
         x=cat_cfg["x"], y=cat_cfg["y"], scale=cat_cfg["scale"], flip=cat_cfg["flip"],
     )
     ai_tmpl = templates["ai_tools_cat_body"]
     body = Template(ai_tmpl["body"]).substitute(
+        breed_id=_esc(chosen_breed),
         font_family=_esc(theme["font_family"]),
         accent_end=theme["accent_end"],
         pill_cyan=theme["pill_cyan"],
@@ -530,7 +534,9 @@ CARD_RENDERERS: dict[str, Callable[[dict[str, Any]], str]] = {
         roaming_ids=ctx["strip_breed_ids"], seed=ctx["seed"],
         poses=ctx.get("strip_poses"),
     ),
-    "ai_tools_cat": lambda ctx: render_ai_tools_cat_svg(ctx["cfg"], ctx["breeds"], ctx["templates"]),
+    "ai_tools_cat": lambda ctx: render_ai_tools_cat_svg(
+        ctx["cfg"], ctx["breeds"], ctx["templates"], breed_id=ctx.get("ai_tools_breed_id"),
+    ),
     "stats": lambda ctx: render_stats_svg(
         ctx["metrics"], ctx["cfg"], ctx["templates"],
         includes_private=ctx["include_private"], updated_date=ctx["updated_date"],

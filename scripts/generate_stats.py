@@ -120,11 +120,11 @@ def _build_cat_context(
 ) -> dict[str, Any]:
     slot_poses = [str(s["pose"]) for s in cfg["cat_strip"]["slots"]]
     if daily_mode:
-        chosen = select_roaming_breeds(breeds_cfg, 2 + len(slot_poses), seed, include_pinned=True)
-        hero_breed, cp_breed, strip_breeds = chosen[0], chosen[1], chosen[2:]
+        chosen = select_roaming_breeds(breeds_cfg, 3 + len(slot_poses), seed, include_pinned=True)
+        hero_breed, cp_breed, ai_breed, strip_breeds = chosen[0], chosen[1], chosen[2], chosen[3:]
         poses = select_daily_poses(slot_poses, len(slot_poses), seed)
     else:
-        hero_breed, cp_breed = None, None
+        hero_breed, cp_breed, ai_breed = None, None, None
         strip_breeds = select_roaming_breeds(breeds_cfg, len(slot_poses), seed)
         poses = slot_poses
     return {
@@ -134,6 +134,7 @@ def _build_cat_context(
         "seed": seed,
         "hero_breed_id": hero_breed,
         "catportfolio_breed_id": cp_breed,
+        "ai_tools_breed_id": ai_breed,
         "strip_breed_ids": strip_breeds,
         "strip_poses": poses,
     }
