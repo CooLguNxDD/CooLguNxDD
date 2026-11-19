@@ -1,24 +1,45 @@
-### Hi there
+<p align="center">
+  <img src="./assets/hero-banner.svg" alt="Andrew Liang — DevOps & Agentic AI Systems Engineer" width="100%" />
+</p>
 
-## I am Andrew Liang
-
-**DevOps & Agentic AI Systems Engineer**
+<p align="center">
+  <a href="https://coolgunxdd.github.io/CatPortfolio/"><img src="https://img.shields.io/badge/CatPortfolio-Live_GenUI-863bff?style=for-the-badge&labelColor=1c1730" alt="CatPortfolio" /></a>
+  <a href="https://www.linkedin.com/in/andrew-liang-8281301b5/"><img src="https://img.shields.io/badge/LinkedIn-Connect-47bfff?style=for-the-badge&labelColor=1c1730" alt="LinkedIn" /></a>
+  <a href="https://coolgunxdd.itch.io"><img src="https://img.shields.io/badge/Itch.io-Games_%26_Jams-863bff?style=for-the-badge&labelColor=1c1730" alt="Itch.io" /></a>
+</p>
 
 I build production MCP platforms, self-rendering GenUI, and cloud infrastructure — with a background in real-time graphics.
 
-- 🧠 **Agentic AI / MCP** — FastMCP, LangGraph, GOAP, pgvector
-- 💻 **Full-Stack** — React 19, TypeScript, Python, Node.js
-- ☁️ **Cloud & DevOps** — AWS, Terraform, Docker, EKS
-- 🎮 **Real-Time Graphics** — Unity, Unreal, Three.js / WebGL
+- 🧠 **Agentic AI & MCP** — FastMCP, LangGraph, GOAP, pgvector
+- 💻 **Full-Stack & GenUI** — React 19, TypeScript, Python, Node.js, SolidJS
+- ☁️ **Cloud & DevOps** — AWS, Terraform, Docker, EKS, GitHub Actions
+- 🎮 **Real-Time Graphics** — Unity, Unreal Engine 5, Three.js / WebGL, HLSL/GLSL
 
-🔭 Building [Whiskers Agent](https://github.com/CooLguNxDD/Whiskers-Agent) — plugin-driven MCP + LangGraph/GOAP platform  
-📫 [LinkedIn](https://www.linkedin.com/in/andrew-liang-8281301b5/) · [Itch.io](https://coolgunxdd.itch.io) · [CatPortfolio](https://coolgunxdd.github.io/CatPortfolio/)
+## Featured Projects
 
-## Portfolio
+<p>
+  <a href="https://coolgunxdd.github.io/CatPortfolio/">
+    <img src="./assets/catportfolio-card.svg" alt="CatPortfolio — live GenUI site" width="440" />
+  </a>
+</p>
 
-<a href="https://coolgunxdd.github.io/CatPortfolio/">
-  <img src="./assets/catportfolio-card.svg" alt="CatPortfolio — live GenUI site" width="440" />
-</a>
+| Project | Overview |
+| :--- | :--- |
+| [**Whiskers-Agent**](https://github.com/CooLguNxDD/Whiskers-Agent) | Plugin-driven MCP platform with `FastMCP` (stdio & HTTP), LangGraph/GOAP orchestration, two-layer OAuth, encrypted vault, and React admin console |
+| [**Whiskers-Agent-Chat**](https://github.com/CooLguNxDD/Whiskers-Agent-Chat) | Shared chat & task board for coding-agent fleets built on `FastMCP` + SQLite, SolidJS portal, webhooks, and Discord relay |
+| [**Claude-Idle-Cat**](https://github.com/CooLguNxDD/Claude-Idle-Cat) | Claude Code plugin where an idle cat earns coins while you code, complete with a household and six browser arcade games |
+| [**The-Daily-Directive-Game**](https://github.com/CooLguNxDD/The-Daily-Directive-Game) | Co-op photo roguelike shooter in Unreal Engine 5.9 (`C++`, Epic AI MegaJam 2026 · [Watch Demo](https://youtu.be/xV4vN-_Von8)) |
+
+## Statistics
+
+<p>
+  <a href="https://github.com/CooLguNxDD">
+    <img height="196" src="./assets/github-stats.svg" alt="Andrew Liang's GitHub Activity" />
+    <img height="196" src="./assets/top-langs.svg" alt="Andrew Liang's Top Languages" />
+  </a>
+</p>
+
+<sub>Self-hosted SVG cards generated via <a href="./scripts/generate_stats.py"><code>scripts/generate_stats.py</code></a> and <a href="./.github/workflows/update-stats.yml">GitHub Actions</a> — zero third-party OAuth apps.</sub>
 
 ## Tech Stack
 
@@ -31,10 +52,10 @@ I build production MCP platforms, self-rendering GenUI, and cloud infrastructure
 | Area | Stack |
 | :--- | :--- |
 | **Agentic AI** | MCP · FastMCP · LangGraph · GOAP · Pydantic · RAG / pgvector |
-| **Frontend & GenUI** | React 19 · TypeScript · TanStack · Zustand · Zod · Tailwind v4 · Three.js |
-| **Backend** | Python · Node.js · FastAPI · PostgreSQL · Redis · Nginx |
+| **Frontend & GenUI** | React 19 · SolidJS · TypeScript · TanStack · Zustand · Zod · Tailwind v4 · Three.js |
+| **Backend** | Python · Node.js · FastAPI · PostgreSQL · SQLite · Redis · Nginx |
 | **Cloud & DevOps** | AWS (EKS, Lambda, DynamoDB, SQS, Amplify) · Terraform · Docker · GitHub Actions |
-| **Graphics** | Unity · Unreal Engine 5 · C# / C++ · GLSL · Blender |
+| **Graphics** | Unity · Unreal Engine 5 · C# / C++ · HLSL / GLSL · Blender |
 
 ## AI Tools
 
@@ -66,9 +87,3 @@ I build production MCP platforms, self-rendering GenUI, and cloud infrastructure
     </td>
   </tr>
 </table>
-
-## Statistics
-<a href="https://github.com/CooLguNxDD/">
-  <img height="170em" src="https://github-stats-extended.vercel.app/api?username=CooLguNxDD&show_icons=true&theme=dark&count_private=true"/>
-  <img height="170em" src="https://github-stats-extended.vercel.app/api/top-langs/?username=CooLguNxDD&layout=compact&langs_count=8&theme=dark&count_private=true"/>
-</a>
