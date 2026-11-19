@@ -116,17 +116,25 @@ def _build_cat_context(
     bundle: dict[str, dict[str, Any]],
     seed: str,
     *,
-    rotate_poses: bool,
+    daily_mode: bool,
 ) -> dict[str, Any]:
     slot_poses = [str(s["pose"]) for s in cfg["cat_strip"]["slots"]]
-    chosen = select_roaming_breeds(breeds_cfg, len(slot_poses), seed)
-    poses = select_daily_poses(slot_poses, len(slot_poses), seed) if rotate_poses else slot_poses
+    if daily_mode:
+        chosen = select_roaming_breeds(breeds_cfg, 2 + len(slot_poses), seed, include_pinned=True)
+        hero_breed, cp_breed, strip_breeds = chosen[0], chosen[1], chosen[2:]
+        poses = select_daily_poses(slot_poses, len(slot_poses), seed)
+    else:
+        hero_breed, cp_breed = None, None
+        strip_breeds = select_roaming_breeds(breeds_cfg, len(slot_poses), seed)
+        poses = slot_poses
     return {
         "cfg": cfg,
         "breeds": breeds_cfg,
         "templates": bundle["templates"],
         "seed": seed,
-        "strip_breed_ids": chosen,
+        "hero_breed_id": hero_breed,
+        "catportfolio_breed_id": cp_breed,
+        "strip_breed_ids": strip_breeds,
         "strip_poses": poses,
     }
 
@@ -216,7 +224,7 @@ def main(argv: list[str] | None = None) -> int:
     cfg = apply_theme_preset(raw_cfg, themes_cfg, theme_id=theme_id, accent_id=accent_id)
     breeds_cfg = load_breeds(args.breeds)
     bundle = load_text_bundle(root)
-    ctx = _build_cat_context(cfg, breeds_cfg, bundle, seed, rotate_poses=daily_mode)
+    ctx = _build_cat_context(cfg, breeds_cfg, bundle, seed, daily_mode=daily_mode)
 
     if args.hero_only:
         _write_card_set((OFFLINE_CARDS[0],), ctx, args.output_dir)

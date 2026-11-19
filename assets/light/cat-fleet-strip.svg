@@ -111,28 +111,28 @@
   <g transform="translate(148, 74) scale(1, 1) scale(0.90)">
   <ellipse cx="0" cy="17" rx="25" ry="3.6" fill="#000000" fill-opacity="0.22"/>
   <g class="anim loaf-breathe">
-    <path d="M-22,14 C-24,-4 -12,-12 1,-12 C14,-12 22,-4 21,14 C21,16.5 14,17.5 0,17.5 C-14,17.5 -22,16.5 -22,14 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.1"/>
-    <g transform="translate(-2, 4) scale(0.95, 0.72)"><path d="M-12,-4 Q-8,-2 -11,3 M12,-4 Q8,-2 11,3 M-13,6 Q-9,8 -12,11 M13,6 Q9,8 12,11" fill="none" stroke="#6e3f19" stroke-width="1.4" stroke-linecap="round" opacity="0.78"/></g>
+    <path d="M-22,14 C-24,-4 -12,-12 1,-12 C14,-12 22,-4 21,14 C21,16.5 14,17.5 0,17.5 C-14,17.5 -22,16.5 -22,14 Z" fill="#f8f6fc" stroke="#c4b6e6" stroke-width="1.1"/>
+    <g transform="translate(-2, 4) scale(0.95, 0.72)"></g>
     <g transform="translate(-15, 11)">
       <g class="anim nap-tail">
-        <path d="M0,0 C10,5 22,5 28,1 C30,-1 28,-4 24,-3 C18,-1 9,0 0,-3 Z" fill="#b97434" stroke="#6e3f19" stroke-width="1"/>
+        <path d="M0,0 C10,5 22,5 28,1 C30,-1 28,-4 24,-3 C18,-1 9,0 0,-3 Z" fill="#ddd6ee" stroke="#c4b6e6" stroke-width="1"/>
       </g>
     </g>
-    <ellipse cx="-6" cy="15.5" rx="5" ry="2.8" fill="#faebd7" stroke="#6e3f19" stroke-width="0.85"/>
-    <ellipse cx="10" cy="15.5" rx="5" ry="2.8" fill="#faebd7" stroke="#6e3f19" stroke-width="0.85"/>
-    <path d="M1,-10 L0,-23 C0,-25 2.5,-25 4,-23 L9,-15 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1" stroke-linejoin="round"/>
-    <path d="M2,-12 L1.5,-20 L7.5,-14 Z" fill="#ebb0a8"/>
-    <path d="M14,-15 L21,-24 C23,-25 25,-24 25,-22 L23,-9 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1" stroke-linejoin="round"/>
-    <path d="M16,-14 L22.5,-20 L22,-11 Z" fill="#ebb0a8"/>
-    <ellipse cx="12" cy="-3" rx="14.5" ry="12" fill="#df9a52" stroke="#6e3f19" stroke-width="1.1"/>
-    <g transform="translate(12, -3) scale(0.74)"><path d="M-4.5,-13.5 L-2.5,-9 L0,-12 L2.5,-9 L4.5,-13.5" fill="none" stroke="#6e3f19" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/><path d="M-15,-3 L-10,-2 M-15.5,1 L-10.5,1.5 M15,-3 L10,-2 M15.5,1 L10.5,1.5" fill="none" stroke="#6e3f19" stroke-width="1.25" stroke-linecap="round"/></g>
-    <ellipse cx="4" cy="1" rx="2.8" ry="1.5" fill="#f29494" fill-opacity="0.38"/>
-    <ellipse cx="20" cy="1" rx="2.8" ry="1.5" fill="#f29494" fill-opacity="0.38"/>
+    <ellipse cx="-6" cy="15.5" rx="5" ry="2.8" fill="#ffffff" stroke="#c4b6e6" stroke-width="0.85"/>
+    <ellipse cx="10" cy="15.5" rx="5" ry="2.8" fill="#ffffff" stroke="#c4b6e6" stroke-width="0.85"/>
+    <path d="M1,-10 L0,-23 C0,-25 2.5,-25 4,-23 L9,-15 Z" fill="#f8f6fc" stroke="#c4b6e6" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M2,-12 L1.5,-20 L7.5,-14 Z" fill="#f4b4cc"/>
+    <path d="M14,-15 L21,-24 C23,-25 25,-24 25,-22 L23,-9 Z" fill="#f8f6fc" stroke="#c4b6e6" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M16,-14 L22.5,-20 L22,-11 Z" fill="#f4b4cc"/>
+    <ellipse cx="12" cy="-3" rx="14.5" ry="12" fill="#f8f6fc" stroke="#c4b6e6" stroke-width="1.1"/>
+    <g transform="translate(12, -3) scale(0.74)"><path d="M-3,-13.5 Q0,-16 3,-13.5" fill="none" stroke="#e8e1f7" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/></g>
+    <ellipse cx="4" cy="1" rx="2.8" ry="1.5" fill="#f49ac1" fill-opacity="0.38"/>
+    <ellipse cx="20" cy="1" rx="2.8" ry="1.5" fill="#f49ac1" fill-opacity="0.38"/>
     <path d="M4.5,-3.5 Q7.5,-0.5 10.5,-3.5" fill="none" stroke="#161225" stroke-width="1.5" stroke-linecap="round"/>
     <path d="M14,-3.5 Q17,-0.5 20,-3.5" fill="none" stroke="#161225" stroke-width="1.5" stroke-linecap="round"/>
-    <polygon points="10.8,0 13.8,0 12.3,1.6" fill="#e58888"/>
-    <path d="M9.5,2.6 Q11,4 12.3,2.5 Q13.6,4 15.1,2.6" fill="none" stroke="#5c3314" stroke-width="1.2" stroke-linecap="round"/>
-    <g stroke="#faebd7" stroke-width="0.8" stroke-linecap="round" fill="none">
+    <polygon points="10.8,0 13.8,0 12.3,1.6" fill="#f09ab8"/>
+    <path d="M9.5,2.6 Q11,4 12.3,2.5 Q13.6,4 15.1,2.6" fill="none" stroke="#863bff" stroke-width="1.2" stroke-linecap="round"/>
+    <g stroke="#c9bfe0" stroke-width="0.8" stroke-linecap="round" fill="none">
       <path d="M3,-0.5 L-3,-1.5"/><path d="M3,1.5 L-3,2"/>
       <path d="M21,-0.5 L27,-1.5"/><path d="M21,1.5 L27,2"/>
     </g>
@@ -146,39 +146,39 @@
     <ellipse cx="0" cy="21" rx="22" ry="3.4" fill="#000000" fill-opacity="0.22"/>
     <g class="anim stroll-bob">
       <g class="anim leg-b">
-        <rect x="-15" y="7" width="5.5" height="13" rx="2.7" fill="#28184a" stroke="#8b62ff" stroke-width="0.9"/>
-        <rect x="5" y="7" width="5.5" height="13" rx="2.7" fill="#28184a" stroke="#8b62ff" stroke-width="0.9"/>
+        <rect x="-15" y="7" width="5.5" height="13" rx="2.7" fill="#ded6eb" stroke="#a79dc4" stroke-width="0.9"/>
+        <rect x="5" y="7" width="5.5" height="13" rx="2.7" fill="#ded6eb" stroke="#a79dc4" stroke-width="0.9"/>
       </g>
       <g transform="translate(-17, 1)">
         <g class="anim cat-tail">
-          <path d="M0,0 C-10,-4 -15,-17 -9,-25 C-6,-28 -2,-26 -4,-21 C-7,-15 -3,-6 2,-2 Z" fill="#28184a" stroke="#8b62ff" stroke-width="1"/>
+          <path d="M0,0 C-10,-4 -15,-17 -9,-25 C-6,-28 -2,-26 -4,-21 C-7,-15 -3,-6 2,-2 Z" fill="#ded6eb" stroke="#a79dc4" stroke-width="1"/>
         </g>
       </g>
-      <ellipse cx="-2" cy="3" rx="17.5" ry="10" fill="#3b2566" stroke="#8b62ff" stroke-width="1.1"/>
-      <g transform="translate(-2, 1) scale(0.85, 0.72)"><circle cx="-8" cy="4" r="1.2" fill="#7ee0ff"/><circle cx="7" cy="10" r="1.3" fill="#f4b4cc"/><circle cx="-5" cy="15" r="0.9" fill="#7ee0ff"/></g>
+      <ellipse cx="-2" cy="3" rx="17.5" ry="10" fill="#f4f0fa" stroke="#a79dc4" stroke-width="1.1"/>
+      <g transform="translate(-2, 1) scale(0.85, 0.72)"></g>
       <g class="anim leg-a">
-        <rect x="-11" y="8" width="5.8" height="13" rx="2.9" fill="#3b2566" stroke="#8b62ff" stroke-width="0.95"/>
-        <rect x="8" y="8" width="5.8" height="13" rx="2.9" fill="#3b2566" stroke="#8b62ff" stroke-width="0.95"/>
+        <rect x="-11" y="8" width="5.8" height="13" rx="2.9" fill="#f4f0fa" stroke="#a79dc4" stroke-width="0.95"/>
+        <rect x="8" y="8" width="5.8" height="13" rx="2.9" fill="#f4f0fa" stroke="#a79dc4" stroke-width="0.95"/>
       </g>
-      <path d="M7,-17 L6,-29 C6,-31 8.5,-31 10,-29 L16,-21 Z" fill="#3b2566" stroke="#8b62ff" stroke-width="1" stroke-linejoin="round"/>
-      <path d="M8,-18 L7.5,-26 L14,-20 Z" fill="#a87bff"/>
-      <path d="M18,-21 L25,-30 C27,-31 29,-30 29,-28 L27,-16 Z" fill="#3b2566" stroke="#8b62ff" stroke-width="1" stroke-linejoin="round"/>
-      <path d="M20,-20 L26.5,-26 L26,-17 Z" fill="#a87bff"/>
-      <ellipse cx="17" cy="-10" rx="13.5" ry="11.8" fill="#3b2566" stroke="#8b62ff" stroke-width="1.1"/>
-      <g transform="translate(17, -10) scale(0.7)"><path d="M-3,-9.5 A3.8,3.8 0 1,1 3,-9.5 A2.9,2.9 0 1,0 -3,-9.5 Z" fill="#7ee0ff" opacity="0.9"/><circle cx="-9" cy="-11" r="1.1" fill="#f4b4cc"/><circle cx="10" cy="-8" r="1.0" fill="#7ee0ff"/></g>
-      <ellipse cx="9" cy="-6" rx="2.5" ry="1.4" fill="#c07eff" fill-opacity="0.35"/>
-      <ellipse cx="25" cy="-6" rx="2.5" ry="1.4" fill="#c07eff" fill-opacity="0.35"/>
+      <path d="M7,-17 L6,-29 C6,-31 8.5,-31 10,-29 L16,-21 Z" fill="#f4f0fa" stroke="#a79dc4" stroke-width="1" stroke-linejoin="round"/>
+      <path d="M8,-18 L7.5,-26 L14,-20 Z" fill="#9c90ba"/>
+      <path d="M18,-21 L25,-30 C27,-31 29,-30 29,-28 L27,-16 Z" fill="#f4f0fa" stroke="#a79dc4" stroke-width="1" stroke-linejoin="round"/>
+      <path d="M20,-20 L26.5,-26 L26,-17 Z" fill="#9c90ba"/>
+      <ellipse cx="17" cy="-10" rx="13.5" ry="11.8" fill="#f4f0fa" stroke="#a79dc4" stroke-width="1.1"/>
+      <g transform="translate(17, -10) scale(0.7)"><ellipse cx="0" cy="4.5" rx="10" ry="7.5" fill="#7e749c" opacity="0.88"/></g>
+      <ellipse cx="9" cy="-6" rx="2.5" ry="1.4" fill="#e8a8d0" fill-opacity="0.35"/>
+      <ellipse cx="25" cy="-6" rx="2.5" ry="1.4" fill="#e8a8d0" fill-opacity="0.35"/>
       <g class="anim cat-blink">
-        <ellipse cx="12.5" cy="-10.5" rx="2.8" ry="3.3" fill="#7ee0ff"/>
-        <ellipse cx="12.5" cy="-10.5" rx="1.4" ry="2.4" fill="#110a24"/>
+        <ellipse cx="12.5" cy="-10.5" rx="2.8" ry="3.3" fill="#47bfff"/>
+        <ellipse cx="12.5" cy="-10.5" rx="1.4" ry="2.4" fill="#161225"/>
         <circle cx="13.4" cy="-11.6" r="1.0" fill="#ffffff"/>
-        <ellipse cx="22" cy="-10.5" rx="2.8" ry="3.3" fill="#7ee0ff"/>
-        <ellipse cx="22" cy="-10.5" rx="1.4" ry="2.4" fill="#110a24"/>
+        <ellipse cx="22" cy="-10.5" rx="2.8" ry="3.3" fill="#47bfff"/>
+        <ellipse cx="22" cy="-10.5" rx="1.4" ry="2.4" fill="#161225"/>
         <circle cx="22.9" cy="-11.6" r="1.0" fill="#ffffff"/>
       </g>
-      <polygon points="16,-7 19,-7 17.5,-5.5" fill="#f4b4cc"/>
-      <path d="M14.5,-4.2 Q16,-2.8 17.5,-4.4 Q19,-2.8 20.5,-4.2" fill="none" stroke="#7ee0ff" stroke-width="1.2" stroke-linecap="round"/>
-      <g stroke="#cbb8ff" stroke-width="0.8" stroke-linecap="round" fill="none">
+      <polygon points="16,-7 19,-7 17.5,-5.5" fill="#9085b0"/>
+      <path d="M14.5,-4.2 Q16,-2.8 17.5,-4.4 Q19,-2.8 20.5,-4.2" fill="none" stroke="#6c618c" stroke-width="1.2" stroke-linecap="round"/>
+      <g stroke="#d8d0eb" stroke-width="0.8" stroke-linecap="round" fill="none">
         <path d="M8,-7 L2,-8"/><path d="M8,-5 L2,-4.5"/>
         <path d="M26,-7 L32,-8"/><path d="M26,-5 L32,-4.5"/>
       </g>
@@ -200,48 +200,48 @@
   <g class="anim play-hop">
     <g transform="translate(-18, 5)">
       <g class="anim cat-tail">
-        <path d="M0,0 C-11,-5 -16,-19 -9,-27 C-6,-30 -2,-27 -4,-22 C-7,-16 -3,-6 2,-2 Z" fill="#ded6eb" stroke="#a79dc4" stroke-width="1"/>
+        <path d="M0,0 C-11,-5 -16,-19 -9,-27 C-6,-30 -2,-27 -4,-22 C-7,-16 -3,-6 2,-2 Z" fill="#52607a" stroke="#9fb1cf" stroke-width="1"/>
       </g>
     </g>
-    <path d="M-19,17 C-20,3 -12,-3 -1,-1 C9,1 14,9 12,19 L-16,19 Z" fill="#f4f0fa" stroke="#a79dc4" stroke-width="1.1"/>
+    <path d="M-19,17 C-20,3 -12,-3 -1,-1 C9,1 14,9 12,19 L-16,19 Z" fill="#6d7d99" stroke="#9fb1cf" stroke-width="1.1"/>
     <g transform="translate(-4, 8) scale(0.85, 0.72)"></g>
-    <ellipse cx="-11" cy="19" rx="5" ry="3" fill="#ffffff" stroke="#a79dc4" stroke-width="0.9"/>
-    <ellipse cx="6" cy="19" rx="5" ry="3" fill="#ffffff" stroke="#a79dc4" stroke-width="0.9"/>
+    <ellipse cx="-11" cy="19" rx="5" ry="3" fill="#899ab8" stroke="#9fb1cf" stroke-width="0.9"/>
+    <ellipse cx="6" cy="19" rx="5" ry="3" fill="#899ab8" stroke="#9fb1cf" stroke-width="0.9"/>
     <g transform="translate(12, 5)">
       <g class="anim cat-bat">
-        <ellipse cx="7" cy="-2" rx="6.5" ry="3.5" fill="#ffffff" stroke="#a79dc4" stroke-width="0.95"/>
+        <ellipse cx="7" cy="-2" rx="6.5" ry="3.5" fill="#899ab8" stroke="#9fb1cf" stroke-width="0.95"/>
       </g>
     </g>
-    <path d="M-2,-17 L-4,-31 C-4,-33 -1,-33 1,-31 L7,-22 Z" fill="#f4f0fa" stroke="#a79dc4" stroke-width="1" stroke-linejoin="round"/>
-    <path d="M-0.5,-19 L-1.5,-28 L5,-21 Z" fill="#9c90ba"/>
+    <path d="M-2,-17 L-4,-31 C-4,-33 -1,-33 1,-31 L7,-22 Z" fill="#6d7d99" stroke="#9fb1cf" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M-0.5,-19 L-1.5,-28 L5,-21 Z" fill="#b498b8"/>
     <g transform="translate(16, -21)">
       <g class="anim cat-ear">
-        <path d="M-5,-1 L3,-11 C5,-12 7,-11 7,-9 L4,4 Z" fill="#f4f0fa" stroke="#a79dc4" stroke-width="1" stroke-linejoin="round"/>
-        <path d="M-3,-1 L4,-7 L2.5,2 Z" fill="#9c90ba"/>
+        <path d="M-5,-1 L3,-11 C5,-12 7,-11 7,-9 L4,4 Z" fill="#6d7d99" stroke="#9fb1cf" stroke-width="1" stroke-linejoin="round"/>
+        <path d="M-3,-1 L4,-7 L2.5,2 Z" fill="#b498b8"/>
       </g>
     </g>
-    <ellipse cx="9" cy="-11" rx="14" ry="12" fill="#f4f0fa" stroke="#a79dc4" stroke-width="1.1"/>
-    <g transform="translate(9, -11) scale(0.74)"><ellipse cx="0" cy="4.5" rx="10" ry="7.5" fill="#7e749c" opacity="0.88"/></g>
-    <ellipse cx="1.5" cy="-7" rx="2.6" ry="1.4" fill="#e8a8d0" fill-opacity="0.38"/>
-    <ellipse cx="17" cy="-7" rx="2.6" ry="1.4" fill="#e8a8d0" fill-opacity="0.38"/>
+    <ellipse cx="9" cy="-11" rx="14" ry="12" fill="#6d7d99" stroke="#9fb1cf" stroke-width="1.1"/>
+    <g transform="translate(9, -11) scale(0.74)"><path d="M-3,-13.5 Q0,-16 3,-13.5" fill="none" stroke="#8192b0" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/></g>
+    <ellipse cx="1.5" cy="-7" rx="2.6" ry="1.4" fill="#a888b0" fill-opacity="0.38"/>
+    <ellipse cx="17" cy="-7" rx="2.6" ry="1.4" fill="#a888b0" fill-opacity="0.38"/>
     <g class="anim cat-blink">
-      <ellipse cx="4.5" cy="-11.5" rx="3.0" ry="3.5" fill="#47bfff"/>
-      <ellipse cx="4.5" cy="-11.5" rx="1.5" ry="2.5" fill="#161225"/>
+      <ellipse cx="4.5" cy="-11.5" rx="3.0" ry="3.5" fill="#52e5a8"/>
+      <ellipse cx="4.5" cy="-11.5" rx="1.5" ry="2.5" fill="#141824"/>
       <circle cx="5.5" cy="-12.7" r="1.0" fill="#ffffff"/>
-      <ellipse cx="14.5" cy="-11.5" rx="3.0" ry="3.5" fill="#47bfff"/>
-      <ellipse cx="14.5" cy="-11.5" rx="1.5" ry="2.5" fill="#161225"/>
+      <ellipse cx="14.5" cy="-11.5" rx="3.0" ry="3.5" fill="#52e5a8"/>
+      <ellipse cx="14.5" cy="-11.5" rx="1.5" ry="2.5" fill="#141824"/>
       <circle cx="15.5" cy="-12.7" r="1.0" fill="#ffffff"/>
     </g>
-    <polygon points="8,-8 11,-8 9.5,-6.4" fill="#9085b0"/>
-    <path d="M6.5,-5.2 Q8,-3.7 9.5,-5.3 Q11,-3.7 12.5,-5.2" fill="none" stroke="#6c618c" stroke-width="1.25" stroke-linecap="round"/>
-    <g stroke="#d8d0eb" stroke-width="0.8" stroke-linecap="round" fill="none">
+    <polygon points="8,-8 11,-8 9.5,-6.4" fill="#424d63"/>
+    <path d="M6.5,-5.2 Q8,-3.7 9.5,-5.3 Q11,-3.7 12.5,-5.2" fill="none" stroke="#2d3545" stroke-width="1.25" stroke-linecap="round"/>
+    <g stroke="#cad6eb" stroke-width="0.8" stroke-linecap="round" fill="none">
       <path d="M0,-8 L-6,-9"/><path d="M0,-6 L-6,-5.5"/>
       <path d="M18,-8 L24,-9"/><path d="M18,-6 L24,-5.5"/>
     </g>
   </g>
   </g>
-  <text x="148" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">Tabby · napping</text>
-  <text x="420" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">Nebula · strolling</text>
-  <text x="690" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">Ragdoll · playing</text>
+  <text x="148" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">White · napping</text>
+  <text x="420" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">Ragdoll · strolling</text>
+  <text x="690" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">Russian Blue · playing</text>
 
 </svg>

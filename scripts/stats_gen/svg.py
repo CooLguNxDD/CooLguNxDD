@@ -150,12 +150,15 @@ def render_hero_svg(
     cfg: dict[str, Any],
     breeds_cfg: dict[str, Any],
     templates: dict[str, dict[str, str]],
+    *,
+    breed_id: str | None = None,
 ) -> str:
-    """Render the animated White Cat & Fish Fleet aquarium hero banner."""
+    """Render the animated Cat & Fish Fleet aquarium hero banner."""
     theme, hero, snips = cfg["theme"], cfg["hero"], cfg["svg_snippets"]
     aq = hero["aquarium"]
     mc = aq["main_cat"]
-    main_cat = render_cat(mc["breed"], mc["pose"], breeds_cfg, snips["cat_wrapper"], x=mc["x"], y=mc["y"], scale=mc["scale"], flip=mc["flip"])
+    chosen_breed = breed_id or mc["breed"]
+    main_cat = render_cat(chosen_breed, mc["pose"], breeds_cfg, snips["cat_wrapper"], x=mc["x"], y=mc["y"], scale=mc["scale"], flip=mc["flip"])
 
     hero_tmpl = templates["hero_banner"]
     extra_defs = Template(hero_tmpl["defs"]).substitute(
@@ -163,7 +166,7 @@ def render_hero_svg(
         tank_width=aq["width"], tank_height=aq["height"], tank_rx=aq["rx"],
     )
     body = Template(hero_tmpl["body"]).substitute(
-        font_family=_esc(theme["font_family"]),
+        breed_id=_esc(chosen_breed), font_family=_esc(theme["font_family"]),
         text_primary=theme["text_primary"], text_secondary=theme["text_secondary"],
         chip_bg=theme["chip_bg"], chip_border=theme["chip_border"],
         pill_lavender=theme["pill_lavender"], accent_end=theme["accent_end"],
@@ -213,12 +216,15 @@ def render_catportfolio_svg(
     cfg: dict[str, Any],
     breeds_cfg: dict[str, Any],
     templates: dict[str, dict[str, str]],
+    *,
+    breed_id: str | None = None,
 ) -> str:
-    """Render the animated Black Cat CatPortfolio card."""
+    """Render the animated CatPortfolio card."""
     theme, card, snips = cfg["theme"], cfg["catportfolio_card"], cfg["svg_snippets"]
     cat_cfg = card["cat"]
+    chosen_breed = breed_id or cat_cfg["breed"]
     cat_svg = render_cat(
-        cat_cfg["breed"], cat_cfg["pose"], breeds_cfg, snips["cat_wrapper"],
+        chosen_breed, cat_cfg["pose"], breeds_cfg, snips["cat_wrapper"],
         x=cat_cfg["x"], y=cat_cfg["y"], scale=cat_cfg["scale"], flip=cat_cfg["flip"],
     )
     chip_t, bubble_t = Template(snips["cp_chip"]), Template(snips["cp_bubble"])
@@ -244,7 +250,7 @@ def render_catportfolio_svg(
         accent_start=theme["accent_start"], accent_end=theme["accent_end"], pill_cyan=theme["pill_cyan"],
     )
     body = Template(cp_tmpl["body"]).substitute(
-        font_family=_esc(theme["font_family"]), bg_start=theme["bg_start"],
+        breed_id=_esc(chosen_breed), font_family=_esc(theme["font_family"]), bg_start=theme["bg_start"],
         text_primary=theme["text_primary"], text_secondary=theme["text_secondary"],
         accent_start=theme["accent_start"], accent_end=theme["accent_end"],
         pill_lavender=theme["pill_lavender"], pill_cyan=theme["pill_cyan"], title=_esc(card["title"]),
@@ -513,8 +519,12 @@ def render_langs_svg(
 
 
 CARD_RENDERERS: dict[str, Callable[[dict[str, Any]], str]] = {
-    "hero": lambda ctx: render_hero_svg(ctx["cfg"], ctx["breeds"], ctx["templates"]),
-    "catportfolio": lambda ctx: render_catportfolio_svg(ctx["cfg"], ctx["breeds"], ctx["templates"]),
+    "hero": lambda ctx: render_hero_svg(
+        ctx["cfg"], ctx["breeds"], ctx["templates"], breed_id=ctx.get("hero_breed_id"),
+    ),
+    "catportfolio": lambda ctx: render_catportfolio_svg(
+        ctx["cfg"], ctx["breeds"], ctx["templates"], breed_id=ctx.get("catportfolio_breed_id"),
+    ),
     "cat_strip": lambda ctx: render_cat_strip_svg(
         ctx["cfg"], ctx["breeds"], ctx["templates"],
         roaming_ids=ctx["strip_breed_ids"], seed=ctx["seed"],

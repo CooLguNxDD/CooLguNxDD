@@ -26,6 +26,7 @@ from stats_gen.svg import (  # noqa: E402
 
 SEED_RE = re.compile(r"<!-- seed: ([A-Za-z0-9_.:-]+) -->")
 THEME_RE = re.compile(r"<!-- theme: ([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+) -->")
+BREED_RE = re.compile(r"<!-- breed: ([A-Za-z0-9_-]+) -->")
 
 
 class TestSvgAndDrift(unittest.TestCase):
@@ -146,11 +147,16 @@ class TestSvgAndDrift(unittest.TestCase):
             self.assertIsNotNone(m)
             return apply_theme_preset(self.cfg, themes, theme_id=m.group(1), accent_id=m.group(2))
 
+        def breed_of(svg_text: str) -> str:
+            m = BREED_RE.search(svg_text)
+            self.assertIsNotNone(m)
+            return m.group(1)
+
         hero_disk = (ROOT / "assets" / "hero-banner.svg").read_text(encoding="utf-8")
-        self.assertEqual(hero_disk, render_hero_svg(cfg_for(hero_disk), self.breeds, self.bundle["templates"]))
+        self.assertEqual(hero_disk, render_hero_svg(cfg_for(hero_disk), self.breeds, self.bundle["templates"], breed_id=breed_of(hero_disk)))
 
         cp_disk = (ROOT / "assets" / "catportfolio-card.svg").read_text(encoding="utf-8")
-        self.assertEqual(cp_disk, render_catportfolio_svg(cfg_for(cp_disk), self.breeds, self.bundle["templates"]))
+        self.assertEqual(cp_disk, render_catportfolio_svg(cfg_for(cp_disk), self.breeds, self.bundle["templates"], breed_id=breed_of(cp_disk)))
 
         ai_disk = (ROOT / "assets" / "ai-tools-cat.svg").read_text(encoding="utf-8")
         self.assertEqual(ai_disk, render_ai_tools_cat_svg(cfg_for(ai_disk), self.breeds, self.bundle["templates"]))
@@ -160,11 +166,12 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertIsNotNone(strip_match)
         strip_seed = strip_match.group(1)
         strip_roaming = select_roaming_breeds(self.breeds, 3, strip_seed)
+        daily_roaming = select_roaming_breeds(self.breeds, 5, strip_seed, include_pinned=True)[2:]
         strip_cfg = cfg_for(strip_disk)
         daily_poses = select_daily_poses(["stroll", "nap", "play"], 3, strip_seed)
         candidates = (
             render_cat_strip_svg(strip_cfg, self.breeds, self.bundle["templates"], roaming_ids=strip_roaming, seed=strip_seed),
-            render_cat_strip_svg(strip_cfg, self.breeds, self.bundle["templates"], roaming_ids=strip_roaming, seed=strip_seed, poses=daily_poses),
+            render_cat_strip_svg(strip_cfg, self.breeds, self.bundle["templates"], roaming_ids=daily_roaming, seed=strip_seed, poses=daily_poses),
         )
         self.assertIn(strip_disk, candidates)
 
@@ -191,14 +198,15 @@ class TestSvgAndDrift(unittest.TestCase):
             ET.fromstring(light_text)
             self.assertIn(latte_bg, light_text)
 
-        self.assertEqual(
-            (ROOT / "assets" / "light" / "hero-banner.svg").read_text(encoding="utf-8"),
-            render_hero_svg(light_cfg, self.breeds, self.bundle["templates"]),
-        )
-        self.assertEqual(
-            (ROOT / "assets" / "light" / "catportfolio-card.svg").read_text(encoding="utf-8"),
-            render_catportfolio_svg(light_cfg, self.breeds, self.bundle["templates"]),
-        )
+        hero_light = (ROOT / "assets" / "light" / "hero-banner.svg").read_text(encoding="utf-8")
+        hero_breed = BREED_RE.search(hero_light)
+        self.assertIsNotNone(hero_breed)
+        self.assertEqual(hero_light, render_hero_svg(light_cfg, self.breeds, self.bundle["templates"], breed_id=hero_breed.group(1)))
+
+        cp_light = (ROOT / "assets" / "light" / "catportfolio-card.svg").read_text(encoding="utf-8")
+        cp_breed = BREED_RE.search(cp_light)
+        self.assertIsNotNone(cp_breed)
+        self.assertEqual(cp_light, render_catportfolio_svg(light_cfg, self.breeds, self.bundle["templates"], breed_id=cp_breed.group(1)))
         self.assertEqual(
             (ROOT / "assets" / "light" / "ai-tools-cat.svg").read_text(encoding="utf-8"),
             render_ai_tools_cat_svg(light_cfg, self.breeds, self.bundle["templates"]),

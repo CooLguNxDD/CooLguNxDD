@@ -31,11 +31,17 @@ def _safe_hex(color: str | None, fallback: str) -> str:
     return cleaned if HEX_COLOR_RE.match(cleaned) else fallback
 
 
-def select_roaming_breeds(breeds_cfg: dict[str, Any], count: int, seed_str: str) -> list[str]:
-    """Deterministically pick distinct roaming breeds from a seed string."""
+def select_roaming_breeds(
+    breeds_cfg: dict[str, Any],
+    count: int,
+    seed_str: str,
+    *,
+    include_pinned: bool = False,
+) -> list[str]:
+    """Deterministically pick distinct breeds from a seed string."""
     pool = [
         bid for bid, spec in breeds_cfg["breeds"].items()
-        if bool(spec.get("roaming"))
+        if include_pinned or bool(spec.get("roaming"))
     ]
     ranked = sorted(
         pool,
