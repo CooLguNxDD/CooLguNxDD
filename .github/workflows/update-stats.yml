@@ -4,6 +4,30 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
+    inputs:
+      theme:
+        description: 'Theme preset (CatPortfolio / Catppuccin)'
+        required: false
+        type: choice
+        default: 'catportfolio'
+        options:
+          - catportfolio
+          - mocha
+          - macchiato
+          - frappe
+          - latte
+      accent:
+        description: 'Accent color pair'
+        required: false
+        type: choice
+        default: 'violet'
+        options:
+          - violet
+          - mauve
+          - sapphire
+          - peach
+          - green
+          - pink
 
 permissions:
   contents: write
@@ -32,6 +56,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
+          CAT_THEME: ${{ inputs.theme }}
+          CAT_ACCENT: ${{ inputs.accent }}
         run: python scripts/generate_stats.py
 
       - name: Commit and push updated cards

@@ -47,23 +47,26 @@ REQUIRED_BREED_POSES = ("sit", "peek", "stroll", "nap", "play", "fish_catch")
 REQUIRED_BREED_PATTERNS = ("solid", "tabby", "calico", "tuxedo", "pointed", "nebula")
 MIN_ROAMING_BREEDS = 4
 
-THEME_HEX_KEYS = (
+THEME_SURFACE_HEX_KEYS = (
     "bg_start",
     "bg_end",
     "border",
-    "accent_start",
-    "accent_end",
     "text_primary",
     "text_secondary",
     "text_muted",
-    "pill_lavender",
-    "pill_cyan",
     "chip_bg",
     "chip_border",
+)
+ACCENT_HEX_KEYS = (
+    "accent_start",
+    "accent_end",
+    "pill_lavender",
+    "pill_cyan",
     "icon_cyan",
     "icon_violet",
     "default_lang_color",
 )
+THEME_HEX_KEYS = THEME_SURFACE_HEX_KEYS + ACCENT_HEX_KEYS
 
 POSITIVE_NUMBER_PATHS = (
     ("github", "timeout_sec"),
@@ -174,6 +177,50 @@ def load_breeds(path: Path) -> dict[str, Any]:
     if len(roaming) < MIN_ROAMING_BREEDS:
         raise ValueError("breeds.json needs at least 4 roaming breeds")
     return raw
+
+
+def _validate_hex_map(section: str, entry_id: str, spec: dict[str, Any], keys: tuple[str, ...]) -> None:
+    if not isinstance(spec, dict):
+        raise ValueError(f"{section}.{entry_id} must be object")
+    for key in keys:
+        val = spec.get(key)
+        if not isinstance(val, str) or not HEX_COLOR_RE.match(val):
+            raise ValueError(f"{section}.{entry_id}.{key} invalid hex: {val!r}")
+
+
+def load_themes(path: Path) -> dict[str, Any]:
+    """Load themes.json and verify Catppuccin/CatPortfolio themes and accents."""
+    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(raw, dict) or not isinstance(raw.get("themes"), dict) or not isinstance(raw.get("accents"), dict):
+        raise ValueError("themes.json missing themes or accents")
+    if not raw["themes"] or not raw["accents"]:
+        raise ValueError("themes.json cannot be empty")
+    for tid, spec in raw["themes"].items():
+        _validate_hex_map("themes", tid, spec, THEME_SURFACE_HEX_KEYS)
+    for aid, spec in raw["accents"].items():
+        _validate_hex_map("accents", aid, spec, ACCENT_HEX_KEYS)
+    return raw
+
+
+def apply_theme_preset(
+    cfg: dict[str, Any],
+    themes_cfg: dict[str, Any],
+    *,
+    theme_id: str,
+    accent_id: str,
+) -> dict[str, Any]:
+    """Return a copy of cfg with theme and accent presets applied."""
+    themes, accents = themes_cfg["themes"], themes_cfg["accents"]
+    if theme_id not in themes:
+        raise ValueError(f"unknown theme: {theme_id}")
+    if accent_id not in accents:
+        raise ValueError(f"unknown accent: {accent_id}")
+    merged_theme = dict(cfg["theme"])
+    for key in THEME_SURFACE_HEX_KEYS:
+        merged_theme[key] = themes[theme_id][key]
+    for key in ACCENT_HEX_KEYS:
+        merged_theme[key] = accents[accent_id][key]
+    return {**cfg, "theme": merged_theme, "active_theme": theme_id, "active_accent": accent_id}
 
 
 def _split_template(raw: str) -> dict[str, str]:

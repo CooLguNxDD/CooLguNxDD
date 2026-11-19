@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from stats_gen.cats import select_roaming_breeds
-from stats_gen.config import load_breeds, load_config, load_text_bundle
+from stats_gen.config import apply_theme_preset, load_breeds, load_config, load_text_bundle, load_themes
 from stats_gen.github_io import (
     fetch_all_time_contributions,
     fetch_repositories,
@@ -36,8 +36,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--hero-only", action="store_true", help="Render hero banner only without network calls")
     parser.add_argument("--offline", action="store_true", help="Render hero, CatPortfolio, and Cat Fleet strip offline")
     parser.add_argument("--seed", default="", help="Override deterministic daily breed seed")
+    parser.add_argument("--theme", default="", help="Override active theme id from config/themes.json")
+    parser.add_argument("--accent", default="", help="Override active accent id from config/themes.json")
     parser.add_argument("--config", type=Path, default=root / "config" / "profile.json", help="Path to profile.json")
     parser.add_argument("--breeds", type=Path, default=root / "config" / "breeds.json", help="Path to breeds.json")
+    parser.add_argument("--themes", type=Path, default=root / "config" / "themes.json", help="Path to themes.json")
     parser.add_argument("--output-dir", type=Path, default=root / "assets", help="Directory for generated SVGs")
     return parser.parse_args(argv)
 
@@ -72,7 +75,12 @@ def _print_summary(
     print(msgs["cli_summary_activity"].format(prs=metrics["prs_total"], active_days=metrics["active_days"], current_streak=metrics["current_streak"], longest_streak=metrics["longest_streak"]))
     print(msgs["cli_summary_repos"].format(repos_count=metrics["repos_count"]))
     print(msgs["cli_summary_langs"].format(langs=langs_str))
-    print(msgs["cli_cat_fleet"].format(seed=ctx["seed"], strip_breeds=",".join(ctx["strip_breed_ids"])))
+    print(msgs["cli_cat_fleet"].format(
+        seed=ctx["seed"],
+        strip_breeds=",".join(ctx["strip_breed_ids"]),
+        theme=cfg["active_theme"],
+        accent=cfg["active_accent"],
+    ))
 
 
 def _fetch_all(
@@ -158,7 +166,11 @@ def main(argv: list[str] | None = None) -> int:
     """CLI entry point."""
     args = parse_args(argv)
     root = args.config.resolve().parent.parent
-    cfg = load_config(args.config)
+    raw_cfg = load_config(args.config)
+    themes_cfg = load_themes(args.themes)
+    theme_id = args.theme.strip() or os.environ.get("CAT_THEME", "").strip() or str(raw_cfg.get("active_theme", "catportfolio"))
+    accent_id = args.accent.strip() or os.environ.get("CAT_ACCENT", "").strip() or str(raw_cfg.get("active_accent", "violet"))
+    cfg = apply_theme_preset(raw_cfg, themes_cfg, theme_id=theme_id, accent_id=accent_id)
     breeds_cfg = load_breeds(args.breeds)
     bundle = load_text_bundle(root)
     seed = args.seed.strip() or os.environ.get("CAT_SEED", "").strip() or dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")

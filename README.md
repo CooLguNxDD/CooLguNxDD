@@ -8,12 +8,12 @@
   <a href="https://coolgunxdd.itch.io"><img src="https://img.shields.io/badge/Itch.io-Games_%26_Jams-863bff?style=for-the-badge&labelColor=1c1730" alt="Itch.io" /></a>
 </p>
 
-I build Agentic AI platforms, self-rendering GenUI, and cloud infrastructure — with a background in real-time graphics.
+I architect **Agentic AI platforms**, **self-rendering GenUI**, and **distributed cloud & simulation systems** in **Python, TypeScript, Rust, and C++/C#** — grounded in real-time graphics.
 
-- 🧠 **Agentic AI & MCP** — FastMCP, LangGraph, GOAP, pgvector
-- 💻 **Full-Stack & GenUI** — React 19, TypeScript, Python, Node.js, SolidJS
-- ☁️ **Cloud & DevOps** — AWS, Terraform, Docker, EKS, GitHub Actions
-- 🎮 **Real-Time Graphics** — Unity, Unreal Engine 5, Three.js / WebGL, HLSL/GLSL
+- 🧠 **Agentic AI & MCP** — FastMCP, LangGraph, GOAP, multi-agent orchestration, RAG / `pgvector`
+- 💻 **Full-Stack & Systems** — Rust, Python, TypeScript, React 19, SolidJS, Node.js, Zod GenUI
+- ☁️ **Cloud & DevOps** — AWS (EKS, Lambda, DynamoDB, SQS), Terraform, Docker, GitHub Actions
+- 🎮 **Real-Time Graphics & Engines** — Unity, Unreal Engine 5 (`C++`), Three.js / WebGL, HLSL / GLSL
 
 ## Featured Projects
 
@@ -45,11 +45,28 @@ I build Agentic AI platforms, self-rendering GenUI, and cloud infrastructure —
   <img src="./assets/cat-fleet-strip.svg" alt="Cat Fleet — daily rotating animated cat breeds" width="100%" />
 </p>
 
+<details>
+  <summary>🎨 <b>Theme &amp; Accent Config</b> — CatPortfolio · Catppuccin (<code>Mocha</code>, <code>Macchiato</code>, <code>Frappé</code>, <code>Latte</code>)</summary>
+
+  <br/>
+
+  All profile SVGs share one declarative theme &amp; accent registry in <a href="./config/themes.json"><code>config/themes.json</code></a> (matching CatPortfolio's Catppuccin palette) and can be switched on demand via <a href="https://github.com/CooLguNxDD/CooLguNxDD/actions/workflows/update-stats.yml">GitHub Actions <code>workflow_dispatch</code></a> or locally:
+
+  ```sh
+  python scripts/generate_stats.py --offline --theme mocha --accent mauve
+  ```
+
+  | Themes | Accents |
+  | :--- | :--- |
+  | `catportfolio` · `mocha` · `macchiato` · `frappe` · `latte` | `violet` · `mauve` · `sapphire` · `peach` · `green` · `pink` |
+
+</details>
+
 ## Tech Stack
 
 <p>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,ts,js,react,nodejs,cpp,cs,go,postgres,aws,docker,terraform,kubernetes,nginx,linux,git,unity,unreal,blender,threejs,tailwind,vite&perline=11" alt="Tech stack icons" />
+    <img src="https://skillicons.dev/icons?i=python,ts,js,rust,react,nodejs,cpp,cs,go,postgres,aws,docker,terraform,kubernetes,nginx,linux,git,unity,unreal,blender,threejs,tailwind,vite&perline=12" alt="Tech stack icons" />
   </a>
 </p>
 
@@ -57,7 +74,7 @@ I build Agentic AI platforms, self-rendering GenUI, and cloud infrastructure —
 | :--- | :--- |
 | **Agentic AI** | MCP · FastMCP · LangGraph · GOAP · Pydantic · RAG / pgvector |
 | **Frontend & GenUI** | React 19 · SolidJS · TypeScript · TanStack · Zustand · Zod · Tailwind v4 · Three.js |
-| **Backend** | Python · Node.js · FastAPI · PostgreSQL · SQLite · Redis · Nginx |
+| **Systems & Backend** | Rust · Python · Node.js · FastAPI · PostgreSQL · SQLite · Redis · Nginx |
 | **Cloud & DevOps** | AWS (EKS, Lambda, DynamoDB, SQS, Amplify) · Terraform · Docker · GitHub Actions |
 | **Graphics** | Unity · Unreal Engine 5 · C# / C++ · HLSL / GLSL · Blender |
 

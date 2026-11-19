@@ -1,5 +1,7 @@
 {
   "username": "CooLguNxDD",
+  "active_theme": "catportfolio",
+  "active_accent": "violet",
   "github": {
     "endpoint": "https://api.github.com/graphql",
     "user_agent": "CooLguNxDD-profile-stats",
@@ -345,7 +347,7 @@
     "cli_summary_langs": "  top_langs={langs}",
     "cli_lang_item": "{name} ({pct:.1f}%)",
     "cli_hero_done": "Generated offline cards",
-    "cli_cat_fleet": "  cats_seed={seed}, strip_breeds={strip_breeds}",
+    "cli_cat_fleet": "  cats_seed={seed}, strip_breeds={strip_breeds}, theme={theme}, accent={accent}",
     "strip_slot_label": "{label} · {action}"
   },
   "svg_snippets": {

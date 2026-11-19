@@ -1,0 +1,131 @@
+{
+  "themes": {
+    "catportfolio": {
+      "label": "CatPortfolio",
+      "description": "Default dark violet aquarium",
+      "is_light": false,
+      "bg_start": "#14111f",
+      "bg_end": "#1c1730",
+      "border": "#3a3358",
+      "text_primary": "#f4eefc",
+      "text_secondary": "#b5abc8",
+      "text_muted": "#7f7699",
+      "chip_bg": "#2a2440",
+      "chip_border": "#4a4270"
+    },
+    "mocha": {
+      "label": "Catppuccin Mocha",
+      "description": "Catppuccin dark (Mocha)",
+      "is_light": false,
+      "bg_start": "#1e1e2e",
+      "bg_end": "#181825",
+      "border": "#45475a",
+      "text_primary": "#cdd6f4",
+      "text_secondary": "#bac2de",
+      "text_muted": "#7f849c",
+      "chip_bg": "#313244",
+      "chip_border": "#585b70"
+    },
+    "macchiato": {
+      "label": "Catppuccin Macchiato",
+      "description": "Catppuccin dark (Macchiato)",
+      "is_light": false,
+      "bg_start": "#24273a",
+      "bg_end": "#1e2030",
+      "border": "#494d64",
+      "text_primary": "#cad3f5",
+      "text_secondary": "#b8c0e0",
+      "text_muted": "#8087a2",
+      "chip_bg": "#363a4f",
+      "chip_border": "#5b6078"
+    },
+    "frappe": {
+      "label": "Catppuccin Frappé",
+      "description": "Catppuccin dark (Frappé)",
+      "is_light": false,
+      "bg_start": "#303446",
+      "bg_end": "#292c3c",
+      "border": "#51576d",
+      "text_primary": "#c6d0f5",
+      "text_secondary": "#b5bfe2",
+      "text_muted": "#838ba7",
+      "chip_bg": "#414559",
+      "chip_border": "#626880"
+    },
+    "latte": {
+      "label": "Catppuccin Latte",
+      "description": "Catppuccin light (Latte)",
+      "is_light": true,
+      "bg_start": "#eff1f5",
+      "bg_end": "#e6e9ef",
+      "border": "#bcc0cc",
+      "text_primary": "#4c4f69",
+      "text_secondary": "#5c5f77",
+      "text_muted": "#6c6f85",
+      "chip_bg": "#dce0e8",
+      "chip_border": "#acb0be"
+    }
+  },
+  "accents": {
+    "violet": {
+      "label": "Violet",
+      "accent_start": "#863bff",
+      "accent_end": "#47bfff",
+      "pill_lavender": "#d7c2ff",
+      "pill_cyan": "#7ee0ff",
+      "icon_cyan": "#47bfff",
+      "icon_violet": "#a77bff",
+      "default_lang_color": "#863bff"
+    },
+    "mauve": {
+      "label": "Mauve",
+      "accent_start": "#cba6f7",
+      "accent_end": "#89b4fa",
+      "pill_lavender": "#cba6f7",
+      "pill_cyan": "#89dceb",
+      "icon_cyan": "#89b4fa",
+      "icon_violet": "#cba6f7",
+      "default_lang_color": "#cba6f7"
+    },
+    "sapphire": {
+      "label": "Sapphire",
+      "accent_start": "#74c7ec",
+      "accent_end": "#94e2d5",
+      "pill_lavender": "#89b4fa",
+      "pill_cyan": "#94e2d5",
+      "icon_cyan": "#74c7ec",
+      "icon_violet": "#89b4fa",
+      "default_lang_color": "#74c7ec"
+    },
+    "peach": {
+      "label": "Peach",
+      "accent_start": "#fab387",
+      "accent_end": "#f9e2af",
+      "pill_lavender": "#f5c2e7",
+      "pill_cyan": "#fab387",
+      "icon_cyan": "#f9e2af",
+      "icon_violet": "#fab387",
+      "default_lang_color": "#fab387"
+    },
+    "green": {
+      "label": "Green",
+      "accent_start": "#a6e3a1",
+      "accent_end": "#94e2d5",
+      "pill_lavender": "#a6e3a1",
+      "pill_cyan": "#94e2d5",
+      "icon_cyan": "#94e2d5",
+      "icon_violet": "#a6e3a1",
+      "default_lang_color": "#a6e3a1"
+    },
+    "pink": {
+      "label": "Pink",
+      "accent_start": "#f5c2e7",
+      "accent_end": "#cba6f7",
+      "pill_lavender": "#f5c2e7",
+      "pill_cyan": "#89dceb",
+      "icon_cyan": "#f5c2e7",
+      "icon_violet": "#cba6f7",
+      "default_lang_color": "#f5c2e7"
+    }
+  }
+}

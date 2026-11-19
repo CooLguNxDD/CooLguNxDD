@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from stats_gen.config import load_breeds, load_config  # noqa: E402
+from stats_gen.config import apply_theme_preset, load_breeds, load_config, load_themes  # noqa: E402
 
 MAX_FUNC_LINES = 60
 MAX_IF_ARMS = 3
@@ -117,6 +117,12 @@ class TestFleetRules(unittest.TestCase):
     def test_config_and_breeds_contract_validation(self) -> None:
         cfg = load_config(ROOT / "config" / "profile.json")
         self.assertEqual(cfg["username"], "CooLguNxDD")
+        themes = load_themes(ROOT / "config" / "themes.json")
+        for tid in ("catportfolio", "mocha", "macchiato", "frappe", "latte"):
+            self.assertIn(tid, themes["themes"])
+        themed = apply_theme_preset(cfg, themes, theme_id="mocha", accent_id="mauve")
+        self.assertEqual(themed["theme"]["bg_start"], themes["themes"]["mocha"]["bg_start"])
+        self.assertEqual(themed["theme"]["accent_start"], themes["accents"]["mauve"]["accent_start"])
         breeds = load_breeds(ROOT / "config" / "breeds.json")
         self.assertIn("white", breeds["breeds"])
         self.assertIn("black", breeds["breeds"])
@@ -143,6 +149,8 @@ class TestFleetRules(unittest.TestCase):
 
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("Agentic AI platforms", readme)
+        self.assertIn("Rust", readme)
+        self.assertIn("./config/themes.json", readme)
         for forbidden in ("vercel.app", "github-stats-extended", "github-readme-stats", "production MCP platforms"):
             self.assertNotIn(forbidden, readme)
         for rel in re.findall(r"\./[A-Za-z0-9_./-]+", readme):
