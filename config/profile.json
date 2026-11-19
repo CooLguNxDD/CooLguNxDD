@@ -1,0 +1,314 @@
+{
+  "username": "CooLguNxDD",
+  "github": {
+    "endpoint": "https://api.github.com/graphql",
+    "user_agent": "CooLguNxDD-profile-stats",
+    "timeout_sec": 30,
+    "max_retries": 1,
+    "retry_status_min": 500,
+    "repos_page_size": 100,
+    "langs_per_repo": 20,
+    "privacy_public_arg": ", privacy: PUBLIC"
+  },
+  "theme": {
+    "font_family": "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif",
+    "bg_start": "#14111f",
+    "bg_end": "#1c1730",
+    "border": "#3a3358",
+    "accent_start": "#863bff",
+    "accent_end": "#47bfff",
+    "text_primary": "#f4eefc",
+    "text_secondary": "#b5abc8",
+    "text_muted": "#7f7699",
+    "pill_lavender": "#d7c2ff",
+    "pill_cyan": "#7ee0ff",
+    "chip_bg": "#2a2440",
+    "chip_border": "#4a4270",
+    "icon_cyan": "#47bfff",
+    "icon_violet": "#a77bff",
+    "default_lang_color": "#863bff",
+    "card_radius": 12,
+    "accent_width": 5
+  },
+  "formatting": {
+    "year_days": 365.0,
+    "compact_thousand": 1000,
+    "compact_hundred_k": 100000,
+    "compact_suffix": "k",
+    "max_lang_name_len": 13,
+    "ellipsis": "…",
+    "pct_scale": 100.0,
+    "percent_decimals": 1
+  },
+  "color_norm": {
+    "channel_max": 255.0,
+    "srgb_linear_cutoff": 0.03928,
+    "srgb_linear_div": 12.92,
+    "srgb_offset": 0.055,
+    "srgb_scale": 1.055,
+    "srgb_gamma": 2.4,
+    "luma_r": 0.2126,
+    "luma_g": 0.7152,
+    "luma_b": 0.0722,
+    "min_luminance": 0.08,
+    "blend_target": "#b5abc8",
+    "blend_weight": 0.5,
+    "overrides": {
+      "#555555": "#8b9bb4",
+      "#222c37": "#6c83a3",
+      "#191919": "#8b9bb4",
+      "#000000": "#8b9bb4"
+    }
+  },
+  "excluded_languages": [
+    "Jupyter Notebook",
+    "ShaderLab",
+    "Batchfile",
+    "HTML",
+    "CSS",
+    "SCSS",
+    "ASP.NET",
+    "Mathematica",
+    "Makefile",
+    "CMake",
+    "Rich Text Format",
+    "TeX"
+  ],
+  "hero": {
+    "width": 840,
+    "height": 190,
+    "clip_id": "banner-clip",
+    "title_id": "hero-title",
+    "desc_id": "hero-desc",
+    "title": "Andrew Liang — DevOps & Agentic AI Systems Engineer",
+    "desc": "Production MCP platforms, self-rendering GenUI, cloud infrastructure, and real-time graphics with an animated Cat Fleet aquarium.",
+    "name": "Andrew Liang",
+    "handle": "@CooLguNxDD",
+    "role": "DevOps & Agentic AI Systems Engineer",
+    "tagline_1": "Production MCP platforms · Self-rendering GenUI",
+    "tagline_2": "Cloud infrastructure · Real-time graphics",
+    "chips": [
+      {
+        "text": "Vancouver, BC",
+        "x": 32,
+        "y": 148,
+        "width": 102,
+        "height": 22,
+        "text_x": 83,
+        "text_y": "162.5",
+        "color": "#e8d7ff"
+      },
+      {
+        "text": "Open Source · MCP · WebGL",
+        "x": 142,
+        "y": 148,
+        "width": 168,
+        "height": 22,
+        "text_x": 226,
+        "text_y": "162.5",
+        "color": "#7ee0ff"
+      },
+      {
+        "text": "Cat Fleet",
+        "x": 318,
+        "y": 148,
+        "width": 84,
+        "height": 22,
+        "text_x": 360,
+        "text_y": "162.5",
+        "color": "#d7c2ff"
+      }
+    ],
+    "aquarium": {
+      "x": 465,
+      "y": 14,
+      "width": 359,
+      "height": 162,
+      "rx": 12,
+      "clip_id": "tank-clip",
+      "kelp": [
+        {"x": 490, "y": 172, "color": "#266e7a", "dur_sec": "5.5", "delay_sec": "-1.0", "path": "M0,0 C-5,-14 6,-28 -3,-44 C-6,-28 4,-14 2,0 Z"},
+        {"x": 506, "y": 174, "color": "#349496", "dur_sec": "6.5", "delay_sec": "-3.2", "path": "M0,0 C6,-18 -5,-36 4,-54 C7,-36 -3,-18 2,0 Z"},
+        {"x": 706, "y": 173, "color": "#2b7a85", "dur_sec": "6.0", "delay_sec": "-2.1", "path": "M0,0 C-4,-15 5,-30 -2,-48 C-5,-30 4,-15 2,0 Z"},
+        {"x": 722, "y": 174, "color": "#3b8f9c", "dur_sec": "7.2", "delay_sec": "-4.4", "path": "M0,0 C5,-12 -4,-24 3,-36 C6,-24 -2,-12 2,0 Z"}
+      ],
+      "fish": [
+        {"x": 545, "y": 52, "direction": "right", "scale": "1.0", "body_color": "#a77bff", "fin_color": "#d7c2ff", "eye_color": "#14111f", "anim_class": "swim-r", "dur_sec": "11", "delay_sec": "-2", "tail_dur_sec": "0.75"},
+        {"x": 645, "y": 86, "direction": "left", "scale": "0.92", "body_color": "#47bfff", "fin_color": "#7ee0ff", "eye_color": "#14111f", "anim_class": "swim-l", "dur_sec": "13", "delay_sec": "-6", "tail_dur_sec": "0.85"},
+        {"x": 595, "y": 120, "direction": "right", "scale": "0.86", "body_color": "#ffb86c", "fin_color": "#ffd59e", "eye_color": "#14111f", "anim_class": "swim-r", "dur_sec": "9.5", "delay_sec": "-5", "tail_dur_sec": "0.65"},
+        {"x": 685, "y": 68, "direction": "left", "scale": "0.82", "body_color": "#5ef2c8", "fin_color": "#7ee0ff", "eye_color": "#14111f", "anim_class": "swim-l", "dur_sec": "15", "delay_sec": "-10", "tail_dur_sec": "0.95"}
+      ],
+      "minnows": [
+        {"x": 525, "y": 96, "direction": "right", "scale": "0.44", "color": "#7ee0ff", "dur_sec": "9.0", "delay_sec": "-1.5"},
+        {"x": 540, "y": 102, "direction": "right", "scale": "0.38", "color": "#d7c2ff", "dur_sec": "9.0", "delay_sec": "-1.9"},
+        {"x": 532, "y": 109, "direction": "right", "scale": "0.40", "color": "#7ee0ff", "dur_sec": "9.0", "delay_sec": "-2.3"},
+        {"x": 550, "y": 113, "direction": "right", "scale": "0.36", "color": "#d7c2ff", "dur_sec": "9.0", "delay_sec": "-2.7"}
+      ],
+      "bubbles": [
+        {"cx": 498, "cy": 144, "r": "2.4", "color": "#7ee0ff", "dur_sec": "5.2", "delay_sec": "-1.1"},
+        {"cx": 522, "cy": 152, "r": "1.8", "color": "#d7c2ff", "dur_sec": "4.6", "delay_sec": "-2.8"},
+        {"cx": 566, "cy": 148, "r": "2.8", "color": "#47bfff", "dur_sec": "6.0", "delay_sec": "-0.7"},
+        {"cx": 612, "cy": 155, "r": "2.0", "color": "#7ee0ff", "dur_sec": "5.4", "delay_sec": "-3.5"},
+        {"cx": 648, "cy": 146, "r": "3.0", "color": "#d7c2ff", "dur_sec": "6.4", "delay_sec": "-2.2"},
+        {"cx": 694, "cy": 150, "r": "2.2", "color": "#47bfff", "dur_sec": "4.8", "delay_sec": "-1.6"},
+        {"cx": 726, "cy": 142, "r": "1.9", "color": "#7ee0ff", "dur_sec": "5.8", "delay_sec": "-4.1"}
+      ]
+    }
+  },
+  "stats_card": {
+    "width": 450,
+    "height": 196,
+    "clip_id": "card-clip",
+    "title_id": "stats-title",
+    "desc_id": "stats-desc",
+    "title": "GitHub Activity",
+    "ring": {
+      "cx": 353,
+      "cy": 98,
+      "r": 36.0,
+      "stroke_width": 6,
+      "sublabel": "12m contribs"
+    },
+    "sparkline": {
+      "weeks": 12,
+      "start_x": 286.0,
+      "step_x": 11.5,
+      "bar_width": 8,
+      "bottom_y": 174.0,
+      "max_height": 26.0,
+      "min_height": 3.0,
+      "rx": 2
+    },
+    "pill": {
+      "streak_text_x": 383,
+      "best_text_x": 376,
+      "text_y": "32.5",
+      "flame_x": 335,
+      "flame_y": 23,
+      "flame_scale": "0.75",
+      "flame_path": "M8.5 1.5c.3 2.1-1.2 3.4-2.2 4.6-.9 1.1-1.5 2.1-1.3 3.5.2 1.2 1.1 2.2 2.4 2.4 1.6.3 3.1-.8 3.3-2.5.1-1.1-.4-2.1-.9-2.9 1.5.5 2.8 1.9 2.9 3.8.2 2.7-2 5-4.7 5-2.8 0-5-2.1-5-4.9 0-2.1 1.1-3.8 2.4-5.2 1.2-1.3 2.5-2.4 3.1-3.8Z"
+    },
+    "icon_x": 24,
+    "label_x": 46,
+    "value_x": 256,
+    "footer_x": 24,
+    "footer_y": 181,
+    "rows": [
+      {
+        "key": "contribs_12m",
+        "label": "Contributions (12m)",
+        "y": 66,
+        "icon_offset_y": 11.5,
+        "icon_scale": "0.875",
+        "icon_style": "fill",
+        "icon_color_key": "icon_cyan",
+        "format_kind": "comma",
+        "icon_path": "M1 2.75A1.75 1.75 0 0 1 2.75 1h10.5A1.75 1.75 0 0 1 15 2.75v10.5A1.75 1.75 0 0 1 13.25 15H2.75A1.75 1.75 0 0 1 1 13.25V2.75Zm2.5 1.25v2.5h2.5V4H3.5Zm4 0v2.5h2.5V4H7.5Zm4 0v2.5H14V4h-2.5Zm-8 4v2.5h2.5V8H3.5Zm4 0v2.5h2.5V8H7.5Zm4 0v2.5H14V8h-2.5Z"
+      },
+      {
+        "key": "all_time_contribs",
+        "label": "All-Time Contribs",
+        "y": 94,
+        "icon_offset_y": 11.5,
+        "icon_scale": "0.875",
+        "icon_style": "fill",
+        "icon_color_key": "icon_violet",
+        "format_kind": "comma",
+        "icon_path": "M8 1.5l1.95 3.95 4.36.63-3.15 3.07.74 4.34L8 11.44l-3.9 2.05.74-4.34-3.15-3.07 4.36-.63L8 1.5z"
+      },
+      {
+        "key": "prs_total",
+        "label": "Pull Requests",
+        "y": 122,
+        "icon_offset_y": 11.5,
+        "icon_scale": "0.875",
+        "icon_style": "stroke",
+        "icon_color_key": "icon_cyan",
+        "format_kind": "comma",
+        "icon_path": "M5 3.25a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm9.5 9.5a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm-9.5 0a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0ZM3.25 5v6M12.75 11V6.5a2 2 0 0 0-2-2H8.5m0 0 1.75-1.75M8.5 4.5l1.75 1.75"
+      },
+      {
+        "key": "active_days",
+        "label": "Active Days (12m)",
+        "y": 150,
+        "icon_offset_y": 11.5,
+        "icon_scale": "0.875",
+        "icon_style": "stroke",
+        "icon_color_key": "icon_violet",
+        "format_kind": "ratio_year",
+        "icon_path": "M8 2.2a5.8 5.8 0 1 0 5.8 5.8A5.8 5.8 0 0 0 8 2.2Zm0 1.8v4.2l2.8 1.7"
+      }
+    ]
+  },
+  "langs_card": {
+    "width": 380,
+    "height": 196,
+    "clip_id": "card-clip",
+    "title_id": "langs-title",
+    "desc_id": "langs-desc",
+    "title": "Top Languages",
+    "badge": "CORE CODE",
+    "limit": 8,
+    "bar": {
+      "x": 24.0,
+      "y": 50,
+      "width": 332.0,
+      "height": 10,
+      "rx": 5,
+      "min_segment_width": 2.0
+    },
+    "legend": {
+      "rows_per_col": 4,
+      "row_ys": [84, 108, 132, 156],
+      "dot_offset_y": 4,
+      "dot_r": 4.5,
+      "cols": [
+        {"cx": 29, "name_x": 41, "pct_x": 176},
+        {"cx": 203, "name_x": 215, "pct_x": 356}
+      ]
+    },
+    "footer_x": 24,
+    "footer_y": 181
+  },
+  "messages": {
+    "missing_token": "Error: set STATS_TOKEN or GITHUB_TOKEN before running generate_stats.py",
+    "missing_user": "Error: GitHub user '{username}' not found",
+    "http_error": "GitHub GraphQL HTTP {code}: {detail}",
+    "network_error": "GitHub GraphQL network error: {reason}",
+    "graphql_errors": "GitHub GraphQL errors: {errors}",
+    "no_data": "GitHub GraphQL returned no data",
+    "stats_desc": "{contribs_12m} contributions in the last 12 months, {all_time} all-time contributions, {prs} pull requests, {active_days} active days.",
+    "streak_pill": "{streak}d STREAK",
+    "best_pill": "{best}d BEST",
+    "stats_footer_public": "{repos_count} public repos · updated {updated_date}",
+    "stats_footer_all": "{repos_count} repos · updated {updated_date}",
+    "langs_footer_public_excl": "Across {repos_count} public repos · excludes markup & notebooks",
+    "langs_footer_all_excl": "Across {repos_count} repos · excludes markup & notebooks",
+    "langs_footer_public_all": "Across {repos_count} public repos",
+    "langs_footer_all_all": "Across {repos_count} repos",
+    "no_langs_desc": "No language data",
+    "cli_summary_header": "Generated stats for @{username} (custom_token={custom_token}, include_private={include_private})",
+    "cli_summary_contribs": "  contribs_12m={contribs_12m} (restricted={restricted}), all_time_contribs={all_time}",
+    "cli_summary_activity": "  prs_total={prs}, active_days={active_days}, current_streak={current_streak}, longest_streak={longest_streak}",
+    "cli_summary_repos": "  repos_count={repos_count}",
+    "cli_summary_langs": "  top_langs={langs}",
+    "cli_lang_item": "{name} ({pct:.1f}%)",
+    "cli_hero_done": "Generated hero banner"
+  },
+  "svg_snippets": {
+    "hero_chip": "  <rect x=\"${x}\" y=\"${y}\" width=\"${width}\" height=\"${height}\" rx=\"6\" fill=\"${chip_bg}\" stroke=\"${chip_border}\"/>\n  <text x=\"${text_x}\" y=\"${text_y}\" text-anchor=\"middle\" font-family=\"${font_family}\" font-size=\"10.5\" fill=\"${color}\">${text}</text>",
+    "aquarium_kelp": "      <g transform=\"translate(${x}, ${y})\"><g class=\"anim kelp-sway\" style=\"animation-duration:${dur_sec}s;animation-delay:${delay_sec}s\"><path d=\"${path}\" fill=\"${color}\" fill-opacity=\"0.85\"/></g></g>",
+    "aquarium_fish": "      <g transform=\"translate(${x}, ${y})\">\n        <g class=\"anim ${anim_class}\" style=\"animation-duration:${dur_sec}s;animation-delay:${delay_sec}s\">\n          <g transform=\"scale(${dir_scale}, 1) scale(${scale})\">\n            <g transform=\"translate(-9, 0)\">\n              <g class=\"anim tail-wag\" style=\"animation-duration:${tail_dur_sec}s\">\n                <polygon points=\"0,0 -10,-5.5 -8,0 -10,5.5\" fill=\"${fin_color}\" fill-opacity=\"0.9\"/>\n              </g>\n            </g>\n            <polygon points=\"-2,-6 4,-11 6,-5\" fill=\"${fin_color}\" fill-opacity=\"0.85\"/>\n            <ellipse cx=\"2\" cy=\"0\" rx=\"13\" ry=\"6.5\" fill=\"${body_color}\"/>\n            <ellipse cx=\"4\" cy=\"-1.5\" rx=\"7\" ry=\"3\" fill=\"${fin_color}\" fill-opacity=\"0.28\"/>\n            <polygon points=\"0,2 -4,7 3,5\" fill=\"${fin_color}\" fill-opacity=\"0.85\"/>\n            <circle cx=\"9.5\" cy=\"-1.2\" r=\"1.5\" fill=\"${eye_color}\"/>\n            <circle cx=\"10.1\" cy=\"-1.8\" r=\"0.55\" fill=\"#ffffff\"/>\n          </g>\n        </g>\n      </g>",
+    "aquarium_minnow": "      <g transform=\"translate(${x}, ${y})\">\n        <g class=\"anim minnow-r\" style=\"animation-duration:${dur_sec}s;animation-delay:${delay_sec}s\">\n          <g transform=\"scale(${dir_scale}, 1) scale(${scale})\">\n            <polygon points=\"-7,0 -14,-4 -12,0 -14,4\" fill=\"${color}\" fill-opacity=\"0.8\"/>\n            <ellipse cx=\"0\" cy=\"0\" rx=\"9\" ry=\"3.8\" fill=\"${color}\" fill-opacity=\"0.88\"/>\n            <circle cx=\"5.5\" cy=\"-0.8\" r=\"1\" fill=\"#14111f\"/>\n          </g>\n        </g>\n      </g>",
+    "aquarium_bubble": "      <g transform=\"translate(${cx}, ${cy})\"><circle class=\"anim bubble-rise\" cx=\"0\" cy=\"0\" r=\"${r}\" fill=\"${color}\" fill-opacity=\"0.42\" stroke=\"${color}\" stroke-opacity=\"0.7\" stroke-width=\"0.6\" style=\"animation-duration:${dur_sec}s;animation-delay:${delay_sec}s\"/></g>",
+    "icon_fill": "<path d=\"${path}\" fill=\"${color}\"/>",
+    "icon_stroke": "<path d=\"${path}\" fill=\"none\" stroke=\"${color}\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+    "stats_row": "  <g transform=\"translate(${icon_x}, ${icon_y}) scale(${icon_scale})\">${icon_elem}</g>\n  <text x=\"${label_x}\" y=\"${y}\" font-family=\"${font_family}\" font-size=\"12.5\" fill=\"${text_secondary}\">${label}</text>\n  <text x=\"${value_x}\" y=\"${y}\" text-anchor=\"end\" font-family=\"${font_family}\" font-size=\"13.5\" font-weight=\"700\" fill=\"${text_primary}\">${value}</text>",
+    "streak_pill": "    <g transform=\"translate(${flame_x}, ${flame_y}) scale(${flame_scale})\">\n      <path d=\"${flame_path}\" fill=\"${pill_cyan}\"/>\n    </g>\n    <text x=\"${text_x}\" y=\"${text_y}\" text-anchor=\"middle\" font-family=\"${font_family}\" font-size=\"10\" font-weight=\"700\" fill=\"${pill_lavender}\">${label}</text>",
+    "best_pill": "    <text x=\"${text_x}\" y=\"${text_y}\" text-anchor=\"middle\" font-family=\"${font_family}\" font-size=\"10\" font-weight=\"700\" fill=\"${pill_lavender}\">${label}</text>",
+    "ring_arc": "  <circle cx=\"${cx}\" cy=\"${cy}\" r=\"${r}\" fill=\"none\" stroke=\"url(#ring)\" stroke-width=\"${stroke_width}\" stroke-linecap=\"round\" stroke-dasharray=\"${dash_len} ${circumference}\" transform=\"rotate(-90 ${cx} ${cy})\"/>",
+    "spark_bar": "  <rect x=\"${x}\" y=\"${y}\" width=\"${width}\" height=\"${height}\" rx=\"${rx}\" fill=\"${fill}\"/>",
+    "lang_segment": "    <rect x=\"${x}\" y=\"${y}\" width=\"${width}\" height=\"${height}\" fill=\"${color}\"/>",
+    "lang_legend_item": "  <circle cx=\"${cx}\" cy=\"${cy}\" r=\"${dot_r}\" fill=\"${color}\"/>\n  <text x=\"${name_x}\" y=\"${y}\" font-family=\"${font_family}\" font-size=\"12\" fill=\"${text_primary}\">${name}</text>\n  <text x=\"${pct_x}\" y=\"${y}\" text-anchor=\"end\" font-family=\"${font_family}\" font-size=\"11.5\" fill=\"${text_secondary}\">${pct}</text>"
+  }
+}

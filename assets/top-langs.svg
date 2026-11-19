@@ -10,11 +10,11 @@
       <stop offset="0%" stop-color="#863bff"/>
       <stop offset="100%" stop-color="#47bfff"/>
     </linearGradient>
-    <clipPath id="card-clip">
-      <rect x="0" y="0" width="380" height="196" rx="12"/>
-    </clipPath>
     <clipPath id="bar-clip">
       <rect x="24" y="50" width="332" height="10" rx="5"/>
+    </clipPath>
+    <clipPath id="card-clip">
+      <rect x="0" y="0" width="380" height="196" rx="12"/>
     </clipPath>
   </defs>
 
@@ -65,4 +65,5 @@
   <text x="356" y="156" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" fill="#b5abc8">0.5%</text>
 
   <text x="24" y="181" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#7f7699">Across 20 public repos · excludes markup &amp; notebooks</text>
+
 </svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="${title_id} ${desc_id}">
+  <title id="${title_id}">${title}</title>
+  <desc id="${desc_id}">${desc}</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="${bg_start}"/>
+      <stop offset="100%" stop-color="${bg_end}"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${accent_start}"/>
+      <stop offset="100%" stop-color="${accent_end}"/>
+    </linearGradient>${extra_defs}
+    <clipPath id="${clip_id}">
+      <rect x="0" y="0" width="${width}" height="${height}" rx="${card_radius}"/>
+    </clipPath>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="${inner_width}" height="${inner_height}" rx="${card_radius}" fill="url(#bg)" stroke="${border}" stroke-width="1"/>
+  <rect x="0" y="0" width="${accent_width}" height="${height}" fill="url(#accent)" clip-path="url(#${clip_id})"/>
+
+${body}
+</svg>

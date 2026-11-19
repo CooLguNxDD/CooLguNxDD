@@ -1,0 +1,26 @@
+
+    <linearGradient id="ring" gradientUnits="userSpaceOnUse" x1="${ring_x1}" y1="${ring_y1}" x2="${ring_x2}" y2="${ring_y2}">
+      <stop offset="0%" stop-color="${accent_start}"/>
+      <stop offset="100%" stop-color="${accent_end}"/>
+    </linearGradient>
+    <linearGradient id="spark" gradientUnits="userSpaceOnUse" x1="0" y1="${spark_y1}" x2="0" y2="${spark_y2}">
+      <stop offset="0%" stop-color="${accent_end}"/>
+      <stop offset="100%" stop-color="${accent_start}"/>
+    </linearGradient>
+<!-- BODY -->
+  <text x="24" y="34" font-family="${font_family}" font-size="16" font-weight="700" fill="${text_primary}">${title}</text>
+  <g>
+    <rect x="324" y="18" width="104" height="22" rx="11" fill="${accent_start}" fill-opacity="0.22" stroke="${accent_start}" stroke-opacity="0.65"/>
+${pill_inner}
+  </g>
+
+${rows}
+
+  <circle cx="${ring_cx}" cy="${ring_cy}" r="${ring_r}" fill="none" stroke="${chip_bg}" stroke-width="${ring_stroke_width}"/>
+${ring_arc}
+  <text x="${ring_cx}" y="96" text-anchor="middle" font-family="${font_family}" font-size="20" font-weight="700" fill="${text_primary}">${ring_value}</text>
+  <text x="${ring_cx}" y="112" text-anchor="middle" font-family="${font_family}" font-size="9.5" fill="${text_secondary}">${ring_sublabel}</text>
+
+${spark_bars}
+
+  <text x="${footer_x}" y="${footer_y}" font-family="${font_family}" font-size="10" fill="${text_muted}">${footer}</text>

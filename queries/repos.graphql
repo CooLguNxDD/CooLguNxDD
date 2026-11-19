@@ -1,0 +1,25 @@
+query($login: String!, $cursor: String) {
+  user(login: $login) {
+    repositories(first: __REPOS_PAGE_SIZE__, ownerAffiliations: OWNER, isFork: false__PRIVACY_ARG__, after: $cursor) {
+      totalCount
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      nodes {
+        name
+        isPrivate
+        stargazerCount
+        languages(first: __LANGS_PER_REPO__, orderBy: {field: SIZE, direction: DESC}) {
+          edges {
+            size
+            node {
+              name
+              color
+            }
+          }
+        }
+      }
+    }
+  }
+}

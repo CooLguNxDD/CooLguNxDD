@@ -1,0 +1,29 @@
+query($login: String!) {
+  user(login: $login) {
+    name
+    login
+    pullRequests(first: 1) {
+      totalCount
+    }
+    issues(first: 1) {
+      totalCount
+    }
+    contributionsCollection {
+      totalCommitContributions
+      restrictedContributionsCount
+      totalPullRequestContributions
+      totalPullRequestReviewContributions
+      totalIssueContributions
+      contributionYears
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays {
+            date
+            contributionCount
+          }
+        }
+      }
+    }
+  }
+}
