@@ -1,58 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="450" height="196" viewBox="0 0 450 196" role="img" aria-labelledby="stats-title stats-desc">
-  <!-- theme: catportfolio/green -->
+  <!-- theme: macchiato/sapphire -->
   <title id="stats-title">GitHub Activity</title>
   <desc id="stats-desc">6,901 contributions in the last 12 months, 8,830 all-time contributions, 465 pull requests, 208 active days.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#14111f"/>
-      <stop offset="100%" stop-color="#1c1730"/>
+      <stop offset="0%" stop-color="#24273a"/>
+      <stop offset="100%" stop-color="#1e2030"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#a6e3a1"/>
+      <stop offset="0%" stop-color="#74c7ec"/>
       <stop offset="100%" stop-color="#94e2d5"/>
     </linearGradient>
     <linearGradient id="ring" gradientUnits="userSpaceOnUse" x1="317" y1="62" x2="389" y2="134">
-      <stop offset="0%" stop-color="#a6e3a1"/>
+      <stop offset="0%" stop-color="#74c7ec"/>
       <stop offset="100%" stop-color="#94e2d5"/>
     </linearGradient>
     <linearGradient id="spark" gradientUnits="userSpaceOnUse" x1="0" y1="148" x2="0" y2="174">
       <stop offset="0%" stop-color="#94e2d5"/>
-      <stop offset="100%" stop-color="#a6e3a1"/>
+      <stop offset="100%" stop-color="#74c7ec"/>
     </linearGradient>
     <clipPath id="card-clip">
       <rect x="0" y="0" width="450" height="196" rx="12"/>
     </clipPath>
   </defs>
 
-  <rect x="0.5" y="0.5" width="449" height="195" rx="12" fill="url(#bg)" stroke="#3a3358" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="449" height="195" rx="12" fill="url(#bg)" stroke="#494d64" stroke-width="1"/>
   <rect x="0" y="0" width="5" height="196" fill="url(#accent)" clip-path="url(#card-clip)"/>
 
-  <text x="24" y="34" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#f4eefc">GitHub Activity</text>
+  <text x="24" y="34" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#cad3f5">GitHub Activity</text>
   <g>
-    <rect x="324" y="18" width="104" height="22" rx="11" fill="#a6e3a1" fill-opacity="0.22" stroke="#a6e3a1" stroke-opacity="0.65"/>
+    <rect x="324" y="18" width="104" height="22" rx="11" fill="#74c7ec" fill-opacity="0.22" stroke="#74c7ec" stroke-opacity="0.65"/>
     <g transform="translate(335, 23) scale(0.75)">
       <path d="M8.5 1.5c.3 2.1-1.2 3.4-2.2 4.6-.9 1.1-1.5 2.1-1.3 3.5.2 1.2 1.1 2.2 2.4 2.4 1.6.3 3.1-.8 3.3-2.5.1-1.1-.4-2.1-.9-2.9 1.5.5 2.8 1.9 2.9 3.8.2 2.7-2 5-4.7 5-2.8 0-5-2.1-5-4.9 0-2.1 1.1-3.8 2.4-5.2 1.2-1.3 2.5-2.4 3.1-3.8Z" fill="#94e2d5"/>
     </g>
-    <text x="383" y="32.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#a6e3a1">58d STREAK</text>
+    <text x="383" y="32.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#89b4fa">58d STREAK</text>
   </g>
 
-  <g transform="translate(24, 54.5) scale(0.875)"><path d="M1 2.75A1.75 1.75 0 0 1 2.75 1h10.5A1.75 1.75 0 0 1 15 2.75v10.5A1.75 1.75 0 0 1 13.25 15H2.75A1.75 1.75 0 0 1 1 13.25V2.75Zm2.5 1.25v2.5h2.5V4H3.5Zm4 0v2.5h2.5V4H7.5Zm4 0v2.5H14V4h-2.5Zm-8 4v2.5h2.5V8H3.5Zm4 0v2.5h2.5V8H7.5Zm4 0v2.5H14V8h-2.5Z" fill="#94e2d5"/></g>
-  <text x="46" y="66" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b5abc8">Contributions (12m)</text>
-  <text x="256" y="66" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f4eefc">6,901</text>
-  <g transform="translate(24, 82.5) scale(0.875)"><path d="M8 1.5l1.95 3.95 4.36.63-3.15 3.07.74 4.34L8 11.44l-3.9 2.05.74-4.34-3.15-3.07 4.36-.63L8 1.5z" fill="#a6e3a1"/></g>
-  <text x="46" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b5abc8">All-Time Contribs</text>
-  <text x="256" y="94" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f4eefc">8,830</text>
-  <g transform="translate(24, 110.5) scale(0.875)"><path d="M5 3.25a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm9.5 9.5a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm-9.5 0a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0ZM3.25 5v6M12.75 11V6.5a2 2 0 0 0-2-2H8.5m0 0 1.75-1.75M8.5 4.5l1.75 1.75" fill="none" stroke="#94e2d5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <text x="46" y="122" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b5abc8">Pull Requests</text>
-  <text x="256" y="122" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f4eefc">465</text>
-  <g transform="translate(24, 138.5) scale(0.875)"><path d="M8 2.2a5.8 5.8 0 1 0 5.8 5.8A5.8 5.8 0 0 0 8 2.2Zm0 1.8v4.2l2.8 1.7" fill="none" stroke="#a6e3a1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <text x="46" y="150" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b5abc8">Active Days (12m)</text>
-  <text x="256" y="150" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f4eefc">208 / 365</text>
+  <g transform="translate(24, 54.5) scale(0.875)"><path d="M1 2.75A1.75 1.75 0 0 1 2.75 1h10.5A1.75 1.75 0 0 1 15 2.75v10.5A1.75 1.75 0 0 1 13.25 15H2.75A1.75 1.75 0 0 1 1 13.25V2.75Zm2.5 1.25v2.5h2.5V4H3.5Zm4 0v2.5h2.5V4H7.5Zm4 0v2.5H14V4h-2.5Zm-8 4v2.5h2.5V8H3.5Zm4 0v2.5h2.5V8H7.5Zm4 0v2.5H14V8h-2.5Z" fill="#74c7ec"/></g>
+  <text x="46" y="66" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b8c0e0">Contributions (12m)</text>
+  <text x="256" y="66" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#cad3f5">6,901</text>
+  <g transform="translate(24, 82.5) scale(0.875)"><path d="M8 1.5l1.95 3.95 4.36.63-3.15 3.07.74 4.34L8 11.44l-3.9 2.05.74-4.34-3.15-3.07 4.36-.63L8 1.5z" fill="#89b4fa"/></g>
+  <text x="46" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b8c0e0">All-Time Contribs</text>
+  <text x="256" y="94" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#cad3f5">8,830</text>
+  <g transform="translate(24, 110.5) scale(0.875)"><path d="M5 3.25a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm9.5 9.5a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm-9.5 0a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0ZM3.25 5v6M12.75 11V6.5a2 2 0 0 0-2-2H8.5m0 0 1.75-1.75M8.5 4.5l1.75 1.75" fill="none" stroke="#74c7ec" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="46" y="122" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b8c0e0">Pull Requests</text>
+  <text x="256" y="122" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#cad3f5">465</text>
+  <g transform="translate(24, 138.5) scale(0.875)"><path d="M8 2.2a5.8 5.8 0 1 0 5.8 5.8A5.8 5.8 0 0 0 8 2.2Zm0 1.8v4.2l2.8 1.7" fill="none" stroke="#89b4fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="46" y="150" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b8c0e0">Active Days (12m)</text>
+  <text x="256" y="150" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#cad3f5">208 / 365</text>
 
-  <circle cx="353" cy="98" r="36" fill="none" stroke="#2a2440" stroke-width="6"/>
+  <circle cx="353" cy="98" r="36" fill="none" stroke="#363a4f" stroke-width="6"/>
   <circle cx="353" cy="98" r="36" fill="none" stroke="url(#ring)" stroke-width="6" stroke-linecap="round" stroke-dasharray="128.90 226.19" transform="rotate(-90 353 98)"/>
-  <text x="353" y="96" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#f4eefc">6.9k</text>
-  <text x="353" y="112" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="9.5" fill="#b5abc8">12m contribs</text>
+  <text x="353" y="96" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#cad3f5">6.9k</text>
+  <text x="353" y="112" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="9.5" fill="#b8c0e0">12m contribs</text>
 
   <rect x="286.0" y="171.0" width="8" height="3.0" rx="2" fill="url(#spark)"/>
   <rect x="297.5" y="169.1" width="8" height="4.9" rx="2" fill="url(#spark)"/>
@@ -67,6 +67,6 @@
   <rect x="401.0" y="148.0" width="8" height="26.0" rx="2" fill="url(#spark)"/>
   <rect x="412.5" y="162.1" width="8" height="11.9" rx="2" fill="url(#spark)"/>
 
-  <text x="24" y="181" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#7f7699">20 public repos · updated 2026-11-19</text>
+  <text x="24" y="181" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#8087a2">20 public repos · updated 2026-11-19</text>
 
 </svg>
