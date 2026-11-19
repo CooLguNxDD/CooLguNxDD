@@ -89,5 +89,8 @@ I build Agentic AI platforms, self-rendering GenUI, and cloud infrastructure —
       </a><br/>
       <sub><b>Grok</b></sub>
     </td>
+    <td align="center" width="250">
+      <img src="./assets/ai-tools-cat.svg" alt="Orange cat catching a leaping fish" width="240" />
+    </td>
   </tr>
 </table>

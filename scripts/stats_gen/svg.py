@@ -148,17 +148,12 @@ def render_hero_svg(
     cfg: dict[str, Any],
     breeds_cfg: dict[str, Any],
     templates: dict[str, dict[str, str]],
-    *,
-    companion_breed_id: str,
-    seed: str,
 ) -> str:
-    """Render the animated Cat & Fish Fleet aquarium hero banner."""
+    """Render the animated White Cat & Fish Fleet aquarium hero banner."""
     theme, hero, snips = cfg["theme"], cfg["hero"], cfg["svg_snippets"]
     aq = hero["aquarium"]
-    mc, cc = aq["main_cat"], aq["companion_cat"]
-    wrapper = snips["cat_wrapper"]
-    main_cat = render_cat(mc["breed"], mc["pose"], breeds_cfg, wrapper, x=mc["x"], y=mc["y"], scale=mc["scale"], flip=mc["flip"])
-    comp_cat = render_cat(companion_breed_id, cc["pose"], breeds_cfg, wrapper, x=cc["x"], y=cc["y"], scale=cc["scale"], flip=cc["flip"])
+    mc = aq["main_cat"]
+    main_cat = render_cat(mc["breed"], mc["pose"], breeds_cfg, snips["cat_wrapper"], x=mc["x"], y=mc["y"], scale=mc["scale"], flip=mc["flip"])
 
     hero_tmpl = templates["hero_banner"]
     extra_defs = Template(hero_tmpl["defs"]).substitute(
@@ -166,7 +161,7 @@ def render_hero_svg(
         tank_width=aq["width"], tank_height=aq["height"], tank_rx=aq["rx"],
     )
     body = Template(hero_tmpl["body"]).substitute(
-        seed=_safe_seed(seed), font_family=_esc(theme["font_family"]),
+        font_family=_esc(theme["font_family"]),
         text_primary=theme["text_primary"], text_secondary=theme["text_secondary"],
         chip_bg=theme["chip_bg"], chip_border=theme["chip_border"],
         pill_lavender=theme["pill_lavender"], accent_end=theme["accent_end"],
@@ -175,13 +170,40 @@ def render_hero_svg(
         chips=_render_hero_chips(hero, theme, snips),
         tank_clip_id=_esc(aq["clip_id"]), tank_x=aq["x"], tank_y=aq["y"],
         tank_width=aq["width"], tank_height=aq["height"], tank_rx=aq["rx"],
-        main_cat=main_cat, companion_cat=comp_cat,
+        main_cat=main_cat,
         **_render_aquarium_parts(aq, theme, snips),
     )
     return render_card_shell(
         cfg, templates, width=int(hero["width"]), height=int(hero["height"]),
         clip_id=hero["clip_id"], title_id=hero["title_id"], desc_id=hero["desc_id"],
         title=hero["title"], desc=hero["desc"], extra_defs=extra_defs, body=body,
+    )
+
+
+def render_ai_tools_cat_svg(
+    cfg: dict[str, Any],
+    breeds_cfg: dict[str, Any],
+    templates: dict[str, dict[str, str]],
+) -> str:
+    """Render the animated orange cat catching a leaping fish beside AI Tools."""
+    theme, card, snips = cfg["theme"], cfg["ai_tools_cat"], cfg["svg_snippets"]
+    cat_cfg = card["cat"]
+    cat_svg = render_cat(
+        cat_cfg["breed"], cat_cfg["pose"], breeds_cfg, snips["cat_wrapper"],
+        x=cat_cfg["x"], y=cat_cfg["y"], scale=cat_cfg["scale"], flip=cat_cfg["flip"],
+    )
+    ai_tmpl = templates["ai_tools_cat_body"]
+    body = Template(ai_tmpl["body"]).substitute(
+        font_family=_esc(theme["font_family"]),
+        accent_end=theme["accent_end"],
+        pill_cyan=theme["pill_cyan"],
+        badge=_esc(card["badge"]),
+        cat=cat_svg,
+    )
+    return render_card_shell(
+        cfg, templates, width=int(card["width"]), height=int(card["height"]),
+        clip_id=card["clip_id"], title_id=card["title_id"], desc_id=card["desc_id"],
+        title=card["title"], desc=card["desc"], extra_defs=ai_tmpl["defs"], body=body,
     )
 
 
@@ -486,15 +508,13 @@ def render_langs_svg(
 
 
 CARD_RENDERERS: dict[str, Callable[[dict[str, Any]], str]] = {
-    "hero": lambda ctx: render_hero_svg(
-        ctx["cfg"], ctx["breeds"], ctx["templates"],
-        companion_breed_id=ctx["companion_breed_id"], seed=ctx["seed"],
-    ),
+    "hero": lambda ctx: render_hero_svg(ctx["cfg"], ctx["breeds"], ctx["templates"]),
     "catportfolio": lambda ctx: render_catportfolio_svg(ctx["cfg"], ctx["breeds"], ctx["templates"]),
     "cat_strip": lambda ctx: render_cat_strip_svg(
         ctx["cfg"], ctx["breeds"], ctx["templates"],
         roaming_ids=ctx["strip_breed_ids"], seed=ctx["seed"],
     ),
+    "ai_tools_cat": lambda ctx: render_ai_tools_cat_svg(ctx["cfg"], ctx["breeds"], ctx["templates"]),
     "stats": lambda ctx: render_stats_svg(
         ctx["metrics"], ctx["cfg"], ctx["templates"],
         includes_private=ctx["include_private"], updated_date=ctx["updated_date"],

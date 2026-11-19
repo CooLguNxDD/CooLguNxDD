@@ -20,6 +20,7 @@ REQUIRED_SECTIONS = (
     "hero",
     "catportfolio_card",
     "cat_strip",
+    "ai_tools_cat",
     "stats_card",
     "langs_card",
     "messages",
@@ -42,7 +43,7 @@ BREED_HEX_KEYS = (
     "accent2",
 )
 
-REQUIRED_BREED_POSES = ("sit", "peek", "stroll", "nap", "play")
+REQUIRED_BREED_POSES = ("sit", "peek", "stroll", "nap", "play", "fish_catch")
 REQUIRED_BREED_PATTERNS = ("solid", "tabby", "calico", "tuxedo", "pointed", "nebula")
 MIN_ROAMING_BREEDS = 4
 
@@ -79,6 +80,8 @@ POSITIVE_NUMBER_PATHS = (
     ("catportfolio_card", "height"),
     ("cat_strip", "width"),
     ("cat_strip", "height"),
+    ("ai_tools_cat", "width"),
+    ("ai_tools_cat", "height"),
     ("stats_card", "width"),
     ("stats_card", "height"),
     ("langs_card", "width"),

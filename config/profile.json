@@ -133,7 +133,6 @@
         {"x": 722, "y": 174, "color": "#3b8f9c", "dur_sec": "7.2", "delay_sec": "-4.4", "path": "M0,0 C5,-12 -4,-24 3,-36 C6,-24 -2,-12 2,0 Z"}
       ],
       "main_cat": {"breed": "white", "pose": "sit", "x": 784, "y": 144, "scale": "0.95", "flip": "1"},
-      "companion_cat": {"pose": "peek", "x": 532, "y": 166, "scale": "0.72", "flip": "1"},
       "fish": [
         {"x": 545, "y": 52, "direction": "right", "scale": "1.0", "body_color": "#a77bff", "fin_color": "#d7c2ff", "eye_color": "#14111f", "anim_class": "swim-r", "dur_sec": "11", "delay_sec": "-2", "tail_dur_sec": "0.75"},
         {"x": 645, "y": 86, "direction": "left", "scale": "0.92", "body_color": "#47bfff", "fin_color": "#7ee0ff", "eye_color": "#14111f", "anim_class": "swim-l", "dur_sec": "13", "delay_sec": "-6", "tail_dur_sec": "0.85"},
@@ -311,6 +310,17 @@
       {"pose": "play", "x": 686, "y": 74, "scale": "0.90", "flip": "1", "label_x": 690, "label_y": 108, "action": "playing"}
     ]
   },
+  "ai_tools_cat": {
+    "width": 240,
+    "height": 110,
+    "clip_id": "ai-cat-clip",
+    "title_id": "ai-cat-title",
+    "desc_id": "ai-cat-desc",
+    "title": "Fish Catcher",
+    "desc": "Orange cat pouncing to catch a leaping fish.",
+    "badge": "CATCHING",
+    "cat": {"breed": "ginger", "pose": "fish_catch", "x": 76, "y": 68, "scale": "0.94", "flip": "1"}
+  },
   "messages": {
     "missing_token": "Error: set STATS_TOKEN or GITHUB_TOKEN before running generate_stats.py",
     "missing_user": "Error: GitHub user '{username}' not found",
@@ -335,7 +345,7 @@
     "cli_summary_langs": "  top_langs={langs}",
     "cli_lang_item": "{name} ({pct:.1f}%)",
     "cli_hero_done": "Generated offline cards",
-    "cli_cat_fleet": "  cats_seed={seed}, hero_companion={companion}, strip_breeds={strip_breeds}",
+    "cli_cat_fleet": "  cats_seed={seed}, strip_breeds={strip_breeds}",
     "strip_slot_label": "{label} · {action}"
   },
   "svg_snippets": {

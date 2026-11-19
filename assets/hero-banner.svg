@@ -40,7 +40,6 @@
       .cat-blink { transform-box: fill-box; transform-origin: 50% 50%; animation: cat-blink 5.4s ease-in-out infinite; }
       .cat-ear { transform-box: fill-box; transform-origin: 40% 95%; animation: cat-ear 6.8s ease-in-out infinite; }
       .cat-breathe { transform-box: fill-box; transform-origin: 50% 100%; animation: cat-breathe 3.8s ease-in-out infinite; }
-      .cat-peek { animation: cat-peek 4.6s ease-in-out infinite; }
       @keyframes swim-r {
         0% { transform: translate(-110px, 0px); opacity: 0; }
         14% { transform: translate(-65px, -4px); opacity: 0.95; }
@@ -97,10 +96,6 @@
         0%, 100% { transform: scaleY(1); }
         50% { transform: scaleY(1.022); }
       }
-      @keyframes cat-peek {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-4px); }
-      }
       @media (prefers-reduced-motion: reduce) {
         .anim { animation: none !important; opacity: 0.92 !important; }
       }
@@ -113,7 +108,6 @@
   <rect x="0.5" y="0.5" width="839" height="189" rx="12" fill="url(#bg)" stroke="#3a3358" stroke-width="1"/>
   <rect x="0" y="0" width="5" height="190" fill="url(#accent)" clip-path="url(#banner-clip)"/>
 
-  <!-- seed: 2026-11-19 -->
   <text x="32" y="54" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#f4eefc">Andrew Liang</text>
   <rect x="232" y="32" width="104" height="22" rx="11" fill="#2a2440" stroke="#4a4270"/>
   <text x="284" y="46.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#d7c2ff">@CooLguNxDD</text>
@@ -259,38 +253,6 @@
       <g transform="translate(694, 150)"><circle class="anim bubble-rise" cx="0" cy="0" r="2.2" fill="#47bfff" fill-opacity="0.42" stroke="#47bfff" stroke-opacity="0.7" stroke-width="0.6" style="animation-duration:4.8s;animation-delay:-1.6s"/></g>
       <g transform="translate(726, 142)"><circle class="anim bubble-rise" cx="0" cy="0" r="1.9" fill="#7ee0ff" fill-opacity="0.42" stroke="#7ee0ff" stroke-opacity="0.7" stroke-width="0.6" style="animation-duration:5.8s;animation-delay:-4.1s"/></g>
 
-  <g transform="translate(532, 166) scale(1, 1) scale(0.72)">
-  <g class="anim cat-peek">
-    <path d="M-16,-20 L-19,-38 C-19,-40 -16,-41 -14,-39 L-3,-28 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.1" stroke-linejoin="round"/>
-    <path d="M-14.5,-22 L-16.5,-34 L-6.5,-27 Z" fill="#ebb0a8"/>
-    <g transform="translate(12, -24)">
-      <g class="anim cat-ear">
-        <path d="M-9,-4 L2,-15 C4,-17 7,-16 7,-14 L4,4 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.1" stroke-linejoin="round"/>
-        <path d="M-5.5,-3 L4.5,-10 L2.5,2 Z" fill="#ebb0a8"/>
-      </g>
-    </g>
-    <path d="M-19,-13 C-19,-24 -11,-30 0,-30 C11,-30 19,-24 19,-13 C20,-3 13,3 0,3 C-13,3 -20,-3 -19,-13 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.15"/>
-    <g transform="translate(0, -14)"><path d="M-4.5,-13.5 L-2.5,-9 L0,-12 L2.5,-9 L4.5,-13.5" fill="none" stroke="#6e3f19" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/><path d="M-15,-3 L-10,-2 M-15.5,1 L-10.5,1.5 M15,-3 L10,-2 M15.5,1 L10.5,1.5" fill="none" stroke="#6e3f19" stroke-width="1.25" stroke-linecap="round"/></g>
-    <ellipse cx="-11.5" cy="-8" rx="3.4" ry="1.8" fill="#f29494" fill-opacity="0.38"/>
-    <ellipse cx="11.5" cy="-8" rx="3.4" ry="1.8" fill="#f29494" fill-opacity="0.38"/>
-    <g class="anim cat-blink">
-      <ellipse cx="-7.5" cy="-14" rx="3.6" ry="4.2" fill="#6ee094"/>
-      <ellipse cx="-7.5" cy="-14" rx="1.9" ry="3.1" fill="#161225"/>
-      <circle cx="-6.2" cy="-15.5" r="1.25" fill="#ffffff"/>
-      <ellipse cx="7.5" cy="-14" rx="3.6" ry="4.2" fill="#6ee094"/>
-      <ellipse cx="7.5" cy="-14" rx="1.9" ry="3.1" fill="#161225"/>
-      <circle cx="8.8" cy="-15.5" r="1.25" fill="#ffffff"/>
-    </g>
-    <polygon points="-1.8,-9.5 1.8,-9.5 0,-7.5" fill="#e58888"/>
-    <path d="M-3.5,-6.2 Q-1.8,-4.5 0,-6.5 Q1.8,-4.5 3.5,-6.2" fill="none" stroke="#5c3314" stroke-width="1.35" stroke-linecap="round"/>
-    <g stroke="#faebd7" stroke-width="0.9" stroke-linecap="round" fill="none">
-      <path d="M-12,-9.5 Q-19,-11 -24,-10"/><path d="M-12.5,-7.5 Q-20,-7.5 -25,-6.5"/>
-      <path d="M12,-9.5 Q19,-11 24,-10"/><path d="M12.5,-7.5 Q20,-7.5 25,-6.5"/>
-    </g>
-    <ellipse cx="-11" cy="3.5" rx="5.5" ry="3.8" fill="#faebd7" stroke="#6e3f19" stroke-width="1"/>
-    <ellipse cx="11" cy="3.5" rx="5.5" ry="3.8" fill="#faebd7" stroke="#6e3f19" stroke-width="1"/>
-  </g>
-  </g>
   <g transform="translate(784, 144) scale(1, 1) scale(0.95)">
   <ellipse cx="0" cy="30" rx="21" ry="3.8" fill="#000000" fill-opacity="0.22"/>
   <g transform="translate(14, 24)">

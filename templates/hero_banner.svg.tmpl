@@ -29,7 +29,6 @@
       .cat-blink { transform-box: fill-box; transform-origin: 50% 50%; animation: cat-blink 5.4s ease-in-out infinite; }
       .cat-ear { transform-box: fill-box; transform-origin: 40% 95%; animation: cat-ear 6.8s ease-in-out infinite; }
       .cat-breathe { transform-box: fill-box; transform-origin: 50% 100%; animation: cat-breathe 3.8s ease-in-out infinite; }
-      .cat-peek { animation: cat-peek 4.6s ease-in-out infinite; }
       @keyframes swim-r {
         0% { transform: translate(-110px, 0px); opacity: 0; }
         14% { transform: translate(-65px, -4px); opacity: 0.95; }
@@ -86,16 +85,11 @@
         0%, 100% { transform: scaleY(1); }
         50% { transform: scaleY(1.022); }
       }
-      @keyframes cat-peek {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-4px); }
-      }
       @media (prefers-reduced-motion: reduce) {
         .anim { animation: none !important; opacity: 0.92 !important; }
       }
     </style>
 <!-- BODY -->
-  <!-- seed: ${seed} -->
   <text x="32" y="54" font-family="${font_family}" font-size="28" font-weight="700" fill="${text_primary}">${name}</text>
   <rect x="232" y="32" width="104" height="22" rx="11" fill="${chip_bg}" stroke="${chip_border}"/>
   <text x="284" y="46.5" text-anchor="middle" font-family="${font_family}" font-size="11" font-weight="600" fill="${pill_lavender}">${handle}</text>
@@ -125,7 +119,6 @@ ${minnows}
 ${fish}
 ${bubbles}
 
-${companion_cat}
 ${main_cat}
 
     <polygon points="465,14 610,14 525,176 465,176" fill="url(#tank-sheen)"/>

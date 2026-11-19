@@ -24,6 +24,7 @@ OFFLINE_CARDS = (
     ("hero", "hero-banner.svg"),
     ("catportfolio", "catportfolio-card.svg"),
     ("cat_strip", "cat-fleet-strip.svg"),
+    ("ai_tools_cat", "ai-tools-cat.svg"),
 )
 STATS_CARDS = (("stats", "github-stats.svg"), ("top_langs", "top-langs.svg"))
 
@@ -71,7 +72,7 @@ def _print_summary(
     print(msgs["cli_summary_activity"].format(prs=metrics["prs_total"], active_days=metrics["active_days"], current_streak=metrics["current_streak"], longest_streak=metrics["longest_streak"]))
     print(msgs["cli_summary_repos"].format(repos_count=metrics["repos_count"]))
     print(msgs["cli_summary_langs"].format(langs=langs_str))
-    print(msgs["cli_cat_fleet"].format(seed=ctx["seed"], companion=ctx["companion_breed_id"], strip_breeds=",".join(ctx["strip_breed_ids"])))
+    print(msgs["cli_cat_fleet"].format(seed=ctx["seed"], strip_breeds=",".join(ctx["strip_breed_ids"])))
 
 
 def _fetch_all(
@@ -106,15 +107,13 @@ def _build_cat_context(
     bundle: dict[str, dict[str, Any]],
     seed: str,
 ) -> dict[str, Any]:
-    roaming_needed = 1 + len(cfg["cat_strip"]["slots"])
-    chosen = select_roaming_breeds(breeds_cfg, roaming_needed, seed)
+    chosen = select_roaming_breeds(breeds_cfg, len(cfg["cat_strip"]["slots"]), seed)
     return {
         "cfg": cfg,
         "breeds": breeds_cfg,
         "templates": bundle["templates"],
         "seed": seed,
-        "companion_breed_id": chosen[0],
-        "strip_breed_ids": chosen[1:],
+        "strip_breed_ids": chosen,
     }
 
 

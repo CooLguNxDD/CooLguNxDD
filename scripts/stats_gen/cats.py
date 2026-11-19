@@ -66,7 +66,7 @@ def _render_pose_parts(pose_tmpl: str, palette: dict[str, str], markings: dict[s
 
 POSE_RENDERERS: dict[str, Callable[[str, dict[str, str], dict[str, str]], str]] = {
     name: _render_pose_parts
-    for name in ("sit", "peek", "stroll", "nap", "play")
+    for name in ("sit", "peek", "stroll", "nap", "play", "fish_catch")
 }
 
 
