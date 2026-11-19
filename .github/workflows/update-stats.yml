@@ -6,22 +6,24 @@ on:
   workflow_dispatch:
     inputs:
       theme:
-        description: 'Theme preset (CatPortfolio / Catppuccin)'
+        description: 'Theme preset (auto = daily rotation)'
         required: false
         type: choice
-        default: 'catportfolio'
+        default: 'auto'
         options:
+          - auto
           - catportfolio
           - mocha
           - macchiato
           - frappe
           - latte
       accent:
-        description: 'Accent color pair'
+        description: 'Accent color pair (auto = daily rotation)'
         required: false
         type: choice
-        default: 'violet'
+        default: 'auto'
         options:
+          - auto
           - violet
           - mauve
           - sapphire
@@ -56,6 +58,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
+          CAT_DAILY: 'true'
           CAT_THEME: ${{ inputs.theme }}
           CAT_ACCENT: ${{ inputs.accent }}
         run: python scripts/generate_stats.py

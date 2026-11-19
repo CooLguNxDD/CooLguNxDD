@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="380" height="196" viewBox="0 0 380 196" role="img" aria-labelledby="langs-title langs-desc">
+  <!-- theme: latte/latte_mauve -->
   <title id="langs-title">Top Languages</title>
   <desc id="langs-desc">Python 46.1%, C# 23.3%, TypeScript 19.3%, C++ 7.5%, C 1.6%, JavaScript 1.0%, Java 0.7%, HLSL 0.5%</desc>
   <defs>

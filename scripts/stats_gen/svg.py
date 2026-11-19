@@ -74,6 +74,8 @@ def render_card_shell(
         clip_id=_esc(clip_id),
         title_id=_esc(title_id),
         desc_id=_esc(desc_id),
+        theme_id=_esc(cfg.get("active_theme", "catportfolio")),
+        accent_id=_esc(cfg.get("active_accent", "violet")),
         title=_esc(title),
         desc=_esc(desc),
         bg_start=theme["bg_start"],
@@ -263,20 +265,23 @@ def render_cat_strip_svg(
     *,
     roaming_ids: list[str],
     seed: str,
+    poses: list[str] | None = None,
 ) -> str:
     """Render the animated 3-breed Cat Fleet Strip card."""
     theme, strip, snips = cfg["theme"], cfg["cat_strip"], cfg["svg_snippets"]
     msgs = cfg["messages"]
     wrapper = snips["cat_wrapper"]
     lbl_t = Template(snips["strip_slot_label"])
+    pose_list = poses or [str(slot["pose"]) for slot in strip["slots"]]
+    action_by_pose = {str(slot["pose"]): str(slot["action"]) for slot in strip["slots"]}
     cats_out: list[str] = []
     labels_out: list[str] = []
-    for slot, bid in zip(strip["slots"], roaming_ids):
+    for slot, bid, pose in zip(strip["slots"], roaming_ids, pose_list):
         cats_out.append(
-            render_cat(bid, slot["pose"], breeds_cfg, wrapper, x=slot["x"], y=slot["y"], scale=slot["scale"], flip=slot["flip"])
+            render_cat(bid, pose, breeds_cfg, wrapper, x=slot["x"], y=slot["y"], scale=slot["scale"], flip=slot["flip"])
         )
         breed_label = str(breeds_cfg["breeds"][bid]["label"])
-        caption = msgs["strip_slot_label"].format(label=breed_label, action=slot["action"])
+        caption = msgs["strip_slot_label"].format(label=breed_label, action=action_by_pose.get(pose, pose))
         labels_out.append(
             lbl_t.substitute(
                 x=slot["label_x"], y=slot["label_y"],
@@ -513,6 +518,7 @@ CARD_RENDERERS: dict[str, Callable[[dict[str, Any]], str]] = {
     "cat_strip": lambda ctx: render_cat_strip_svg(
         ctx["cfg"], ctx["breeds"], ctx["templates"],
         roaming_ids=ctx["strip_breed_ids"], seed=ctx["seed"],
+        poses=ctx.get("strip_poses"),
     ),
     "ai_tools_cat": lambda ctx: render_ai_tools_cat_svg(ctx["cfg"], ctx["breeds"], ctx["templates"]),
     "stats": lambda ctx: render_stats_svg(

@@ -3,6 +3,7 @@
     "catportfolio": {
       "label": "CatPortfolio",
       "description": "Default dark violet aquarium",
+      "roaming": true,
       "is_light": false,
       "bg_start": "#14111f",
       "bg_end": "#1c1730",
@@ -16,6 +17,7 @@
     "mocha": {
       "label": "Catppuccin Mocha",
       "description": "Catppuccin dark (Mocha)",
+      "roaming": true,
       "is_light": false,
       "bg_start": "#1e1e2e",
       "bg_end": "#181825",
@@ -29,6 +31,7 @@
     "macchiato": {
       "label": "Catppuccin Macchiato",
       "description": "Catppuccin dark (Macchiato)",
+      "roaming": true,
       "is_light": false,
       "bg_start": "#24273a",
       "bg_end": "#1e2030",
@@ -42,6 +45,7 @@
     "frappe": {
       "label": "Catppuccin Frappé",
       "description": "Catppuccin dark (Frappé)",
+      "roaming": true,
       "is_light": false,
       "bg_start": "#303446",
       "bg_end": "#292c3c",
@@ -55,6 +59,7 @@
     "latte": {
       "label": "Catppuccin Latte",
       "description": "Catppuccin light (Latte)",
+      "roaming": false,
       "is_light": true,
       "bg_start": "#eff1f5",
       "bg_end": "#e6e9ef",
@@ -69,6 +74,7 @@
   "accents": {
     "violet": {
       "label": "Violet",
+      "roaming": true,
       "accent_start": "#863bff",
       "accent_end": "#47bfff",
       "pill_lavender": "#d7c2ff",
@@ -79,6 +85,7 @@
     },
     "mauve": {
       "label": "Mauve",
+      "roaming": true,
       "accent_start": "#cba6f7",
       "accent_end": "#89b4fa",
       "pill_lavender": "#cba6f7",
@@ -89,6 +96,7 @@
     },
     "sapphire": {
       "label": "Sapphire",
+      "roaming": true,
       "accent_start": "#74c7ec",
       "accent_end": "#94e2d5",
       "pill_lavender": "#89b4fa",
@@ -99,6 +107,7 @@
     },
     "peach": {
       "label": "Peach",
+      "roaming": true,
       "accent_start": "#fab387",
       "accent_end": "#f9e2af",
       "pill_lavender": "#f5c2e7",
@@ -109,6 +118,7 @@
     },
     "green": {
       "label": "Green",
+      "roaming": true,
       "accent_start": "#a6e3a1",
       "accent_end": "#94e2d5",
       "pill_lavender": "#a6e3a1",
@@ -119,6 +129,7 @@
     },
     "pink": {
       "label": "Pink",
+      "roaming": true,
       "accent_start": "#f5c2e7",
       "accent_end": "#cba6f7",
       "pill_lavender": "#f5c2e7",
@@ -129,6 +140,7 @@
     },
     "latte_mauve": {
       "label": "Latte Mauve",
+      "roaming": false,
       "accent_start": "#8839ef",
       "accent_end": "#1e66f5",
       "pill_lavender": "#6c2bd9",

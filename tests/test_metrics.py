@@ -9,8 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from stats_gen.cats import select_roaming_breeds  # noqa: E402
-from stats_gen.config import load_breeds, load_config  # noqa: E402
+from stats_gen.cats import select_daily_poses, select_daily_theme_and_accent, select_roaming_breeds  # noqa: E402
+from stats_gen.config import load_breeds, load_config, load_themes  # noqa: E402
 from stats_gen.metrics import (  # noqa: E402
     aggregate_languages,
     allocate_bar_widths,
@@ -25,6 +25,7 @@ class TestMetrics(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.cfg = load_config(ROOT / "config" / "profile.json")
         cls.breeds = load_breeds(ROOT / "config" / "breeds.json")
+        cls.themes = load_themes(ROOT / "config" / "themes.json")
 
     def test_streaks_active_today(self) -> None:
         days = [
@@ -114,6 +115,15 @@ class TestMetrics(unittest.TestCase):
             for day in range(20, 26)
         )
         self.assertTrue(different_seen)
+
+    def test_select_daily_theme_accent_and_poses(self) -> None:
+        t1, a1 = select_daily_theme_and_accent(self.themes, "2026-11-19")
+        t2, a2 = select_daily_theme_and_accent(self.themes, "2026-11-19")
+        self.assertEqual((t1, a1), (t2, a2))
+        self.assertNotEqual(t1, "latte")
+        self.assertNotEqual(a1, "latte_mauve")
+        poses = select_daily_poses(["stroll", "nap", "play"], 3, "2026-11-19")
+        self.assertEqual(set(poses), {"stroll", "nap", "play"})
 
 
 if __name__ == "__main__":

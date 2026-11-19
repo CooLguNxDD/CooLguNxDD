@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from stats_gen.cats import select_roaming_breeds
+from stats_gen.cats import select_daily_poses, select_daily_theme_and_accent, select_roaming_breeds
 from stats_gen.config import apply_theme_preset, load_breeds, load_config, load_text_bundle, load_themes
 from stats_gen.github_io import (
     fetch_all_time_contributions,
@@ -35,6 +35,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(prog="generate_stats.py")
     parser.add_argument("--hero-only", action="store_true", help="Render hero banner only without network calls")
     parser.add_argument("--offline", action="store_true", help="Render hero, CatPortfolio, and Cat Fleet strip offline")
+    parser.add_argument("--daily", action="store_true", help="Rotate dark theme, accent, breeds, and poses daily")
     parser.add_argument("--seed", default="", help="Override deterministic daily breed seed")
     parser.add_argument("--theme", default="", help="Override active theme id from config/themes.json")
     parser.add_argument("--accent", default="", help="Override active accent id from config/themes.json")
@@ -114,14 +115,19 @@ def _build_cat_context(
     breeds_cfg: dict[str, Any],
     bundle: dict[str, dict[str, Any]],
     seed: str,
+    *,
+    rotate_poses: bool,
 ) -> dict[str, Any]:
-    chosen = select_roaming_breeds(breeds_cfg, len(cfg["cat_strip"]["slots"]), seed)
+    slot_poses = [str(s["pose"]) for s in cfg["cat_strip"]["slots"]]
+    chosen = select_roaming_breeds(breeds_cfg, len(slot_poses), seed)
+    poses = select_daily_poses(slot_poses, len(slot_poses), seed) if rotate_poses else slot_poses
     return {
         "cfg": cfg,
         "breeds": breeds_cfg,
         "templates": bundle["templates"],
         "seed": seed,
         "strip_breed_ids": chosen,
+        "strip_poses": poses,
     }
 
 
@@ -181,19 +187,36 @@ def run_full(
     return 0
 
 
+def _resolve_theme_ids(
+    args: argparse.Namespace,
+    raw_cfg: dict[str, Any],
+    themes_cfg: dict[str, Any],
+    seed: str,
+    daily_mode: bool,
+) -> tuple[str, str]:
+    daily_theme, daily_accent = select_daily_theme_and_accent(themes_cfg, seed)
+    raw_theme = args.theme.strip() or os.environ.get("CAT_THEME", "").strip()
+    raw_accent = args.accent.strip() or os.environ.get("CAT_ACCENT", "").strip()
+    default_theme = daily_theme if daily_mode else str(raw_cfg.get("active_theme", "catportfolio"))
+    default_accent = daily_accent if daily_mode else str(raw_cfg.get("active_accent", "violet"))
+    theme_id = default_theme if raw_theme in ("", "auto") else raw_theme
+    accent_id = default_accent if raw_accent in ("", "auto") else raw_accent
+    return theme_id, accent_id
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entry point."""
     args = parse_args(argv)
     root = args.config.resolve().parent.parent
     raw_cfg = load_config(args.config)
     themes_cfg = load_themes(args.themes)
-    theme_id = args.theme.strip() or os.environ.get("CAT_THEME", "").strip() or str(raw_cfg.get("active_theme", "catportfolio"))
-    accent_id = args.accent.strip() or os.environ.get("CAT_ACCENT", "").strip() or str(raw_cfg.get("active_accent", "violet"))
+    seed = args.seed.strip() or os.environ.get("CAT_SEED", "").strip() or dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    daily_mode = args.daily or os.environ.get("CAT_DAILY", "").strip().lower() == "true"
+    theme_id, accent_id = _resolve_theme_ids(args, raw_cfg, themes_cfg, seed, daily_mode)
     cfg = apply_theme_preset(raw_cfg, themes_cfg, theme_id=theme_id, accent_id=accent_id)
     breeds_cfg = load_breeds(args.breeds)
     bundle = load_text_bundle(root)
-    seed = args.seed.strip() or os.environ.get("CAT_SEED", "").strip() or dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
-    ctx = _build_cat_context(cfg, breeds_cfg, bundle, seed)
+    ctx = _build_cat_context(cfg, breeds_cfg, bundle, seed, rotate_poses=daily_mode)
 
     if args.hero_only:
         _write_card_set((OFFLINE_CARDS[0],), ctx, args.output_dir)

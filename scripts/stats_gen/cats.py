@@ -44,6 +44,30 @@ def select_roaming_breeds(breeds_cfg: dict[str, Any], count: int, seed_str: str)
     return ranked[:count]
 
 
+def select_daily_poses(poses: list[str], count: int, seed_str: str) -> list[str]:
+    """Deterministically shuffle animation poses across strip slots for seed_str."""
+    ranked = sorted(
+        poses,
+        key=lambda pose: hashlib.sha256(f"pose:{seed_str}:{pose}".encode("utf-8")).hexdigest(),
+    )
+    return ranked[:count]
+
+
+def select_daily_theme_and_accent(themes_cfg: dict[str, Any], seed_str: str) -> tuple[str, str]:
+    """Deterministically pick a roaming dark theme and accent pair for seed_str."""
+    theme_pool = [tid for tid, spec in themes_cfg["themes"].items() if bool(spec.get("roaming"))]
+    accent_pool = [aid for aid, spec in themes_cfg["accents"].items() if bool(spec.get("roaming"))]
+    ranked_themes = sorted(
+        theme_pool,
+        key=lambda tid: hashlib.sha256(f"theme:{seed_str}:{tid}".encode("utf-8")).hexdigest(),
+    )
+    ranked_accents = sorted(
+        accent_pool,
+        key=lambda aid: hashlib.sha256(f"accent:{seed_str}:{aid}".encode("utf-8")).hexdigest(),
+    )
+    return ranked_themes[0], ranked_accents[0]
+
+
 def _render_pattern_parts(markings_cfg: dict[str, dict[str, str]], pattern: str, palette: dict[str, str]) -> dict[str, str]:
     spec = markings_cfg[pattern]
     ctx = {"accent": palette["accent"], "accent2": palette["accent2"]}

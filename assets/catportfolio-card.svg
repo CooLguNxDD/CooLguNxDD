@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="140" viewBox="0 0 440 140" role="img" aria-labelledby="cp-title cp-desc">
+  <!-- theme: catportfolio/violet -->
   <title id="cp-title">CatPortfolio</title>
   <desc id="cp-desc">Self-rendering GenUI portfolio — React 19, Three.js aquarium, Zod layout. Live at coolgunxdd.github.io/CatPortfolio</desc>
   <defs>

@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from stats_gen.cats import select_roaming_breeds  # noqa: E402
+from stats_gen.cats import select_daily_poses, select_roaming_breeds  # noqa: E402
 from stats_gen.config import apply_theme_preset, load_breeds, load_config, load_text_bundle, load_themes  # noqa: E402
 from stats_gen.github_io import redact_secret  # noqa: E402
 from stats_gen.svg import (  # noqa: E402
@@ -25,6 +25,7 @@ from stats_gen.svg import (  # noqa: E402
 )
 
 SEED_RE = re.compile(r"<!-- seed: ([A-Za-z0-9_.:-]+) -->")
+THEME_RE = re.compile(r"<!-- theme: ([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+) -->")
 
 
 class TestSvgAndDrift(unittest.TestCase):
@@ -138,24 +139,34 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertEqual(redact_secret("failed bearer ghp_secret123 here", "ghp_secret123"), "failed bearer [REDACTED] here")
 
     def test_generated_cat_svgs_no_drift(self) -> None:
+        themes = load_themes(ROOT / "config" / "themes.json")
+
+        def cfg_for(svg_text: str) -> dict:
+            m = THEME_RE.search(svg_text)
+            self.assertIsNotNone(m)
+            return apply_theme_preset(self.cfg, themes, theme_id=m.group(1), accent_id=m.group(2))
+
         hero_disk = (ROOT / "assets" / "hero-banner.svg").read_text(encoding="utf-8")
-        self.assertEqual(hero_disk, render_hero_svg(self.cfg, self.breeds, self.bundle["templates"]))
+        self.assertEqual(hero_disk, render_hero_svg(cfg_for(hero_disk), self.breeds, self.bundle["templates"]))
 
         cp_disk = (ROOT / "assets" / "catportfolio-card.svg").read_text(encoding="utf-8")
-        self.assertEqual(cp_disk, render_catportfolio_svg(self.cfg, self.breeds, self.bundle["templates"]))
+        self.assertEqual(cp_disk, render_catportfolio_svg(cfg_for(cp_disk), self.breeds, self.bundle["templates"]))
 
         ai_disk = (ROOT / "assets" / "ai-tools-cat.svg").read_text(encoding="utf-8")
-        self.assertEqual(ai_disk, render_ai_tools_cat_svg(self.cfg, self.breeds, self.bundle["templates"]))
+        self.assertEqual(ai_disk, render_ai_tools_cat_svg(cfg_for(ai_disk), self.breeds, self.bundle["templates"]))
 
         strip_disk = (ROOT / "assets" / "cat-fleet-strip.svg").read_text(encoding="utf-8")
         strip_match = SEED_RE.search(strip_disk)
         self.assertIsNotNone(strip_match)
         strip_seed = strip_match.group(1)
         strip_roaming = select_roaming_breeds(self.breeds, 3, strip_seed)
-        self.assertEqual(
-            strip_disk,
-            render_cat_strip_svg(self.cfg, self.breeds, self.bundle["templates"], roaming_ids=strip_roaming, seed=strip_seed),
+        strip_cfg = cfg_for(strip_disk)
+        daily_poses = select_daily_poses(["stroll", "nap", "play"], 3, strip_seed)
+        candidates = (
+            render_cat_strip_svg(strip_cfg, self.breeds, self.bundle["templates"], roaming_ids=strip_roaming, seed=strip_seed),
+            render_cat_strip_svg(strip_cfg, self.breeds, self.bundle["templates"], roaming_ids=strip_roaming, seed=strip_seed, poses=daily_poses),
         )
+        self.assertIn(strip_disk, candidates)
 
     def test_on_disk_generated_svgs_valid_xml_no_bom(self) -> None:
         themes = load_themes(ROOT / "config" / "themes.json")

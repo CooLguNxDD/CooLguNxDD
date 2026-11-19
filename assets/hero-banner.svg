@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="190" viewBox="0 0 840 190" role="img" aria-labelledby="hero-title hero-desc">
+  <!-- theme: catportfolio/violet -->
   <title id="hero-title">Andrew Liang — DevOps &amp; Agentic AI Systems Engineer</title>
   <desc id="hero-desc">Agentic AI Platforms, self-rendering GenUI, cloud infrastructure, and real-time graphics with an animated Cat Fleet aquarium.</desc>
   <defs>
