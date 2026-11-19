@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="118" viewBox="0 0 840 118" role="img" aria-labelledby="strip-title strip-desc">
-  <!-- theme: latte/violet -->
+  <!-- theme: catportfolio/violet -->
   <title id="strip-title">Cat Fleet</title>
   <desc id="strip-desc">Daily rotating animated cat breeds — strolling, napping, and playing.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#eff1f5"/>
-      <stop offset="100%" stop-color="#e6e9ef"/>
+      <stop offset="0%" stop-color="#14111f"/>
+      <stop offset="100%" stop-color="#1c1730"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#863bff"/>
@@ -94,19 +94,19 @@
     </clipPath>
   </defs>
 
-  <rect x="0.5" y="0.5" width="839" height="117" rx="12" fill="url(#bg)" stroke="#bcc0cc" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="839" height="117" rx="12" fill="url(#bg)" stroke="#3a3358" stroke-width="1"/>
   <rect x="0" y="0" width="5" height="118" fill="url(#accent)" clip-path="url(#strip-clip)"/>
 
   <!-- seed: 2026-11-19 -->
-  <text x="24" y="27" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#4c4f69">Cat Fleet</text>
+  <text x="24" y="27" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#f4eefc">Cat Fleet</text>
   <g>
     <rect x="714" y="12" width="102" height="20" rx="10" fill="#47bfff" fill-opacity="0.15" stroke="#47bfff" stroke-opacity="0.6"/>
     <text x="765" y="25.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#7ee0ff">DAILY BREEDS</text>
   </g>
 
-  <line x1="24" y1="94" x2="816" y2="94" stroke="#bcc0cc" stroke-opacity="0.7" stroke-width="1"/>
-  <line x1="284" y1="36" x2="284" y2="106" stroke="#bcc0cc" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 3"/>
-  <line x1="556" y1="36" x2="556" y2="106" stroke="#bcc0cc" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="24" y1="94" x2="816" y2="94" stroke="#3a3358" stroke-opacity="0.7" stroke-width="1"/>
+  <line x1="284" y1="36" x2="284" y2="106" stroke="#3a3358" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="556" y1="36" x2="556" y2="106" stroke="#3a3358" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 3"/>
 
   <g transform="translate(148, 74) scale(1, 1) scale(0.90)">
   <ellipse cx="0" cy="17" rx="25" ry="3.6" fill="#000000" fill-opacity="0.22"/>
@@ -240,8 +240,8 @@
     </g>
   </g>
   </g>
-  <text x="148" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">Tabby · napping</text>
-  <text x="420" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">Nebula · strolling</text>
-  <text x="690" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#5c5f77">Ragdoll · playing</text>
+  <text x="148" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#b5abc8">White · napping</text>
+  <text x="420" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#b5abc8">Ragdoll · strolling</text>
+  <text x="690" y="108" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#b5abc8">Russian Blue · playing</text>
 
 </svg>

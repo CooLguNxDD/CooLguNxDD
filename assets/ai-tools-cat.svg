@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="240" height="110" viewBox="0 0 240 110" role="img" aria-labelledby="ai-cat-title ai-cat-desc">
-  <!-- theme: latte/violet -->
+  <!-- theme: catportfolio/violet -->
   <title id="ai-cat-title">Fish Catcher</title>
   <desc id="ai-cat-desc">Orange cat pouncing to catch a leaping fish.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#eff1f5"/>
-      <stop offset="100%" stop-color="#e6e9ef"/>
+      <stop offset="0%" stop-color="#14111f"/>
+      <stop offset="100%" stop-color="#1c1730"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#863bff"/>
@@ -74,7 +74,7 @@
     </clipPath>
   </defs>
 
-  <rect x="0.5" y="0.5" width="239" height="109" rx="12" fill="url(#bg)" stroke="#bcc0cc" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="239" height="109" rx="12" fill="url(#bg)" stroke="#3a3358" stroke-width="1"/>
   <rect x="0" y="0" width="5" height="110" fill="url(#accent)" clip-path="url(#ai-cat-clip)"/>
 
   <rect x="164" y="10" width="60" height="17" rx="8.5" fill="#47bfff" fill-opacity="0.14" stroke="#47bfff" stroke-opacity="0.55"/>
