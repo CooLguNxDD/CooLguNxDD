@@ -59,6 +59,7 @@ jobs:
           STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
           CAT_DAILY: 'true'
+          CAT_SEED: ${{ github.event_name == 'workflow_dispatch' && format('{0}-{1}', github.run_id, github.run_attempt) || '' }}
           CAT_THEME: ${{ inputs.theme }}
           CAT_ACCENT: ${{ inputs.accent }}
         run: python scripts/generate_stats.py
