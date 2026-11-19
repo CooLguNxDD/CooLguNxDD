@@ -27,6 +27,7 @@ from stats_gen.svg import (  # noqa: E402
 SEED_RE = re.compile(r"<!-- seed: ([A-Za-z0-9_.:-]+) -->")
 THEME_RE = re.compile(r"<!-- theme: ([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+) -->")
 BREED_RE = re.compile(r"<!-- breed: ([A-Za-z0-9_-]+) -->")
+AI_CAT_RE = re.compile(r"<!-- breed: ([A-Za-z0-9_-]+) pose: ([A-Za-z0-9_-]+) -->")
 
 
 class TestSvgAndDrift(unittest.TestCase):
@@ -159,7 +160,9 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertEqual(cp_disk, render_catportfolio_svg(cfg_for(cp_disk), self.breeds, self.bundle["templates"], breed_id=breed_of(cp_disk)))
 
         ai_disk = (ROOT / "assets" / "ai-tools-cat.svg").read_text(encoding="utf-8")
-        self.assertEqual(ai_disk, render_ai_tools_cat_svg(cfg_for(ai_disk), self.breeds, self.bundle["templates"], breed_id=breed_of(ai_disk)))
+        ai_match = AI_CAT_RE.search(ai_disk)
+        self.assertIsNotNone(ai_match)
+        self.assertEqual(ai_disk, render_ai_tools_cat_svg(cfg_for(ai_disk), self.breeds, self.bundle["templates"], breed_id=ai_match.group(1), pose=ai_match.group(2)))
 
         strip_disk = (ROOT / "assets" / "cat-fleet-strip.svg").read_text(encoding="utf-8")
         strip_match = SEED_RE.search(strip_disk)
@@ -168,7 +171,7 @@ class TestSvgAndDrift(unittest.TestCase):
         strip_roaming = select_roaming_breeds(self.breeds, 3, strip_seed)
         daily_roaming = select_roaming_breeds(self.breeds, 6, strip_seed, include_pinned=True)[3:]
         strip_cfg = cfg_for(strip_disk)
-        daily_poses = select_daily_poses(["stroll", "nap", "play"], 3, strip_seed)
+        daily_poses = select_daily_poses(list(self.breeds["poses"].keys()), 4, strip_seed)[1:]
         candidates = (
             render_cat_strip_svg(strip_cfg, self.breeds, self.bundle["templates"], roaming_ids=strip_roaming, seed=strip_seed),
             render_cat_strip_svg(strip_cfg, self.breeds, self.bundle["templates"], roaming_ids=daily_roaming, seed=strip_seed, poses=daily_poses),
@@ -208,9 +211,9 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertIsNotNone(cp_breed)
         self.assertEqual(cp_light, render_catportfolio_svg(light_cfg, self.breeds, self.bundle["templates"], breed_id=cp_breed.group(1)))
         ai_light = (ROOT / "assets" / "light" / "ai-tools-cat.svg").read_text(encoding="utf-8")
-        ai_breed = BREED_RE.search(ai_light)
-        self.assertIsNotNone(ai_breed)
-        self.assertEqual(ai_light, render_ai_tools_cat_svg(light_cfg, self.breeds, self.bundle["templates"], breed_id=ai_breed.group(1)))
+        ai_match = AI_CAT_RE.search(ai_light)
+        self.assertIsNotNone(ai_match)
+        self.assertEqual(ai_light, render_ai_tools_cat_svg(light_cfg, self.breeds, self.bundle["templates"], breed_id=ai_match.group(1), pose=ai_match.group(2)))
 
 
 if __name__ == "__main__":

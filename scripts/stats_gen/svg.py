@@ -191,18 +191,21 @@ def render_ai_tools_cat_svg(
     templates: dict[str, dict[str, str]],
     *,
     breed_id: str | None = None,
+    pose: str | None = None,
 ) -> str:
-    """Render the animated cat catching a leaping fish beside AI Tools."""
+    """Render the animated cat beside AI Tools."""
     theme, card, snips = cfg["theme"], cfg["ai_tools_cat"], cfg["svg_snippets"]
     cat_cfg = card["cat"]
     chosen_breed = breed_id or cat_cfg["breed"]
+    chosen_pose = pose or cat_cfg["pose"]
     cat_svg = render_cat(
-        chosen_breed, cat_cfg["pose"], breeds_cfg, snips["cat_wrapper"],
+        chosen_breed, chosen_pose, breeds_cfg, snips["cat_wrapper"],
         x=cat_cfg["x"], y=cat_cfg["y"], scale=cat_cfg["scale"], flip=cat_cfg["flip"],
     )
     ai_tmpl = templates["ai_tools_cat_body"]
     body = Template(ai_tmpl["body"]).substitute(
         breed_id=_esc(chosen_breed),
+        pose_id=_esc(chosen_pose),
         font_family=_esc(theme["font_family"]),
         accent_end=theme["accent_end"],
         pill_cyan=theme["pill_cyan"],
@@ -283,7 +286,19 @@ def render_cat_strip_svg(
     wrapper = snips["cat_wrapper"]
     lbl_t = Template(snips["strip_slot_label"])
     pose_list = poses or [str(slot["pose"]) for slot in strip["slots"]]
-    action_by_pose = {str(slot["pose"]): str(slot["action"]) for slot in strip["slots"]}
+    action_by_pose = {
+        "sit": "sitting",
+        "peek": "peeking",
+        "stroll": "strolling",
+        "nap": "napping",
+        "play": "playing",
+        "fish_catch": "fishing",
+        "stretch": "stretching",
+        "yarn": "chasing yarn",
+        "groom": "grooming",
+        "box": "in a box",
+        **{str(slot["pose"]): str(slot["action"]) for slot in strip["slots"]},
+    }
     cats_out: list[str] = []
     labels_out: list[str] = []
     for slot, bid, pose in zip(strip["slots"], roaming_ids, pose_list):
@@ -535,7 +550,8 @@ CARD_RENDERERS: dict[str, Callable[[dict[str, Any]], str]] = {
         poses=ctx.get("strip_poses"),
     ),
     "ai_tools_cat": lambda ctx: render_ai_tools_cat_svg(
-        ctx["cfg"], ctx["breeds"], ctx["templates"], breed_id=ctx.get("ai_tools_breed_id"),
+        ctx["cfg"], ctx["breeds"], ctx["templates"],
+        breed_id=ctx.get("ai_tools_breed_id"), pose=ctx.get("ai_tools_pose"),
     ),
     "stats": lambda ctx: render_stats_svg(
         ctx["metrics"], ctx["cfg"], ctx["templates"],

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="380" height="196" viewBox="0 0 380 196" role="img" aria-labelledby="langs-title langs-desc">
   <!-- theme: latte/latte_mauve -->
   <title id="langs-title">Top Languages</title>
-  <desc id="langs-desc">Python 46.1%, C# 23.3%, TypeScript 19.3%, C++ 7.5%, C 1.6%, JavaScript 1.0%, Java 0.7%, HLSL 0.5%</desc>
+  <desc id="langs-desc">Python 46.3%, C# 23.2%, TypeScript 19.2%, C++ 7.5%, C 1.6%, JavaScript 1.0%, Java 0.7%, HLSL 0.5%</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#eff1f5"/>
@@ -30,25 +30,25 @@
 
   <rect x="24" y="50" width="332" height="10" rx="5" fill="#dce0e8"/>
   <g clip-path="url(#bar-clip)">
-    <rect x="24.00" y="50" width="153.01" height="10" fill="#3572a5"/>
-    <rect x="177.01" y="50" width="77.25" height="10" fill="#7355dd"/>
-    <rect x="254.25" y="50" width="63.90" height="10" fill="#3178c6"/>
-    <rect x="318.16" y="50" width="25.02" height="10" fill="#f34b7d"/>
-    <rect x="343.18" y="50" width="5.22" height="10" fill="#8b9bb4"/>
-    <rect x="348.40" y="50" width="3.31" height="10" fill="#f1e05a"/>
-    <rect x="351.71" y="50" width="2.29" height="10" fill="#b07219"/>
+    <rect x="24.00" y="50" width="153.48" height="10" fill="#3572a5"/>
+    <rect x="177.48" y="50" width="77.04" height="10" fill="#7355dd"/>
+    <rect x="254.52" y="50" width="63.73" height="10" fill="#3178c6"/>
+    <rect x="318.25" y="50" width="24.95" height="10" fill="#f34b7d"/>
+    <rect x="343.20" y="50" width="5.21" height="10" fill="#8b9bb4"/>
+    <rect x="348.41" y="50" width="3.30" height="10" fill="#f1e05a"/>
+    <rect x="351.72" y="50" width="2.28" height="10" fill="#b07219"/>
     <rect x="354.00" y="50" width="2.00" height="10" fill="#aace60"/>
   </g>
 
   <circle cx="29" cy="80" r="4.5" fill="#3572a5"/>
   <text x="41" y="84" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#4c4f69">Python</text>
-  <text x="176" y="84" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5c5f77">46.1%</text>
+  <text x="176" y="84" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5c5f77">46.3%</text>
   <circle cx="29" cy="104" r="4.5" fill="#7355dd"/>
   <text x="41" y="108" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#4c4f69">C#</text>
-  <text x="176" y="108" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5c5f77">23.3%</text>
+  <text x="176" y="108" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5c5f77">23.2%</text>
   <circle cx="29" cy="128" r="4.5" fill="#3178c6"/>
   <text x="41" y="132" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#4c4f69">TypeScript</text>
-  <text x="176" y="132" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5c5f77">19.3%</text>
+  <text x="176" y="132" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5c5f77">19.2%</text>
   <circle cx="29" cy="152" r="4.5" fill="#f34b7d"/>
   <text x="41" y="156" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#4c4f69">C++</text>
   <text x="176" y="156" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" fill="#5c5f77">7.5%</text>
