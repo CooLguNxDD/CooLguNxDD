@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="190" viewBox="0 0 840 190" role="img" aria-labelledby="hero-title hero-desc">
   <title id="hero-title">Andrew Liang — DevOps &amp; Agentic AI Systems Engineer</title>
-  <desc id="hero-desc">Production MCP platforms, self-rendering GenUI, cloud infrastructure, and real-time graphics with an animated Cat Fleet aquarium.</desc>
+  <desc id="hero-desc">Agentic AI Platforms, self-rendering GenUI, cloud infrastructure, and real-time graphics with an animated Cat Fleet aquarium.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#14111f"/>
@@ -39,7 +39,8 @@
       .cat-tail { transform-box: fill-box; transform-origin: 10% 90%; animation: cat-tail 4.2s ease-in-out infinite; }
       .cat-blink { transform-box: fill-box; transform-origin: 50% 50%; animation: cat-blink 5.4s ease-in-out infinite; }
       .cat-ear { transform-box: fill-box; transform-origin: 40% 95%; animation: cat-ear 6.8s ease-in-out infinite; }
-      .cat-paw { transform-box: fill-box; transform-origin: 85% 50%; animation: cat-paw 4.8s ease-in-out infinite; }
+      .cat-breathe { transform-box: fill-box; transform-origin: 50% 100%; animation: cat-breathe 3.8s ease-in-out infinite; }
+      .cat-peek { animation: cat-peek 4.6s ease-in-out infinite; }
       @keyframes swim-r {
         0% { transform: translate(-110px, 0px); opacity: 0; }
         14% { transform: translate(-65px, -4px); opacity: 0.95; }
@@ -92,10 +93,13 @@
         88% { transform: rotate(-10deg); }
         92% { transform: rotate(3deg); }
       }
-      @keyframes cat-paw {
-        0%, 70%, 100% { transform: rotate(0deg); }
-        78% { transform: rotate(-11deg); }
-        85% { transform: rotate(4deg); }
+      @keyframes cat-breathe {
+        0%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(1.022); }
+      }
+      @keyframes cat-peek {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
       }
       @media (prefers-reduced-motion: reduce) {
         .anim { animation: none !important; opacity: 0.92 !important; }
@@ -109,13 +113,13 @@
   <rect x="0.5" y="0.5" width="839" height="189" rx="12" fill="url(#bg)" stroke="#3a3358" stroke-width="1"/>
   <rect x="0" y="0" width="5" height="190" fill="url(#accent)" clip-path="url(#banner-clip)"/>
 
-  <!-- Left copy zone -->
+  <!-- seed: 2026-11-19 -->
   <text x="32" y="54" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#f4eefc">Andrew Liang</text>
   <rect x="232" y="32" width="104" height="22" rx="11" fill="#2a2440" stroke="#4a4270"/>
   <text x="284" y="46.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#d7c2ff">@CooLguNxDD</text>
 
   <text x="32" y="84" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#47bfff">DevOps &amp; Agentic AI Systems Engineer</text>
-  <text x="32" y="110" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b5abc8">Production MCP platforms · Self-rendering GenUI</text>
+  <text x="32" y="110" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b5abc8">Agentic AI Platforms · Self-rendering GenUI</text>
   <text x="32" y="128" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#b5abc8">Cloud infrastructure · Real-time graphics</text>
 
   <rect x="32" y="148" width="102" height="22" rx="6" fill="#2a2440" stroke="#4a4270"/>
@@ -125,7 +129,6 @@
   <rect x="318" y="148" width="84" height="22" rx="6" fill="#2a2440" stroke="#4a4270"/>
   <text x="360" y="162.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" fill="#d7c2ff">Cat Fleet</text>
 
-  <!-- Embedded Cat & Fish Fleet Aquarium -->
   <rect x="465" y="14" width="359" height="162" rx="12" fill="url(#tank-water)"/>
   <g clip-path="url(#tank-clip)">
     <path d="M465,30 Q510,25 555,30 T645,30 T735,30 T824,30 L824,14 L465,14 Z" fill="#47bfff" fill-opacity="0.08"/>
@@ -140,8 +143,8 @@
     <path d="M465,160 Q540,152 620,162 T760,155 L824,160 L824,176 L465,176 Z" fill="#1e2242" fill-opacity="0.92"/>
     <path d="M465,167 Q560,160 660,168 T824,165 L824,176 L465,176 Z" fill="#272447" fill-opacity="0.95"/>
 
-      <g transform="translate(490, 172)"><g class="anim kelp-sway" style="animation-duration:5.5s;animation-delay:-1.0s"><path d="M0,0 C-5,-14 6,-28 -3,-44 C-6,-28 4,-14 2,0 Z" fill="#266e7a" fill-opacity="0.85"/></g></g>
-      <g transform="translate(506, 174)"><g class="anim kelp-sway" style="animation-duration:6.5s;animation-delay:-3.2s"><path d="M0,0 C6,-18 -5,-36 4,-54 C7,-36 -3,-18 2,0 Z" fill="#349496" fill-opacity="0.85"/></g></g>
+      <g transform="translate(484, 172)"><g class="anim kelp-sway" style="animation-duration:5.5s;animation-delay:-1.0s"><path d="M0,0 C-5,-14 6,-28 -3,-44 C-6,-28 4,-14 2,0 Z" fill="#266e7a" fill-opacity="0.85"/></g></g>
+      <g transform="translate(498, 174)"><g class="anim kelp-sway" style="animation-duration:6.5s;animation-delay:-3.2s"><path d="M0,0 C6,-18 -5,-36 4,-54 C7,-36 -3,-18 2,0 Z" fill="#349496" fill-opacity="0.85"/></g></g>
       <g transform="translate(706, 173)"><g class="anim kelp-sway" style="animation-duration:6.0s;animation-delay:-2.1s"><path d="M0,0 C-4,-15 5,-30 -2,-48 C-5,-30 4,-15 2,0 Z" fill="#2b7a85" fill-opacity="0.85"/></g></g>
       <g transform="translate(722, 174)"><g class="anim kelp-sway" style="animation-duration:7.2s;animation-delay:-4.4s"><path d="M0,0 C5,-12 -4,-24 3,-36 C6,-24 -2,-12 2,0 Z" fill="#3b8f9c" fill-opacity="0.85"/></g></g>
       <g transform="translate(525, 96)">
@@ -256,37 +259,82 @@
       <g transform="translate(694, 150)"><circle class="anim bubble-rise" cx="0" cy="0" r="2.2" fill="#47bfff" fill-opacity="0.42" stroke="#47bfff" stroke-opacity="0.7" stroke-width="0.6" style="animation-duration:4.8s;animation-delay:-1.6s"/></g>
       <g transform="translate(726, 142)"><circle class="anim bubble-rise" cx="0" cy="0" r="1.9" fill="#7ee0ff" fill-opacity="0.42" stroke="#7ee0ff" stroke-opacity="0.7" stroke-width="0.6" style="animation-duration:5.8s;animation-delay:-4.1s"/></g>
 
-    <!-- Watching Lavender Cat -->
-    <g>
-      <g transform="translate(800, 166)">
-        <g class="anim cat-tail">
-          <path d="M0,0 C11,-2 17,-14 13,-24 C11,-28 7,-26 8,-22 C10,-16 7,-8 -1,-4 Z" fill="#d7c2ff"/>
-        </g>
+  <g transform="translate(532, 166) scale(1, 1) scale(0.72)">
+  <g class="anim cat-peek">
+    <path d="M-16,-20 L-19,-38 C-19,-40 -16,-41 -14,-39 L-3,-28 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M-14.5,-22 L-16.5,-34 L-6.5,-27 Z" fill="#ebb0a8"/>
+    <g transform="translate(12, -24)">
+      <g class="anim cat-ear">
+        <path d="M-9,-4 L2,-15 C4,-17 7,-16 7,-14 L4,4 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.1" stroke-linejoin="round"/>
+        <path d="M-5.5,-3 L4.5,-10 L2.5,2 Z" fill="#ebb0a8"/>
       </g>
-      <path d="M768,176 C768,154 774,142 785,142 C796,142 802,154 802,176 Z" fill="#e8d7ff"/>
-      <ellipse cx="785" cy="159" rx="7.5" ry="11" fill="#d7c2ff" fill-opacity="0.55"/>
-      <g transform="translate(770, 158)">
-        <g class="anim cat-paw">
-          <ellipse cx="-6" cy="0" rx="7" ry="4" fill="#e8d7ff" stroke="#1c1730" stroke-width="0.6"/>
-        </g>
-      </g>
-      <polygon points="771,122 773,105 781,116" fill="#e8d7ff"/>
-      <polygon points="773,119 774.5,109 779,116" fill="#c3a4f5"/>
-      <g transform="translate(795, 118)">
-        <g class="anim cat-ear">
-          <polygon points="-5,-2 3,-13 5,4" fill="#e8d7ff"/>
-          <polygon points="-3,-2 2,-9.5 3,2" fill="#c3a4f5"/>
-        </g>
-      </g>
-      <ellipse cx="785" cy="128" rx="16" ry="14" fill="#e8d7ff"/>
-      <g class="anim cat-blink">
-        <ellipse cx="779" cy="126.5" rx="2.7" ry="3.2" fill="#161225"/>
-        <circle cx="779.8" cy="125.6" r="1.0" fill="#47bfff"/>
-        <ellipse cx="791" cy="126.5" rx="2.7" ry="3.2" fill="#161225"/>
-        <circle cx="791.8" cy="125.6" r="1.0" fill="#47bfff"/>
-      </g>
-      <path d="M783 132.5 C784 134.5 786 134.5 787 132.5" fill="none" stroke="#863bff" stroke-width="1.4" stroke-linecap="round"/>
     </g>
+    <path d="M-19,-13 C-19,-24 -11,-30 0,-30 C11,-30 19,-24 19,-13 C20,-3 13,3 0,3 C-13,3 -20,-3 -19,-13 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.15"/>
+    <g transform="translate(0, -14)"><path d="M-4.5,-13.5 L-2.5,-9 L0,-12 L2.5,-9 L4.5,-13.5" fill="none" stroke="#6e3f19" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/><path d="M-15,-3 L-10,-2 M-15.5,1 L-10.5,1.5 M15,-3 L10,-2 M15.5,1 L10.5,1.5" fill="none" stroke="#6e3f19" stroke-width="1.25" stroke-linecap="round"/></g>
+    <ellipse cx="-11.5" cy="-8" rx="3.4" ry="1.8" fill="#f29494" fill-opacity="0.38"/>
+    <ellipse cx="11.5" cy="-8" rx="3.4" ry="1.8" fill="#f29494" fill-opacity="0.38"/>
+    <g class="anim cat-blink">
+      <ellipse cx="-7.5" cy="-14" rx="3.6" ry="4.2" fill="#6ee094"/>
+      <ellipse cx="-7.5" cy="-14" rx="1.9" ry="3.1" fill="#161225"/>
+      <circle cx="-6.2" cy="-15.5" r="1.25" fill="#ffffff"/>
+      <ellipse cx="7.5" cy="-14" rx="3.6" ry="4.2" fill="#6ee094"/>
+      <ellipse cx="7.5" cy="-14" rx="1.9" ry="3.1" fill="#161225"/>
+      <circle cx="8.8" cy="-15.5" r="1.25" fill="#ffffff"/>
+    </g>
+    <polygon points="-1.8,-9.5 1.8,-9.5 0,-7.5" fill="#e58888"/>
+    <path d="M-3.5,-6.2 Q-1.8,-4.5 0,-6.5 Q1.8,-4.5 3.5,-6.2" fill="none" stroke="#5c3314" stroke-width="1.35" stroke-linecap="round"/>
+    <g stroke="#faebd7" stroke-width="0.9" stroke-linecap="round" fill="none">
+      <path d="M-12,-9.5 Q-19,-11 -24,-10"/><path d="M-12.5,-7.5 Q-20,-7.5 -25,-6.5"/>
+      <path d="M12,-9.5 Q19,-11 24,-10"/><path d="M12.5,-7.5 Q20,-7.5 25,-6.5"/>
+    </g>
+    <ellipse cx="-11" cy="3.5" rx="5.5" ry="3.8" fill="#faebd7" stroke="#6e3f19" stroke-width="1"/>
+    <ellipse cx="11" cy="3.5" rx="5.5" ry="3.8" fill="#faebd7" stroke="#6e3f19" stroke-width="1"/>
+  </g>
+  </g>
+  <g transform="translate(784, 144) scale(1, 1) scale(0.95)">
+  <ellipse cx="0" cy="30" rx="21" ry="3.8" fill="#000000" fill-opacity="0.22"/>
+  <g transform="translate(14, 24)">
+    <g class="anim cat-tail">
+      <path d="M0,0 C13,-2 21,-16 16,-29 C14,-33 9,-31 10,-26 C12,-18 8,-8 -2,-3 Z" fill="#ddd6ee" stroke="#c4b6e6" stroke-width="1"/>
+      
+    </g>
+  </g>
+  <g class="anim cat-breathe">
+    <path d="M-18,28 C-20,11 -13,-4 0,-4 C13,-4 20,11 18,28 C18,30.5 14,31.5 0,31.5 C-14,31.5 -18,30.5 -18,28 Z" fill="#f8f6fc" stroke="#c4b6e6" stroke-width="1.1"/>
+    <ellipse cx="0" cy="14" rx="8.5" ry="11.5" fill="#ffffff" fill-opacity="0.92"/>
+    <g transform="translate(0, 12)"></g>
+    <ellipse cx="-8.5" cy="28.2" rx="5.8" ry="3.6" fill="#ffffff" stroke="#c4b6e6" stroke-width="0.95"/>
+    <ellipse cx="8.5" cy="28.2" rx="5.8" ry="3.6" fill="#ffffff" stroke="#c4b6e6" stroke-width="0.95"/>
+  </g>
+  <path d="M-16,-22 L-19,-40 C-19,-42 -16,-43 -14,-41 L-3,-30 Z" fill="#f8f6fc" stroke="#c4b6e6" stroke-width="1.1" stroke-linejoin="round"/>
+  <path d="M-14.5,-24 L-16.5,-36 L-6.5,-29 Z" fill="#f4b4cc"/>
+  <g transform="translate(12, -26)">
+    <g class="anim cat-ear">
+      <path d="M-9,-4 L2,-15 C4,-17 7,-16 7,-14 L4,4 Z" fill="#f8f6fc" stroke="#c4b6e6" stroke-width="1.1" stroke-linejoin="round"/>
+      <path d="M-5.5,-3 L4.5,-10 L2.5,2 Z" fill="#f4b4cc"/>
+    </g>
+  </g>
+  <path d="M-19,-15 C-19,-26 -11,-32 0,-32 C11,-32 19,-26 19,-15 C20,-5 13,1 0,1 C-13,1 -20,-5 -19,-15 Z" fill="#f8f6fc" stroke="#c4b6e6" stroke-width="1.15"/>
+  <g transform="translate(0, -16)"><path d="M-3,-13.5 Q0,-16 3,-13.5" fill="none" stroke="#e8e1f7" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/></g>
+  <ellipse cx="-11.5" cy="-10" rx="3.4" ry="1.8" fill="#f49ac1" fill-opacity="0.38"/>
+  <ellipse cx="11.5" cy="-10" rx="3.4" ry="1.8" fill="#f49ac1" fill-opacity="0.38"/>
+  <g class="anim cat-blink">
+    <ellipse cx="-7.5" cy="-16" rx="3.6" ry="4.2" fill="#47bfff"/>
+    <ellipse cx="-7.5" cy="-16" rx="1.9" ry="3.1" fill="#161225"/>
+    <circle cx="-6.2" cy="-17.5" r="1.25" fill="#ffffff"/>
+    <circle cx="-8.5" cy="-14.2" r="0.65" fill="#ffffff" fill-opacity="0.85"/>
+    <ellipse cx="7.5" cy="-16" rx="3.6" ry="4.2" fill="#47bfff"/>
+    <ellipse cx="7.5" cy="-16" rx="1.9" ry="3.1" fill="#161225"/>
+    <circle cx="8.8" cy="-17.5" r="1.25" fill="#ffffff"/>
+    <circle cx="6.5" cy="-14.2" r="0.65" fill="#ffffff" fill-opacity="0.85"/>
+  </g>
+  <polygon points="-1.8,-11.5 1.8,-11.5 0,-9.5" fill="#f09ab8"/>
+  <path d="M-3.5,-8.2 Q-1.8,-6.5 0,-8.5 Q1.8,-6.5 3.5,-8.2" fill="none" stroke="#863bff" stroke-width="1.35" stroke-linecap="round"/>
+  <g stroke="#c9bfe0" stroke-width="0.9" stroke-linecap="round" fill="none">
+    <path d="M-12,-11.5 Q-19,-13 -24,-12"/><path d="M-12.5,-9.5 Q-20,-9.5 -25,-8.5"/><path d="M-12,-7.5 Q-18,-6 -23,-4.5"/>
+    <path d="M12,-11.5 Q19,-13 24,-12"/><path d="M12.5,-9.5 Q20,-9.5 25,-8.5"/><path d="M12,-7.5 Q18,-6 23,-4.5"/>
+  </g>
+  </g>
 
     <polygon points="465,14 610,14 525,176 465,176" fill="url(#tank-sheen)"/>
   </g>

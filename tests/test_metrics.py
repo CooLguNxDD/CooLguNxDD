@@ -1,4 +1,4 @@
-"""Unit tests for pure metrics calculation and color/bar helpers."""
+"""Unit tests for pure metrics calculation, breed selection, and color/bar helpers."""
 
 from __future__ import annotations
 
@@ -9,7 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from stats_gen.config import load_config  # noqa: E402
+from stats_gen.cats import select_roaming_breeds  # noqa: E402
+from stats_gen.config import load_breeds, load_config  # noqa: E402
 from stats_gen.metrics import (  # noqa: E402
     aggregate_languages,
     allocate_bar_widths,
@@ -23,6 +24,7 @@ class TestMetrics(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.cfg = load_config(ROOT / "config" / "profile.json")
+        cls.breeds = load_breeds(ROOT / "config" / "breeds.json")
 
     def test_streaks_active_today(self) -> None:
         days = [
@@ -98,6 +100,20 @@ class TestMetrics(unittest.TestCase):
         self.assertEqual(format_compact(999, fmt), "999")
         self.assertEqual(format_compact(6888, fmt), "6.9k")
         self.assertEqual(format_compact(125000, fmt), "125k")
+
+    def test_select_roaming_breeds_deterministic_and_excludes_pinned(self) -> None:
+        a = select_roaming_breeds(self.breeds, 4, "2026-11-19")
+        b = select_roaming_breeds(self.breeds, 4, "2026-11-19")
+        self.assertEqual(a, b)
+        self.assertEqual(len(set(a)), 4)
+        self.assertNotIn("white", a)
+        self.assertNotIn("black", a)
+
+        different_seen = any(
+            select_roaming_breeds(self.breeds, 4, f"2026-11-{day:02d}") != a
+            for day in range(20, 26)
+        )
+        self.assertTrue(different_seen)
 
 
 if __name__ == "__main__":

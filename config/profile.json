@@ -81,11 +81,11 @@
     "title_id": "hero-title",
     "desc_id": "hero-desc",
     "title": "Andrew Liang — DevOps & Agentic AI Systems Engineer",
-    "desc": "Production MCP platforms, self-rendering GenUI, cloud infrastructure, and real-time graphics with an animated Cat Fleet aquarium.",
+    "desc": "Agentic AI Platforms, self-rendering GenUI, cloud infrastructure, and real-time graphics with an animated Cat Fleet aquarium.",
     "name": "Andrew Liang",
     "handle": "@CooLguNxDD",
     "role": "DevOps & Agentic AI Systems Engineer",
-    "tagline_1": "Production MCP platforms · Self-rendering GenUI",
+    "tagline_1": "Agentic AI Platforms · Self-rendering GenUI",
     "tagline_2": "Cloud infrastructure · Real-time graphics",
     "chips": [
       {
@@ -127,11 +127,13 @@
       "rx": 12,
       "clip_id": "tank-clip",
       "kelp": [
-        {"x": 490, "y": 172, "color": "#266e7a", "dur_sec": "5.5", "delay_sec": "-1.0", "path": "M0,0 C-5,-14 6,-28 -3,-44 C-6,-28 4,-14 2,0 Z"},
-        {"x": 506, "y": 174, "color": "#349496", "dur_sec": "6.5", "delay_sec": "-3.2", "path": "M0,0 C6,-18 -5,-36 4,-54 C7,-36 -3,-18 2,0 Z"},
+        {"x": 484, "y": 172, "color": "#266e7a", "dur_sec": "5.5", "delay_sec": "-1.0", "path": "M0,0 C-5,-14 6,-28 -3,-44 C-6,-28 4,-14 2,0 Z"},
+        {"x": 498, "y": 174, "color": "#349496", "dur_sec": "6.5", "delay_sec": "-3.2", "path": "M0,0 C6,-18 -5,-36 4,-54 C7,-36 -3,-18 2,0 Z"},
         {"x": 706, "y": 173, "color": "#2b7a85", "dur_sec": "6.0", "delay_sec": "-2.1", "path": "M0,0 C-4,-15 5,-30 -2,-48 C-5,-30 4,-15 2,0 Z"},
         {"x": 722, "y": 174, "color": "#3b8f9c", "dur_sec": "7.2", "delay_sec": "-4.4", "path": "M0,0 C5,-12 -4,-24 3,-36 C6,-24 -2,-12 2,0 Z"}
       ],
+      "main_cat": {"breed": "white", "pose": "sit", "x": 784, "y": 144, "scale": "0.95", "flip": "1"},
+      "companion_cat": {"pose": "peek", "x": 532, "y": 166, "scale": "0.72", "flip": "1"},
       "fish": [
         {"x": 545, "y": 52, "direction": "right", "scale": "1.0", "body_color": "#a77bff", "fin_color": "#d7c2ff", "eye_color": "#14111f", "anim_class": "swim-r", "dur_sec": "11", "delay_sec": "-2", "tail_dur_sec": "0.75"},
         {"x": 645, "y": 86, "direction": "left", "scale": "0.92", "body_color": "#47bfff", "fin_color": "#7ee0ff", "eye_color": "#14111f", "anim_class": "swim-l", "dur_sec": "13", "delay_sec": "-6", "tail_dur_sec": "0.85"},
@@ -270,6 +272,45 @@
     "footer_x": 24,
     "footer_y": 181
   },
+  "catportfolio_card": {
+    "width": 440,
+    "height": 140,
+    "clip_id": "cp-clip",
+    "title_id": "cp-title",
+    "desc_id": "cp-desc",
+    "title": "CatPortfolio",
+    "desc": "Self-rendering GenUI portfolio — React 19, Three.js aquarium, Zod layout. Live at coolgunxdd.github.io/CatPortfolio",
+    "badge": "LIVE",
+    "subtitle": "Self-rendering GenUI · WebGL aquarium",
+    "url_text": "coolgunxdd.github.io/CatPortfolio →",
+    "cat": {"breed": "black", "pose": "sit", "x": 48, "y": 78, "scale": "0.86", "flip": "1"},
+    "chips": [
+      {"text": "React 19", "x": 88, "y": 80, "width": 62, "height": 22, "text_x": 119, "text_y": 95},
+      {"text": "Three.js", "x": 156, "y": 80, "width": 64, "height": 22, "text_x": 188, "text_y": 95},
+      {"text": "Zod", "x": 226, "y": 80, "width": 42, "height": 22, "text_x": 247, "text_y": 95},
+      {"text": "Vite", "x": 274, "y": 80, "width": 44, "height": 22, "text_x": 296, "text_y": 95}
+    ],
+    "bubbles": [
+      {"cx": 400, "cy": 28, "r": "3", "color": "#47bfff", "opacity": "0.35", "dur_sec": "4.2", "delay_sec": "-1.0"},
+      {"cx": 412, "cy": 48, "r": "2", "color": "#863bff", "opacity": "0.4", "dur_sec": "3.6", "delay_sec": "-2.2"},
+      {"cx": 392, "cy": 58, "r": "1.5", "color": "#47bfff", "opacity": "0.3", "dur_sec": "4.8", "delay_sec": "-0.5"}
+    ]
+  },
+  "cat_strip": {
+    "width": 840,
+    "height": 118,
+    "clip_id": "strip-clip",
+    "title_id": "strip-title",
+    "desc_id": "strip-desc",
+    "title": "Cat Fleet",
+    "badge": "DAILY BREEDS",
+    "desc": "Daily rotating animated cat breeds — strolling, napping, and playing.",
+    "slots": [
+      {"pose": "stroll", "x": 148, "y": 74, "scale": "0.90", "flip": "1", "label_x": 148, "label_y": 108, "action": "strolling"},
+      {"pose": "nap", "x": 420, "y": 77, "scale": "0.94", "flip": "1", "label_x": 420, "label_y": 108, "action": "napping"},
+      {"pose": "play", "x": 686, "y": 74, "scale": "0.90", "flip": "1", "label_x": 690, "label_y": 108, "action": "playing"}
+    ]
+  },
   "messages": {
     "missing_token": "Error: set STATS_TOKEN or GITHUB_TOKEN before running generate_stats.py",
     "missing_user": "Error: GitHub user '{username}' not found",
@@ -293,9 +334,15 @@
     "cli_summary_repos": "  repos_count={repos_count}",
     "cli_summary_langs": "  top_langs={langs}",
     "cli_lang_item": "{name} ({pct:.1f}%)",
-    "cli_hero_done": "Generated hero banner"
+    "cli_hero_done": "Generated offline cards",
+    "cli_cat_fleet": "  cats_seed={seed}, hero_companion={companion}, strip_breeds={strip_breeds}",
+    "strip_slot_label": "{label} · {action}"
   },
   "svg_snippets": {
+    "cat_wrapper": "  <g transform=\"translate(${x}, ${y}) scale(${flip}, 1) scale(${scale})\">\n${inner}\n  </g>",
+    "cp_chip": "  <rect x=\"${x}\" y=\"${y}\" width=\"${width}\" height=\"${height}\" rx=\"6\" fill=\"${chip_bg}\" stroke=\"${chip_border}\"/>\n  <text x=\"${text_x}\" y=\"${text_y}\" text-anchor=\"middle\" font-family=\"${font_family}\" font-size=\"11\" fill=\"${color}\">${text}</text>",
+    "cp_bubble": "  <circle class=\"anim cp-bubble\" cx=\"${cx}\" cy=\"${cy}\" r=\"${r}\" fill=\"${color}\" fill-opacity=\"${opacity}\" style=\"animation-duration:${dur_sec}s;animation-delay:${delay_sec}s\"/>",
+    "strip_slot_label": "  <text x=\"${x}\" y=\"${y}\" text-anchor=\"middle\" font-family=\"${font_family}\" font-size=\"10\" fill=\"${color}\">${text}</text>",
     "hero_chip": "  <rect x=\"${x}\" y=\"${y}\" width=\"${width}\" height=\"${height}\" rx=\"6\" fill=\"${chip_bg}\" stroke=\"${chip_border}\"/>\n  <text x=\"${text_x}\" y=\"${text_y}\" text-anchor=\"middle\" font-family=\"${font_family}\" font-size=\"10.5\" fill=\"${color}\">${text}</text>",
     "aquarium_kelp": "      <g transform=\"translate(${x}, ${y})\"><g class=\"anim kelp-sway\" style=\"animation-duration:${dur_sec}s;animation-delay:${delay_sec}s\"><path d=\"${path}\" fill=\"${color}\" fill-opacity=\"0.85\"/></g></g>",
     "aquarium_fish": "      <g transform=\"translate(${x}, ${y})\">\n        <g class=\"anim ${anim_class}\" style=\"animation-duration:${dur_sec}s;animation-delay:${delay_sec}s\">\n          <g transform=\"scale(${dir_scale}, 1) scale(${scale})\">\n            <g transform=\"translate(-9, 0)\">\n              <g class=\"anim tail-wag\" style=\"animation-duration:${tail_dur_sec}s\">\n                <polygon points=\"0,0 -10,-5.5 -8,0 -10,5.5\" fill=\"${fin_color}\" fill-opacity=\"0.9\"/>\n              </g>\n            </g>\n            <polygon points=\"-2,-6 4,-11 6,-5\" fill=\"${fin_color}\" fill-opacity=\"0.85\"/>\n            <ellipse cx=\"2\" cy=\"0\" rx=\"13\" ry=\"6.5\" fill=\"${body_color}\"/>\n            <ellipse cx=\"4\" cy=\"-1.5\" rx=\"7\" ry=\"3\" fill=\"${fin_color}\" fill-opacity=\"0.28\"/>\n            <polygon points=\"0,2 -4,7 3,5\" fill=\"${fin_color}\" fill-opacity=\"0.85\"/>\n            <circle cx=\"9.5\" cy=\"-1.2\" r=\"1.5\" fill=\"${eye_color}\"/>\n            <circle cx=\"10.1\" cy=\"-1.8\" r=\"0.55\" fill=\"#ffffff\"/>\n          </g>\n        </g>\n      </g>",

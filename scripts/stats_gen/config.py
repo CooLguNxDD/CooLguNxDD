@@ -18,11 +18,33 @@ REQUIRED_SECTIONS = (
     "color_norm",
     "excluded_languages",
     "hero",
+    "catportfolio_card",
+    "cat_strip",
     "stats_card",
     "langs_card",
     "messages",
     "svg_snippets",
 )
+
+BREED_HEX_KEYS = (
+    "coat",
+    "coat_shadow",
+    "coat_rim",
+    "chest",
+    "inner_ear",
+    "eye",
+    "pupil",
+    "nose",
+    "mouth",
+    "blush",
+    "whisker",
+    "accent",
+    "accent2",
+)
+
+REQUIRED_BREED_POSES = ("sit", "peek", "stroll", "nap", "play")
+REQUIRED_BREED_PATTERNS = ("solid", "tabby", "calico", "tuxedo", "pointed", "nebula")
+MIN_ROAMING_BREEDS = 4
 
 THEME_HEX_KEYS = (
     "bg_start",
@@ -53,6 +75,10 @@ POSITIVE_NUMBER_PATHS = (
     ("formatting", "pct_scale"),
     ("hero", "width"),
     ("hero", "height"),
+    ("catportfolio_card", "width"),
+    ("catportfolio_card", "height"),
+    ("cat_strip", "width"),
+    ("cat_strip", "height"),
     ("stats_card", "width"),
     ("stats_card", "height"),
     ("langs_card", "width"),
@@ -91,6 +117,8 @@ def _validate_shapes(cfg: dict[str, Any]) -> None:
     non_empty = (
         cfg["hero"].get("chips"),
         cfg["hero"].get("aquarium", {}).get("fish"),
+        cfg["catportfolio_card"].get("chips"),
+        cfg["cat_strip"].get("slots"),
         cfg["stats_card"].get("rows"),
         cfg["langs_card"].get("legend", {}).get("cols"),
     )
@@ -109,6 +137,39 @@ def load_config(path: Path) -> dict[str, Any]:
     _validate_theme(raw["theme"])
     _validate_numbers(raw)
     _validate_shapes(raw)
+    return raw
+
+
+def _validate_breed_entry(breed_id: str, spec: dict[str, Any], patterns: set[str]) -> None:
+    if not isinstance(spec, dict) or spec.get("pattern") not in patterns:
+        raise ValueError(f"breed.{breed_id} invalid pattern")
+    for key in BREED_HEX_KEYS:
+        val = spec.get(key)
+        if not isinstance(val, str) or not HEX_COLOR_RE.match(val):
+            raise ValueError(f"breed.{breed_id}.{key} invalid hex: {val!r}")
+
+
+def load_breeds(path: Path) -> dict[str, Any]:
+    """Load breeds.json and verify pinned breeds, roaming pool, and poses."""
+    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(raw, dict) or not isinstance(raw.get("breeds"), dict):
+        raise ValueError("breeds.json missing breeds object")
+    markings, poses = raw.get("markings"), raw.get("poses")
+    if not isinstance(markings, dict) or not isinstance(poses, dict):
+        raise ValueError("breeds.json missing markings or poses")
+    if any(p not in markings for p in REQUIRED_BREED_PATTERNS):
+        raise ValueError("breeds.json missing pattern template")
+    if any(p not in poses for p in REQUIRED_BREED_POSES):
+        raise ValueError("breeds.json missing pose template")
+    breeds = raw["breeds"]
+    for pinned in ("white", "black"):
+        if pinned not in breeds:
+            raise ValueError(f"breeds.json missing pinned breed: {pinned}")
+    for bid, spec in breeds.items():
+        _validate_breed_entry(bid, spec, set(markings.keys()))
+    roaming = [bid for bid, spec in breeds.items() if spec.get("roaming")]
+    if len(roaming) < MIN_ROAMING_BREEDS:
+        raise ValueError("breeds.json needs at least 4 roaming breeds")
     return raw
 
 

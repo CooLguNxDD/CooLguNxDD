@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import re
 import sys
 import unittest
 import xml.etree.ElementTree as ET
@@ -11,15 +12,25 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from stats_gen.config import load_config, load_text_bundle  # noqa: E402
+from stats_gen.cats import select_roaming_breeds  # noqa: E402
+from stats_gen.config import load_breeds, load_config, load_text_bundle  # noqa: E402
 from stats_gen.github_io import redact_secret  # noqa: E402
-from stats_gen.svg import CARD_RENDERERS, render_hero_svg, sanitize_color  # noqa: E402
+from stats_gen.svg import (  # noqa: E402
+    CARD_RENDERERS,
+    render_cat_strip_svg,
+    render_catportfolio_svg,
+    render_hero_svg,
+    sanitize_color,
+)
+
+SEED_RE = re.compile(r"<!-- seed: ([A-Za-z0-9_.:-]+) -->")
 
 
 class TestSvgAndDrift(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.cfg = load_config(ROOT / "config" / "profile.json")
+        cls.breeds = load_breeds(ROOT / "config" / "breeds.json")
         cls.bundle = load_text_bundle(ROOT)
         cls.sample_metrics = {
             "contribs_12m": 6889,
@@ -38,27 +49,58 @@ class TestSvgAndDrift(unittest.TestCase):
             ],
         }
 
-    def test_hero_aquarium_animations_and_reduced_motion(self) -> None:
-        hero_svg = render_hero_svg(self.cfg, self.bundle["templates"])
+    def test_hero_aquarium_white_cat_and_reduced_motion(self) -> None:
+        roaming = select_roaming_breeds(self.breeds, 4, "2026-11-19")
+        hero_svg = render_hero_svg(
+            self.cfg, self.breeds, self.bundle["templates"],
+            companion_breed_id=roaming[0], seed="2026-11-19",
+        )
         root_el = ET.fromstring(hero_svg)
         self.assertIsNone(root_el.find(".//{http://www.w3.org/2000/svg}script"))
         self.assertIn("@keyframes", hero_svg)
         self.assertIn("prefers-reduced-motion: reduce", hero_svg)
+        self.assertIn(self.breeds["breeds"]["white"]["coat"], hero_svg)
+        self.assertIn("Agentic AI Platforms", hero_svg)
+        self.assertNotIn("Production MCP platforms", hero_svg)
         for fish in self.cfg["hero"]["aquarium"]["fish"]:
             self.assertIn(fish["body_color"], hero_svg)
-        self.assertIn("cat-tail", hero_svg)
-        self.assertIn("cat-blink", hero_svg)
 
-    def test_stats_and_langs_render_valid_xml_no_scripts(self) -> None:
+    def test_catportfolio_black_cat_and_strip_animations(self) -> None:
+        cp_svg = render_catportfolio_svg(self.cfg, self.breeds, self.bundle["templates"])
+        ET.fromstring(cp_svg)
+        self.assertNotIn("<script", cp_svg.lower())
+        self.assertIn("@keyframes", cp_svg)
+        self.assertIn("prefers-reduced-motion: reduce", cp_svg)
+        self.assertIn(self.breeds["breeds"]["black"]["coat"], cp_svg)
+        self.assertIn(self.breeds["breeds"]["black"]["coat_rim"], cp_svg)
+
+        roaming = select_roaming_breeds(self.breeds, 4, "2026-11-19")
+        strip_svg = render_cat_strip_svg(
+            self.cfg, self.breeds, self.bundle["templates"],
+            roaming_ids=roaming[1:], seed="2026-11-19",
+        )
+        ET.fromstring(strip_svg)
+        self.assertNotIn("<script", strip_svg.lower())
+        self.assertIn("@keyframes", strip_svg)
+        self.assertIn("prefers-reduced-motion: reduce", strip_svg)
+        for bid in roaming[1:]:
+            self.assertIn(self.breeds["breeds"][bid]["label"], strip_svg)
+
+    def test_all_renderers_valid_xml_no_scripts(self) -> None:
+        roaming = select_roaming_breeds(self.breeds, 4, "2026-11-19")
         ctx = {
             "cfg": self.cfg,
+            "breeds": self.breeds,
             "templates": self.bundle["templates"],
             "metrics": self.sample_metrics,
+            "seed": "2026-11-19",
+            "companion_breed_id": roaming[0],
+            "strip_breed_ids": roaming[1:],
             "include_private": False,
             "has_exclusions": True,
             "updated_date": "2026-11-19",
         }
-        for key in ("hero", "stats", "top_langs"):
+        for key in ("hero", "catportfolio", "cat_strip", "stats", "top_langs"):
             svg_text = CARD_RENDERERS[key](ctx)
             tree = ET.fromstring(svg_text)
             self.assertIsNone(tree.find(".//{http://www.w3.org/2000/svg}script"))
@@ -84,13 +126,33 @@ class TestSvgAndDrift(unittest.TestCase):
         self.assertEqual(sanitize_color("not-a-color", "#863bff"), "#863bff")
         self.assertEqual(redact_secret("failed bearer ghp_secret123 here", "ghp_secret123"), "failed bearer [REDACTED] here")
 
-    def test_hero_banner_no_drift(self) -> None:
-        on_disk = (ROOT / "assets" / "hero-banner.svg").read_text(encoding="utf-8")
-        rendered = render_hero_svg(self.cfg, self.bundle["templates"])
-        self.assertEqual(on_disk, rendered)
+    def test_generated_cat_svgs_no_drift(self) -> None:
+        cp_disk = (ROOT / "assets" / "catportfolio-card.svg").read_text(encoding="utf-8")
+        self.assertEqual(cp_disk, render_catportfolio_svg(self.cfg, self.breeds, self.bundle["templates"]))
+
+        hero_disk = (ROOT / "assets" / "hero-banner.svg").read_text(encoding="utf-8")
+        hero_match = SEED_RE.search(hero_disk)
+        self.assertIsNotNone(hero_match)
+        hero_seed = hero_match.group(1)
+        hero_roaming = select_roaming_breeds(self.breeds, 4, hero_seed)
+        self.assertEqual(
+            hero_disk,
+            render_hero_svg(self.cfg, self.breeds, self.bundle["templates"], companion_breed_id=hero_roaming[0], seed=hero_seed),
+        )
+
+        strip_disk = (ROOT / "assets" / "cat-fleet-strip.svg").read_text(encoding="utf-8")
+        strip_match = SEED_RE.search(strip_disk)
+        self.assertIsNotNone(strip_match)
+        strip_seed = strip_match.group(1)
+        strip_roaming = select_roaming_breeds(self.breeds, 4, strip_seed)
+        self.assertEqual(
+            strip_disk,
+            render_cat_strip_svg(self.cfg, self.breeds, self.bundle["templates"], roaming_ids=strip_roaming[1:], seed=strip_seed),
+        )
 
     def test_on_disk_generated_svgs_valid_xml_no_bom(self) -> None:
-        for name in ("hero-banner.svg", "github-stats.svg", "top-langs.svg"):
+        names = ("hero-banner.svg", "catportfolio-card.svg", "cat-fleet-strip.svg", "github-stats.svg", "top-langs.svg")
+        for name in names:
             raw = (ROOT / "assets" / name).read_bytes()
             self.assertFalse(raw.startswith(b"\xef\xbb\xbf"), f"UTF-8 BOM in {name}")
             ET.fromstring(raw.decode("utf-8"))

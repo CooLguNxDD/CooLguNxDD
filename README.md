@@ -8,7 +8,7 @@
   <a href="https://coolgunxdd.itch.io"><img src="https://img.shields.io/badge/Itch.io-Games_%26_Jams-863bff?style=for-the-badge&labelColor=1c1730" alt="Itch.io" /></a>
 </p>
 
-I build production MCP platforms, self-rendering GenUI, and cloud infrastructure — with a background in real-time graphics.
+I build Agentic AI platforms, self-rendering GenUI, and cloud infrastructure — with a background in real-time graphics.
 
 - 🧠 **Agentic AI & MCP** — FastMCP, LangGraph, GOAP, pgvector
 - 💻 **Full-Stack & GenUI** — React 19, TypeScript, Python, Node.js, SolidJS
@@ -39,7 +39,11 @@ I build production MCP platforms, self-rendering GenUI, and cloud infrastructure
   </a>
 </p>
 
-<sub>Self-hosted SVG cards driven by <a href="./config/profile.json"><code>config/profile.json</code></a>, generated via <a href="./scripts/generate_stats.py"><code>scripts/generate_stats.py</code></a> and <a href="./.github/workflows/update-stats.yml">GitHub Actions</a> — zero third-party OAuth apps.</sub>
+<sub>Self-hosted SVG cards driven by <a href="./config/profile.json"><code>config/profile.json</code></a> and <a href="./config/breeds.json"><code>config/breeds.json</code></a>, generated via <a href="./scripts/generate_stats.py"><code>scripts/generate_stats.py</code></a> and <a href="./.github/workflows/update-stats.yml">GitHub Actions</a> — zero third-party OAuth apps.</sub>
+
+<p align="center">
+  <img src="./assets/cat-fleet-strip.svg" alt="Cat Fleet — daily rotating animated cat breeds" width="100%" />
+</p>
 
 ## Tech Stack
 

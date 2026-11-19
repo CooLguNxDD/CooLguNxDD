@@ -14,13 +14,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from stats_gen.config import load_config  # noqa: E402
+from stats_gen.config import load_breeds, load_config  # noqa: E402
 
 MAX_FUNC_LINES = 60
 MAX_IF_ARMS = 3
 MAX_NEST_DEPTH = 2
 MAX_MATCH_CASES = 3
 FORBIDDEN_PURE_IMPORTS = {"github_io", "urllib", "http", "socket", "os", "datetime"}
+FORBIDDEN_CATS_IMPORTS = FORBIDDEN_PURE_IMPORTS | {"svg"}
 
 
 def _is_elif(node: ast.If) -> bool:
@@ -110,17 +111,30 @@ class TestFleetRules(unittest.TestCase):
             overlap = imported & FORBIDDEN_PURE_IMPORTS
             self.assertEqual(overlap, set(), f"{rel} imported forbidden modules: {overlap}")
 
-    def test_config_contract_validation(self) -> None:
+        cats_imports = _imported_roots(ROOT / "scripts/stats_gen/cats.py")
+        self.assertEqual(cats_imports & FORBIDDEN_CATS_IMPORTS, set())
+
+    def test_config_and_breeds_contract_validation(self) -> None:
         cfg = load_config(ROOT / "config" / "profile.json")
         self.assertEqual(cfg["username"], "CooLguNxDD")
+        breeds = load_breeds(ROOT / "config" / "breeds.json")
+        self.assertIn("white", breeds["breeds"])
+        self.assertIn("black", breeds["breeds"])
 
-        bad = copy.deepcopy(cfg)
-        bad["theme"]["bg_start"] = "invalid-hex"
+        bad_cfg = copy.deepcopy(cfg)
+        bad_cfg["theme"]["bg_start"] = "invalid-hex"
+        bad_breeds = copy.deepcopy(breeds)
+        bad_breeds["breeds"]["white"]["coat"] = "bad-color"
         with tempfile.TemporaryDirectory() as tmp:
-            bad_path = Path(tmp) / "bad.json"
-            bad_path.write_text(json.dumps(bad), encoding="utf-8")
+            bad_cfg_path = Path(tmp) / "bad.json"
+            bad_cfg_path.write_text(json.dumps(bad_cfg), encoding="utf-8")
             with self.assertRaises(ValueError):
-                load_config(bad_path)
+                load_config(bad_cfg_path)
+
+            bad_breeds_path = Path(tmp) / "bad_breeds.json"
+            bad_breeds_path.write_text(json.dumps(bad_breeds), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_breeds(bad_breeds_path)
 
     def test_docs_and_readme_links(self) -> None:
         self.assertTrue((ROOT / ".fleet-rules.md").is_file())
@@ -128,7 +142,8 @@ class TestFleetRules(unittest.TestCase):
         self.assertIn(".fleet-rules.md", (ROOT / "AGENTS.md").read_text(encoding="utf-8"))
 
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        for forbidden in ("vercel.app", "github-stats-extended", "github-readme-stats"):
+        self.assertIn("Agentic AI platforms", readme)
+        for forbidden in ("vercel.app", "github-stats-extended", "github-readme-stats", "production MCP platforms"):
             self.assertNotIn(forbidden, readme)
         for rel in re.findall(r"\./[A-Za-z0-9_./-]+", readme):
             self.assertTrue((ROOT / rel[2:]).exists(), f"Missing path referenced in README.md: {rel}")
