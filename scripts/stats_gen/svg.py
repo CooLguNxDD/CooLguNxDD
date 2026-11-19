@@ -223,7 +223,7 @@ def render_catportfolio_svg(
         font_family=_esc(theme["font_family"]), bg_start=theme["bg_start"],
         text_primary=theme["text_primary"], text_secondary=theme["text_secondary"],
         accent_start=theme["accent_start"], accent_end=theme["accent_end"],
-        pill_lavender=theme["pill_lavender"], title=_esc(card["title"]),
+        pill_lavender=theme["pill_lavender"], pill_cyan=theme["pill_cyan"], title=_esc(card["title"]),
         badge=_esc(card["badge"]), subtitle=_esc(card["subtitle"]),
         url_text=_esc(card["url_text"]), cat=cat_svg, chips=chips, bubbles=bubbles,
     )
