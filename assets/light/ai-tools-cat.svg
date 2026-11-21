@@ -168,40 +168,49 @@
   <rect x="0.5" y="0.5" width="239" height="109" rx="12" fill="url(#bg)" stroke="#bcc0cc" stroke-width="1"/>
   <rect x="0" y="0" width="5" height="110" fill="url(#accent)" clip-path="url(#ai-cat-clip)"/>
 
-  <!-- breed: tabby pose: peek -->
+  <!-- breed: nebula pose: groom -->
   <rect x="164" y="10" width="60" height="17" rx="8.5" fill="#1e66f5" fill-opacity="0.14" stroke="#1e66f5" stroke-opacity="0.55"/>
   <text x="194" y="21.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="700" fill="#0969da">CATCHING</text>
 
   <g transform="translate(76, 68) scale(1, 1) scale(0.94)">
-  <g class="anim cat-peek">
-    <path d="M-16,-20 L-19,-38 C-19,-40 -16,-41 -14,-39 L-3,-28 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.1" stroke-linejoin="round"/>
-    <path d="M-14.5,-22 L-16.5,-34 L-6.5,-27 Z" fill="#ebb0a8"/>
-    <g transform="translate(12, -24)">
+  <ellipse cx="0" cy="24" rx="21" ry="3.6" fill="#000000" fill-opacity="0.22"/>
+  <g transform="translate(14, 18)">
+    <g class="anim cat-tail">
+      <path d="M0,0 C12,-2 19,-15 14,-27 C12,-31 7,-29 8,-24 C10,-16 6,-7 -2,-3 Z" fill="#28184a" stroke="#8b62ff" stroke-width="1"/>
+    </g>
+  </g>
+  <g class="anim cat-breathe">
+    <path d="M-17,22 C-19,7 -12,-6 0,-6 C12,-6 19,7 17,22 C17,24.5 13,25.5 0,25.5 C-13,25.5 -17,24.5 -17,22 Z" fill="#3b2566" stroke="#8b62ff" stroke-width="1.1"/>
+    <ellipse cx="0" cy="10" rx="8" ry="10.5" fill="#503488" fill-opacity="0.92"/>
+    <g transform="translate(0, 8) scale(0.9)"><circle cx="-8" cy="4" r="1.2" fill="#7ee0ff"/><circle cx="7" cy="10" r="1.3" fill="#f4b4cc"/><circle cx="-5" cy="15" r="0.9" fill="#7ee0ff"/></g>
+    <ellipse cx="-8" cy="22.5" rx="5.4" ry="3.3" fill="#503488" stroke="#8b62ff" stroke-width="0.95"/>
+  </g>
+  <g class="anim groom-head">
+    <path d="M-14,-21 L-17,-37 C-17,-39 -14,-40 -12,-38 L-2,-28 Z" fill="#3b2566" stroke="#8b62ff" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M-12.5,-23 L-14.5,-34 L-5.5,-27 Z" fill="#a87bff"/>
+    <g transform="translate(11, -24)">
       <g class="anim cat-ear">
-        <path d="M-9,-4 L2,-15 C4,-17 7,-16 7,-14 L4,4 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.1" stroke-linejoin="round"/>
-        <path d="M-5.5,-3 L4.5,-10 L2.5,2 Z" fill="#ebb0a8"/>
+        <path d="M-8,-4 L2,-14 C4,-16 7,-15 7,-13 L4,4 Z" fill="#3b2566" stroke="#8b62ff" stroke-width="1.1" stroke-linejoin="round"/>
+        <path d="M-5,-3 L4,-9 L2,2 Z" fill="#a87bff"/>
       </g>
     </g>
-    <path d="M-19,-13 C-19,-24 -11,-30 0,-30 C11,-30 19,-24 19,-13 C20,-3 13,3 0,3 C-13,3 -20,-3 -19,-13 Z" fill="#df9a52" stroke="#6e3f19" stroke-width="1.15"/>
-    <g transform="translate(0, -14)"><path d="M-4.5,-13.5 L-2.5,-9 L0,-12 L2.5,-9 L4.5,-13.5" fill="none" stroke="#6e3f19" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"/><path d="M-15,-3 L-10,-2 M-15.5,1 L-10.5,1.5 M15,-3 L10,-2 M15.5,1 L10.5,1.5" fill="none" stroke="#6e3f19" stroke-width="1.25" stroke-linecap="round"/></g>
-    <ellipse cx="-11.5" cy="-8" rx="3.4" ry="1.8" fill="#f29494" fill-opacity="0.38"/>
-    <ellipse cx="11.5" cy="-8" rx="3.4" ry="1.8" fill="#f29494" fill-opacity="0.38"/>
-    <g class="anim cat-blink">
-      <ellipse cx="-7.5" cy="-14" rx="3.6" ry="4.2" fill="#6ee094"/>
-      <ellipse cx="-7.5" cy="-14" rx="1.9" ry="3.1" fill="#161225"/>
-      <circle cx="-6.2" cy="-15.5" r="1.25" fill="#ffffff"/>
-      <ellipse cx="7.5" cy="-14" rx="3.6" ry="4.2" fill="#6ee094"/>
-      <ellipse cx="7.5" cy="-14" rx="1.9" ry="3.1" fill="#161225"/>
-      <circle cx="8.8" cy="-15.5" r="1.25" fill="#ffffff"/>
+    <path d="M-17,-14 C-17,-24 -10,-30 0,-30 C10,-30 17,-24 17,-14 C18,-4 12,1 0,1 C-12,1 -18,-4 -17,-14 Z" fill="#3b2566" stroke="#8b62ff" stroke-width="1.15"/>
+    <g transform="translate(0, -15) scale(0.9)"><path d="M-3,-9.5 A3.8,3.8 0 1,1 3,-9.5 A2.9,2.9 0 1,0 -3,-9.5 Z" fill="#7ee0ff" opacity="0.9"/><circle cx="-9" cy="-11" r="1.1" fill="#f4b4cc"/><circle cx="10" cy="-8" r="1.0" fill="#7ee0ff"/></g>
+    <ellipse cx="-10" cy="-9" rx="3" ry="1.6" fill="#c07eff" fill-opacity="0.38"/>
+    <ellipse cx="10" cy="-9" rx="3" ry="1.6" fill="#c07eff" fill-opacity="0.38"/>
+    <path d="M-10,-15 Q-7,-12 -4,-15" fill="none" stroke="#110a24" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M4,-15 Q7,-12 10,-15" fill="none" stroke="#110a24" stroke-width="1.5" stroke-linecap="round"/>
+    <polygon points="-1.6,-10.5 1.6,-10.5 0,-8.5" fill="#f4b4cc"/>
+    <path d="M-3,-7.2 Q-1.5,-5.5 0,-7.5 Q1.5,-5.5 3,-7.2" fill="none" stroke="#7ee0ff" stroke-width="1.3" stroke-linecap="round"/>
+    <g stroke="#cbb8ff" stroke-width="0.85" stroke-linecap="round" fill="none">
+      <path d="M-11,-10.5 L-19,-11"/><path d="M-11,-8.5 L-20,-7.5"/>
+      <path d="M11,-10.5 L19,-11"/><path d="M11,-8.5 L20,-7.5"/>
     </g>
-    <polygon points="-1.8,-9.5 1.8,-9.5 0,-7.5" fill="#e58888"/>
-    <path d="M-3.5,-6.2 Q-1.8,-4.5 0,-6.5 Q1.8,-4.5 3.5,-6.2" fill="none" stroke="#5c3314" stroke-width="1.35" stroke-linecap="round"/>
-    <g stroke="#faebd7" stroke-width="0.9" stroke-linecap="round" fill="none">
-      <path d="M-12,-9.5 Q-19,-11 -24,-10"/><path d="M-12.5,-7.5 Q-20,-7.5 -25,-6.5"/>
-      <path d="M12,-9.5 Q19,-11 24,-10"/><path d="M12.5,-7.5 Q20,-7.5 25,-6.5"/>
+  </g>
+  <g transform="translate(9, 6)">
+    <g class="anim groom-paw">
+      <ellipse cx="0" cy="-6" rx="4.2" ry="6.2" fill="#503488" stroke="#8b62ff" stroke-width="0.95"/>
     </g>
-    <ellipse cx="-11" cy="3.5" rx="5.5" ry="3.8" fill="#faebd7" stroke="#6e3f19" stroke-width="1"/>
-    <ellipse cx="11" cy="3.5" rx="5.5" ry="3.8" fill="#faebd7" stroke="#6e3f19" stroke-width="1"/>
   </g>
   </g>
 
