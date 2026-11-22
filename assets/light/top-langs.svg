@@ -30,9 +30,9 @@
 
   <rect x="24" y="50" width="332" height="10" rx="5" fill="#dce0e8"/>
   <g clip-path="url(#bar-clip)">
-    <rect x="24.00" y="50" width="153.48" height="10" fill="#3572a5"/>
-    <rect x="177.48" y="50" width="77.04" height="10" fill="#7355dd"/>
-    <rect x="254.52" y="50" width="63.73" height="10" fill="#3178c6"/>
+    <rect x="24.00" y="50" width="153.50" height="10" fill="#3572a5"/>
+    <rect x="177.50" y="50" width="77.03" height="10" fill="#7355dd"/>
+    <rect x="254.53" y="50" width="63.73" height="10" fill="#3178c6"/>
     <rect x="318.25" y="50" width="24.95" height="10" fill="#f34b7d"/>
     <rect x="343.20" y="50" width="5.21" height="10" fill="#8b9bb4"/>
     <rect x="348.41" y="50" width="3.30" height="10" fill="#f1e05a"/>
