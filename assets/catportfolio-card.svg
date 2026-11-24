@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="140" viewBox="0 0 440 140" role="img" aria-labelledby="cp-title cp-desc">
-  <!-- theme: mocha/violet -->
+  <!-- theme: catportfolio/pink -->
   <title id="cp-title">CatPortfolio</title>
   <desc id="cp-desc">Self-rendering GenUI portfolio — React 19, Three.js aquarium, Zod layout. Live at coolgunxdd.github.io/CatPortfolio</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1e1e2e"/>
-      <stop offset="100%" stop-color="#181825"/>
+      <stop offset="0%" stop-color="#14111f"/>
+      <stop offset="100%" stop-color="#1c1730"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#863bff"/>
-      <stop offset="100%" stop-color="#47bfff"/>
+      <stop offset="0%" stop-color="#f5c2e7"/>
+      <stop offset="100%" stop-color="#cba6f7"/>
     </linearGradient>
     <linearGradient id="cp-fish" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#47bfff"/>
-      <stop offset="100%" stop-color="#7ee0ff"/>
+      <stop offset="0%" stop-color="#cba6f7"/>
+      <stop offset="100%" stop-color="#89dceb"/>
     </linearGradient>
     <radialGradient id="cp-cat-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#863bff" stop-opacity="0.24"/>
-      <stop offset="100%" stop-color="#863bff" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#f5c2e7" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#f5c2e7" stop-opacity="0"/>
     </radialGradient>
     <style>
       .anim { will-change: transform, opacity; }
@@ -86,7 +86,7 @@
     </clipPath>
   </defs>
 
-  <rect x="0.5" y="0.5" width="439" height="139" rx="12" fill="url(#bg)" stroke="#45475a" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="439" height="139" rx="12" fill="url(#bg)" stroke="#3a3358" stroke-width="1"/>
   <rect x="0" y="0" width="5" height="140" fill="url(#accent)" clip-path="url(#cp-clip)"/>
 
   <!-- breed: tuxedo -->
@@ -148,43 +148,43 @@
       <g transform="scale(-0.7, 0.7)">
         <g transform="translate(-9, 0)">
           <g class="anim tail-wag">
-            <polygon points="0,0 -8,-4.5 -6,0 -8,4.5" fill="#d7c2ff" fill-opacity="0.75"/>
+            <polygon points="0,0 -8,-4.5 -6,0 -8,4.5" fill="#f5c2e7" fill-opacity="0.75"/>
           </g>
         </g>
-        <ellipse cx="2" cy="0" rx="11" ry="5.5" fill="#863bff" fill-opacity="0.75"/>
-        <circle cx="8" cy="-1" r="1.2" fill="#1e1e2e"/>
+        <ellipse cx="2" cy="0" rx="11" ry="5.5" fill="#f5c2e7" fill-opacity="0.75"/>
+        <circle cx="8" cy="-1" r="1.2" fill="#14111f"/>
       </g>
     </g>
   </g>
   <g transform="translate(384, 94)">
     <g class="anim cp-fish-bob">
-      <polygon points="14,1 18,-4 20,2" fill="#7ee0ff" fill-opacity="0.75"/>
+      <polygon points="14,1 18,-4 20,2" fill="#89dceb" fill-opacity="0.75"/>
       <ellipse cx="16" cy="8" rx="14" ry="7" fill="url(#cp-fish)" fill-opacity="0.82"/>
       <g transform="translate(2, 8)">
         <g class="anim tail-wag">
-          <polygon points="0,0 -8,-6 -6,0 -8,6" fill="#47bfff" fill-opacity="0.82"/>
+          <polygon points="0,0 -8,-6 -6,0 -8,6" fill="#cba6f7" fill-opacity="0.82"/>
         </g>
       </g>
-      <circle cx="23" cy="6.5" r="1.4" fill="#1e1e2e"/>
+      <circle cx="23" cy="6.5" r="1.4" fill="#14111f"/>
       <circle cx="23.5" cy="6.0" r="0.5" fill="#ffffff"/>
     </g>
   </g>
 
-  <text x="88" y="42" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#cdd6f4">CatPortfolio</text>
-  <rect x="232" y="26" width="40" height="18" rx="9" fill="#863bff" fill-opacity="0.25" stroke="#863bff" stroke-opacity="0.7"/>
-  <text x="252" y="39" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#d7c2ff">LIVE</text>
+  <text x="88" y="42" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#f4eefc">CatPortfolio</text>
+  <rect x="232" y="26" width="40" height="18" rx="9" fill="#f5c2e7" fill-opacity="0.25" stroke="#f5c2e7" stroke-opacity="0.7"/>
+  <text x="252" y="39" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#f5c2e7">LIVE</text>
 
-  <text x="88" y="66" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#bac2de">Self-rendering GenUI · WebGL aquarium</text>
+  <text x="88" y="66" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#b5abc8">Self-rendering GenUI · WebGL aquarium</text>
 
-  <rect x="88" y="80" width="62" height="22" rx="6" fill="#313244" stroke="#585b70"/>
-  <text x="119" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#cdd6f4">React 19</text>
-  <rect x="156" y="80" width="64" height="22" rx="6" fill="#313244" stroke="#585b70"/>
-  <text x="188" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#cdd6f4">Three.js</text>
-  <rect x="226" y="80" width="42" height="22" rx="6" fill="#313244" stroke="#585b70"/>
-  <text x="247" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#cdd6f4">Zod</text>
-  <rect x="274" y="80" width="44" height="22" rx="6" fill="#313244" stroke="#585b70"/>
-  <text x="296" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#cdd6f4">Vite</text>
+  <rect x="88" y="80" width="62" height="22" rx="6" fill="#2a2440" stroke="#4a4270"/>
+  <text x="119" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#f4eefc">React 19</text>
+  <rect x="156" y="80" width="64" height="22" rx="6" fill="#2a2440" stroke="#4a4270"/>
+  <text x="188" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#f4eefc">Three.js</text>
+  <rect x="226" y="80" width="42" height="22" rx="6" fill="#2a2440" stroke="#4a4270"/>
+  <text x="247" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#f4eefc">Zod</text>
+  <rect x="274" y="80" width="44" height="22" rx="6" fill="#2a2440" stroke="#4a4270"/>
+  <text x="296" y="95" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#f4eefc">Vite</text>
 
-  <text x="88" y="124" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#47bfff">coolgunxdd.github.io/CatPortfolio →</text>
+  <text x="88" y="124" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#cba6f7">coolgunxdd.github.io/CatPortfolio →</text>
 
 </svg>
